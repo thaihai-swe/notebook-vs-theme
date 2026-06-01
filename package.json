@@ -1,0 +1,32 @@
+{
+  "name": "note-book-theme",
+  "displayName": "Note Book Theme",
+  "description": "A warm, comfortable light theme for VS Code",
+  "version": "1.6.0",
+  "publisher": "note-book",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "light theme",
+    "notebook",
+    "warm"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Note Book (Blended)",
+        "uiTheme": "vs",
+        "path": "./themes/note-book-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
