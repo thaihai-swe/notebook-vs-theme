@@ -2,7 +2,7 @@
   "name": "note-book-theme",
   "displayName": "Note Book Theme",
   "description": "A warm, comfortable light theme for VS Code",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "note-book",
   "engines": {
     "vscode": "^1.60.0"
