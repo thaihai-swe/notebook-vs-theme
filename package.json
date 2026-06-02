@@ -19,9 +19,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Note Book (Blended)",
+        "label": "Note Book",
         "uiTheme": "vs",
         "path": "./themes/note-book-theme.json"
+      },
+      {
+        "label": "Note Book Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/note-book-dark-theme.json"
       }
     ]
   },

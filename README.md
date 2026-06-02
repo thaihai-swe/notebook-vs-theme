@@ -1,6 +1,8 @@
 # Note Book Theme for VS Code
 
-A warm, comfortable light theme for VS Code that's easy on the eyes. It is perfectly blended between the Rosé Pine Dawn palette and the Claude Light UI to create a calm, middle-range aesthetic.
+A warm, comfortable light theme and a new "book-style" Solarized dark theme for VS Code that are easy on the eyes. 
+The light theme is perfectly blended between the Rosé Pine Dawn palette and the Claude Light UI to create a calm, middle-range aesthetic.
+The dark theme provides a warm, low-contrast dark sepia experience inspired by Solarized Dark+.
 
 ## Installation
 
@@ -37,7 +39,7 @@ If you've cloned the repository and want to build and install the theme locally:
 
 1. Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows/Linux)
 2. Type and select **Preferences: Color Theme**
-3. Select **Note Book (Blended)** from the list
+3. Select **Note Book** for the light theme, or **Note Book Dark** for the dark theme.
 
 ## License
 
