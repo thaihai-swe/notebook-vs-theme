@@ -68,7 +68,7 @@
       "name": "Storage",
       "scope": "storage",
       "settings": {
-        "fontStyle": "bold italic",
+        "fontStyle": "italic",
         "foreground": "#93A1A1"
       }
     },

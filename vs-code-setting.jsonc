@@ -1,0 +1,845 @@
+// ============================================================================
+// VS Code settings.json — Full UI/UX Upgrade
+// Purpose: premium, calm, readable, iOS-inspired VS Code workspace.
+// Notes:
+// - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
+// - Keep this as User Settings unless you intentionally want it project-specific.
+// - The custom-ui-style.stylesheet section requires your Custom UI Style extension.
+// - If a font is not installed, VS Code falls back to the next font in the list.
+// ============================================================================
+{
+    "extensions.allowed": {
+        "anthropic.claude-code": false,
+        "*": true
+    },
+    // ======================================================================
+    // Tab management
+    // ======================================================================
+    "workbench.editor.tabActionCloseVisibility": true,
+    "workbench.editor.tabActionUnpinVisibility": true,
+    // ======================================================================
+    // Quick navigation
+    // ======================================================================
+    "workbench.quickOpen.closeOnFocusLost": true,
+    "workbench.quickOpen.preserveInput": true,
+    // ======================================================================
+    // 1. Window, startup, and focus behavior
+    // ----------------------------------------------------------------------
+    // Goal: open directly into the workspace, keep Zen Mode useful but not
+    // disruptive, and use a custom title bar for the polished UI shell.
+    // ======================================================================
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.restore": true,
+    "workbench.startupEditor": "welcomePage",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 1.25,
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
+    "window.titleBarStyle": "custom",
+    "window.commandCenter": true,
+    "window.restoreWindows": "all",
+    // ======================================================================
+    // 2. Editor scrollbar and minimap
+    // ----------------------------------------------------------------------
+    // Goal: keep navigation visible without making the editor feel heavy.
+    // The scrollbar is smaller than your previous 22px version, while the
+    // custom CSS below still keeps it touch-friendly and rounded.
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.horizontal": "auto",
+    "editor.scrollbar.verticalScrollbarSize": 22,
+    "editor.scrollbar.horizontalScrollbarSize": 16,
+    "editor.scrollbar.useShadows": true,
+    "editor.scrollbar.scrollByPage": false,
+    // Minimap is off in your latest setup. Turn it on if you want it later.
+    "editor.minimap.enabled": true,
+    "editor.minimap.side": "right",
+    "editor.minimap.scale": 1,
+    "editor.minimap.size": "proportional",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 120,
+    "editor.minimap.showSlider": "always",
+    // ======================================================================
+    // 3. Editor behavior and typography
+    // ----------------------------------------------------------------------
+    // Goal: readable long coding sessions. Font size and line height are still
+    // large, but slightly calmer than before for better information density.
+    // ======================================================================
+    "editor.fontFamily": "'IBM Plex Mono','Monaspace Neon NF', 'JetBrains Mono', monospace",
+    "editor.fontSize": 17,
+    "editor.fontWeight": "400",
+    "editor.lineHeight": 1.7,
+    "editor.letterSpacing": 0.25,
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 2,
+    "editor.mouseWheelZoom": true,
+    "editor.padding.top": 14,
+    "editor.padding.bottom": 18,
+    "editor.smoothScrolling": true,
+    "editor.scrollBeyondLastColumn": 3,
+    "editor.scrollPredominantAxis": true,
+    "editor.fastScrollSensitivity": 5,
+    "editor.mouseWheelScrollSensitivity": 1,
+    "editor.cursorSurroundingLines": 6,
+    "editor.scrollBeyondLastLine": false,
+    "editor.wordWrap": "off",
+    "editor.wrappingIndent": "same",
+    "editor.renderLineHighlight": "all",
+    "editor.renderFinalNewline": "dimmed",
+    "editor.renderWhitespace": "selection",
+    "editor.renderControlCharacters": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.dragAndDrop": true,
+    "editor.stickyTabStops": true,
+    "editor.largeFileOptimizations": true,
+    "editor.accessibilitySupport": "auto",
+    // Formatting and save actions.
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    // Unicode safety.
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    // ======================================================================
+    // 4. Suggestions, hints, hover, and code navigation
+    // ======================================================================
+    "editor.suggest.preview": true,
+    "editor.suggest.previewMode": "prefix",
+    "editor.suggest.insertMode": "replace",
+    "editor.suggest.matchOnWordStartOnly": false,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.showStatusBar": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.inlineSuggest.enabled": true,
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.parameterHints.enabled": true,
+    "editor.parameterHints.cycle": true,
+    "editor.linkedEditing": true,
+    "editor.hover.enabled": "on",
+    "editor.hover.delay": 350,
+    "editor.hover.sticky": true,
+    "editor.codeLens": true,
+    "editor.codeLensFontFamily": "'IBM Plex Mono', 'JetBrains Mono', monospace",
+    "editor.codeLensFontSize": 13,
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "editor.inlayHints.fontSize": 14,
+    "editor.inlayHints.padding": true,
+    "editor.inlayHints.maximumLength": 40,
+    // ======================================================================
+    // 5. Indent guides, bracket guides, and sticky scroll
+    // ======================================================================
+    "editor.guides.indentation": true,
+    "editor.guides.highlightActiveIndentation": "always",
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 3,
+    // ======================================================================
+    // 6. Breadcrumbs
+    // ======================================================================
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+    "breadcrumbs.symbolPath": "on",
+    "breadcrumbs.icons": true,
+    "breadcrumbs.showArrays": true,
+    "breadcrumbs.showBooleans": true,
+    "breadcrumbs.showClasses": true,
+    "breadcrumbs.showConstants": true,
+    "breadcrumbs.showConstructors": true,
+    "breadcrumbs.showEnumMembers": true,
+    "breadcrumbs.showEnums": true,
+    "breadcrumbs.showFields": true,
+    "breadcrumbs.showFiles": true,
+    "breadcrumbs.showFunctions": true,
+    "breadcrumbs.showInterfaces": true,
+    "breadcrumbs.showMethods": true,
+    "breadcrumbs.showModules": true,
+    "breadcrumbs.showObjects": true,
+    "breadcrumbs.showPackages": true,
+    "breadcrumbs.showProperties": true,
+    "breadcrumbs.showStructs": true,
+    "breadcrumbs.showVariables": true,
+    // ======================================================================
+    // 7. Workbench tabs and editor management
+    // ----------------------------------------------------------------------
+    // Goal: clean tab bar, fewer wrapped rows, predictable close buttons, and
+    // no preview tabs so opened files stay stable.
+    // ======================================================================
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true,
+    "workbench.reduceMotion": "off",
+    // Open settings in JSON mode by default so advanced UI/CSS tuning is easier.
+    "workbench.settings.useSplitJSON": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showTabs": "multiple",
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editor.tabSizing": "fit",
+    "workbench.editor.wrapTabs": false,
+    // Cleaner tabs: close button remains predictable; editor actions do not dominate the header.
+    "workbench.editor.tabCloseButton": "right",
+    "workbench.editor.alwaysShowEditorActions": false,
+    "workbench.editor.showIcons": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.restoreViewState": true,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.focusRecentEditorAfterClose": true,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editor.closeEmptyGroups": true,
+    "workbench.editor.splitSizing": "split",
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 12,
+    "workbench.editor.limit.perEditorGroup": true,
+    // ======================================================================
+    // 8. Explorer / solution-view behavior
+    // ======================================================================
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.enableStickyScroll": true,
+    "workbench.tree.expandMode": "singleClick",
+    "workbench.list.smoothScrolling": true,
+    "explorer.autoReveal": false,
+    "explorer.incrementalNaming": "smart",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.compactFolders": false,
+    "explorer.sortOrder": "type",
+    "explorer.decorations.badges": true,
+    "explorer.decorations.colors": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lock, bun.lockb, .npmrc, .yarnrc.yml",
+        "tsconfig.json": "tsconfig.*.json",
+        "vite.config.*": "vitest.config.*, playwright.config.*, cypress.config.*",
+        "next.config.*": "next-env.d.ts, middleware.*, instrumentation.*",
+        "tailwind.config.*": "postcss.config.*, components.json",
+        "eslint.config.*": ".eslintignore",
+        "prettier.config.*": ".prettierignore",
+        "README.md": "CHANGELOG.md, LICENSE, SECURITY.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md",
+        "Dockerfile": ".dockerignore, docker-compose*.yml, compose*.yml",
+        ".env": ".env.*, !.env.example"
+    },
+    // ======================================================================
+    // 9. Search, files, excludes, and performance
+    // ======================================================================
+    "search.searchOnType": false,
+    // Search waits for Enter, reducing UI churn on large workspaces.
+    "search.showLineNumbers": true,
+    "search.decorations.colors": true,
+    "search.collapseResults": "auto",
+    "search.smartCase": true,
+    "search.useIgnoreFiles": true,
+    "search.useGlobalIgnoreFiles": true,
+    "search.quickOpen.includeSymbols": true,
+    "search.searchEditor.doubleClickBehaviour": "goToLocation",
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 1000,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "files.simpleDialog.enable": false,
+    "files.hotExit": "onExitAndWindowClose",
+    "files.restoreUndoStack": true,
+    "search.exclude": {
+        "**/.angular": true,
+        "**/.svelte-kit": true,
+        "**/.astro": true,
+        "**/.output": true,
+        "**/.serverless": true,
+        "**/.pnpm-store": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.venv": true,
+        "**/venv": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.next": true,
+        "**/.nuxt": true,
+        "**/.turbo": true,
+        "**/.cache": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/.tox": true,
+        "**/.parcel-cache": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.vscode": false,
+        "**/.idea": true,
+        "**/*.log": true,
+        "**/coverage": true,
+        ".pytest_cache": true,
+        "__pycache__": true,
+        "**/__pycache__": true,
+        "**/.next": true,
+        "**/.nuxt": true,
+        "**/.turbo": true,
+        "**/.cache": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/.tox": true,
+        "**/.parcel-cache": true
+    },
+    "files.watcherExclude": {
+        "**/.angular/**": true,
+        "**/.svelte-kit/**": true,
+        "**/.astro/**": true,
+        "**/.output/**": true,
+        "**/.serverless/**": true,
+        "**/.pnpm-store/**": true,
+        "**/node_modules/**": true,
+        "**/dist/**": true,
+        "**/build/**": true,
+        "**/.git/**": true,
+        "**/*.log": true,
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/.venv/**": true,
+        "**/venv/**": true,
+        "**/.next/**": true,
+        "**/.nuxt/**": true,
+        "**/.turbo/**": true,
+        "**/.cache/**": true,
+        "**/.mypy_cache/**": true,
+        "**/.ruff_cache/**": true,
+        "**/.tox/**": true,
+        "**/.parcel-cache/**": true,
+        "**/coverage/**": true
+    },
+    // ======================================================================
+    // 10. Terminal
+    // ======================================================================
+    "terminal.integrated.minimumContrastRatio": 1,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.scrollback": 20000,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+    "terminal.integrated.fontFamily": "'Monaspace Neon NF', 'FiraCode Nerd Font Mono', 'IBM Plex Mono', 'JetBrains Mono', monospace",
+    "terminal.integrated.fontSize": 17,
+    "terminal.integrated.fontWeight": "400",
+    "terminal.integrated.lineHeight": 1.25,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.customGlyphs": true,
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.hideCondition": "singleTerminal",
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.gpuAcceleration": "auto",
+    // ======================================================================
+    // 11. Git, diff, merge, AI tools
+    // ======================================================================
+    "git.decorations.enabled": true,
+    "git.autorefresh": true,
+    "git.autoRepositoryDetection": "subFolders",
+    "git.detectSubmodules": true,
+    "git.showPushSuccessNotification": true,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    "git.pruneOnFetch": true,
+    "git.branchProtectionPrompt": "alwaysPrompt",
+    "scm.alwaysShowRepositories": true,
+    "scm.diffDecorations": "all",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.wordWrap": "on",
+    "diffEditor.hideUnchangedRegions.enabled": false,
+    "diffEditor.experimental.showMoves": false,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.renderIndicators": true,
+    "diffEditor.codeLens": true,
+    "mergeEditor.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": true,
+        "python": true,
+        "csharp": true
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.agent.maxRequests": 50,
+    "chat.detectParticipant.enabled": false,
+    "chat.viewSessions.orientation": "stacked",
+    "claudeCode.preferredLocation": "panel",
+    // ======================================================================
+    // 12. Problems panel
+    // ======================================================================
+    "problems.showWarnings": true,
+    "problems.showInfos": true,
+    "problems.showCurrentInStatus": true,
+    "problems.decorations.enabled": true,
+    "problems.autoReveal": false,
+    "problems.sortOrder": "severity",
+    // ======================================================================
+    // 13. Limited color customizations
+    // ======================================================================
+    // Color overrides are limited to semantic coding aids so the theme still
+    // controls the main UI surfaces.
+    "workbench.colorCustomizations": {
+        "scrollbarSlider.background": "#AEB9C766",
+        "scrollbarSlider.hoverBackground": "#D6DEE8AA",
+        "scrollbarSlider.activeBackground": "#FFFFFFCC",
+        "minimapSlider.background": "#AEB9C766",
+        "minimapSlider.hoverBackground": "#D6DEE8AA",
+        "minimapSlider.activeBackground": "#FFFFFFCC",
+        "editor.lineHighlightBorder": "#40977676",
+        "editor.selectionBackground": "#4D8DFF66",
+        "editor.inactiveSelectionBackground": "#4D8DFF33",
+        "editor.selectionHighlightBackground": "#4D8DFF2E",
+        "editor.selectionHighlightBorder": "#4D8DFF88",
+        "terminal.selectionBackground": "#4D8DFF66",
+        "terminal.inactiveSelectionBackground": "#4D8DFF33",
+        "editor.wordHighlightBackground": "#FFD16633",
+        "editor.wordHighlightStrongBackground": "#FFD16655",
+        "editor.wordHighlightBorder": "#FFD16666",
+        "editor.wordHighlightStrongBorder": "#FFD16688",
+        "tree.indentGuidesStroke": "#6EE7B766",
+        "editorIndentGuide.background1": "#0DBC7933",
+        "editorIndentGuide.background2": "#7DD3FC2E",
+        "editorIndentGuide.background3": "#C084FC2E",
+        "editorIndentGuide.activeBackground1": "#0DBC79CC",
+        "editorIndentGuide.activeBackground2": "#7DD3FCCC",
+        "editorIndentGuide.activeBackground3": "#C084FCCC",
+        "editorBracketPairGuide.background1": "#0DBC7933",
+        "editorBracketPairGuide.background2": "#7DD3FC2E",
+        "editorBracketPairGuide.background3": "#C084FC2E",
+        "editorBracketPairGuide.activeBackground1": "#0DBC79CC",
+        "editorBracketPairGuide.activeBackground2": "#7DD3FCCC",
+        "editorBracketPairGuide.activeBackground3": "#C084FCCC",
+        "editorBracketHighlight.foreground1": "#FFD166",
+        "editorBracketHighlight.foreground2": "#7DD3FC",
+        "editorBracketHighlight.foreground3": "#C084FC",
+        "editorBracketHighlight.foreground4": "#86EFAC",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#FF6B6B",
+        "editorGutter.modifiedBackground": "#F6C177",
+        "editorGutter.addedBackground": "#86EFAC",
+        "editorGutter.deletedBackground": "#FF6B6B",
+        "editorOverviewRuler.modifiedForeground": "#F6C177AA",
+        "editorOverviewRuler.addedForeground": "#86EFACAA",
+        "editorOverviewRuler.deletedForeground": "#FF6B6BAA",
+        "diffEditor.insertedLineBackground": "#123D2470",
+        "diffEditor.removedLineBackground": "#4A1F2A70",
+        "diffEditor.insertedTextBackground": "#1FA15A55",
+        "diffEditor.removedTextBackground": "#FF4D6D55",
+        "diffEditorGutter.insertedLineBackground": "#1F8F4D88",
+        "diffEditorGutter.removedLineBackground": "#B63A4B88",
+        "diffEditorOverview.insertedForeground": "#9BE7C0CC",
+        "diffEditorOverview.removedForeground": "#FF7A90CC",
+        "editor.findMatchBackground": "#D6A94A66",
+        "editor.findMatchBorder": "#E8C76A",
+        "editor.findMatchHighlightBackground": "#54596366",
+        "editor.findRangeHighlightBackground": "#31323844",
+        "editorBracketMatch.background": "#0DBC7926",
+        "editorBracketMatch.border": "#0DBC79AA",
+        "editorOverviewRuler.errorForeground": "#FF6B6BAA",
+        "editorOverviewRuler.warningForeground": "#D6A94AAA",
+        "editorOverviewRuler.infoForeground": "#7DD3FCAA",
+        "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
+        "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
+    },
+    // ======================================================================
+    // 14. Custom UI stylesheet
+    // ----------------------------------------------------------------------
+    // CSS selectors belong here, not in workbench.colorCustomizations.
+    // This section is the main UI/UX upgrade: rounded panels, softer borders,
+    // calmer shadows, floating activity bar, polished command palette, and
+    // modern editor/terminal cards. Requires the Custom UI Style extension.
+    // The editor scrollbar CSS is scoped to .part.editor .monaco-editor so
+    // it does not enlarge Terminal, Explorer, Search, Problems, or other panels.
+    "custom-ui-style.stylesheet": {
+        // ===================================================================
+        // iOS 26-inspired clean frosted UI
+        // ===================================================================
+        // Softer than the previous Liquid Glass attempt:
+        // - main code surfaces remain opaque and readable
+        // - borders are subtle, not bright white
+        // - blur is limited to floating UI only
+        // - rounded panels match the Apple-like sheet/card feeling
+        ".monaco-workbench": {
+            "--ui-panel-radius": "22px",
+            "--ui-widget-radius": "18px",
+            "--ui-input-radius": "13px",
+            "--ui-item-radius": "9px",
+            "--ui-panel-gap": "7px",
+            "--ui-panel-top": "7px",
+            "--ui-ios-canvas": "color-mix(in srgb, var(--vscode-editor-background) 95%, black)",
+            "--ui-ios-surface": "color-mix(in srgb, var(--vscode-editor-background) 96%, white 4%)",
+            "--ui-ios-border": "color-mix(in srgb, var(--vscode-foreground) 11%, transparent)",
+            "--ui-ios-border-strong": "color-mix(in srgb, var(--vscode-foreground) 17%, transparent)",
+            "--ui-ios-inner": "inset 0 1px 0 color-mix(in srgb, white 7%, transparent)",
+            "--ui-ios-shadow": "0 10px 28px color-mix(in srgb, var(--vscode-widget-shadow) 28%, transparent)",
+            "--ui-ios-shadow-soft": "0 4px 16px color-mix(in srgb, var(--vscode-widget-shadow) 20%, transparent)",
+            "--ui-ios-popover-shadow": "0 24px 72px color-mix(in srgb, var(--vscode-widget-shadow) 58%, transparent)",
+            "background-color": "var(--ui-ios-canvas) !important",
+            "color": "var(--vscode-editor-foreground) !important"
+        },
+        // Frosted floating surfaces only. Do not blur editor/terminal text.
+        ".quick-input-widget, .monaco-hover, .notification-toast, .notifications-center, .monaco-dialog-box": {
+            "backdrop-filter": "blur(14px) saturate(135%) !important",
+            "-webkit-backdrop-filter": "blur(14px) saturate(135%) !important"
+        },
+        // Main rounded panels.
+        ".part.editor, .part.sidebar, .part.panel.bottom": {
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+        },
+        // Breadcrumbs.
+        ".monaco-breadcrumbs": {
+            "border-top": "none !important",
+            "background": "var(--vscode-breadcrumb-background) !important"
+        },
+        ".monaco-breadcrumbs *": {
+            "opacity": "1 !important",
+            "visibility": "visible !important",
+            "color": "var(--vscode-breadcrumb-foreground) !important",
+            "transition": "color 0.18s ease !important"
+        },
+        ".monaco-breadcrumbs:hover *": {
+            "color": "var(--vscode-breadcrumb-focusForeground) !important"
+        },
+        // Editor shell.
+        ".part.editor": {
+            "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
+            "border-radius": "var(--ui-panel-radius) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-editor-background) !important",
+            "color": "var(--vscode-editor-foreground) !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+        },
+        ".part.editor > .content": {
+            "border-radius": "calc(var(--ui-panel-radius) - 1px) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-editor-background) !important"
+        },
+        ".editor-instance, .editor-group-container": {
+            "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-editor-background) !important",
+            "color": "var(--vscode-editor-foreground) !important"
+        },
+        ".monaco-editor": {
+            "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-editor-background) !important",
+            "color": "var(--vscode-editor-foreground) !important",
+            "outline": "1px solid color-mix(in srgb, var(--vscode-foreground) 6%, transparent) !important",
+            "outline-offset": "-1px !important"
+        },
+        // Large but calmer editor scrollbar.
+        ".part.editor .monaco-editor .scrollbar.vertical": {
+            "width": "16px !important",
+            "opacity": "1 !important"
+        },
+        ".part.editor .monaco-editor .scrollbar.horizontal": {
+            "height": "12px !important",
+            "opacity": "1 !important"
+        },
+        ".part.editor .monaco-editor .scrollbar.vertical > .slider": {
+            "left": "4px !important",
+            "width": "8px !important",
+            "border-radius": "9999px !important",
+            "background": "var(--vscode-scrollbarSlider-background) !important",
+            "box-shadow": "inset 0 1px 0 color-mix(in srgb, white 14%, transparent), 0 1px 5px color-mix(in srgb, var(--vscode-widget-shadow) 34%, transparent) !important"
+        },
+        ".part.editor .monaco-editor .scrollbar.horizontal > .slider": {
+            "top": "2px !important",
+            "height": "7px !important",
+            "border-radius": "9999px !important",
+            "background": "var(--vscode-scrollbarSlider-background) !important"
+        },
+        ".part.editor .monaco-editor .scrollbar > .slider:hover": {
+            "background": "var(--vscode-scrollbarSlider-hoverBackground) !important"
+        },
+        ".part.editor .monaco-editor .scrollbar > .slider.active": {
+            "background": "var(--vscode-scrollbarSlider-activeBackground) !important"
+        },
+        // Editor detail polish.
+        ".monaco-editor .line-numbers.active-line-number": {
+            "color": "var(--vscode-editorLineNumber-activeForeground) !important",
+            "font-weight": "600 !important"
+        },
+        ".monaco-editor .current-line, .monaco-editor .view-overlays .current-line": {
+            "border-radius": "8px !important"
+        },
+        ".monaco-editor .cursors-layer .cursor": {
+            "box-shadow": "0 0 8px color-mix(in srgb, var(--vscode-editorCursor-foreground) 30%, transparent) !important"
+        },
+        // Tabs: iOS-like segmented chips.
+        ".tabs-and-actions-container": {
+            "min-height": "35px !important",
+            "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-editorGroupHeader-tabsBackground) !important"
+        },
+        ".editor-actions, .tabs-container": {
+            "background-image": "linear-gradient(to top, var(--ui-ios-border) 1px, transparent 1px) !important",
+            "background-repeat": "no-repeat !important",
+            "background-position": "bottom !important"
+        },
+        ".tab": {
+            "margin": "3px 2px 0 2px !important",
+            "border-radius": "12px 12px 0 0 !important",
+            "border": "1px solid transparent !important",
+            "font-family": "'Bear Sans UI', sans-serif !important",
+            "display": "flex !important",
+            "align-items": "center !important"
+        },
+        ".tab.active": {
+            "background": "color-mix(in srgb, var(--vscode-tab-activeBackground) 90%, white 4%) !important",
+            "border": "1px solid var(--ui-ios-border-strong) !important",
+            "border-bottom": "1px solid transparent !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important"
+        },
+        ".tab .label-name": {
+            "font-size": "12.5px !important"
+        },
+        ".tab.active .label-name": {
+            "font-weight": "600 !important",
+            "color": "var(--vscode-tab-activeForeground) !important"
+        },
+        ".tab.dirty .label-name": {
+            "font-style": "italic !important"
+        },
+        ".tab:not(.active)": {
+            "opacity": "0.66 !important"
+        },
+        ".tab:not(.active):hover": {
+            "opacity": "0.95 !important",
+            "background": "color-mix(in srgb, var(--vscode-tab-hoverBackground) 84%, transparent) !important"
+        },
+        ".tab .tab-actions": {
+            "opacity": "0 !important"
+        },
+        ".tab:hover .tab-actions, .tab.active .tab-actions": {
+            "opacity": "1 !important"
+        },
+        // Activity bar: soft floating capsule.
+        ".part.activitybar": {
+            "background": "var(--ui-ios-canvas) !important",
+            "margin": "8px 0 28px 0",
+            "overflow": "visible !important",
+            "width": "64px !important"
+        },
+        ".part.activitybar .composite-bar": {
+            "padding": "12px 4px !important",
+            "gap": "8px !important",
+            "background": "color-mix(in srgb, var(--vscode-editorWidget-background) 92%, transparent) !important",
+            "border-radius": "9999px !important",
+            "width": "calc(100% - 8px) !important",
+            "margin-left": "auto !important",
+            "margin-right": "auto !important",
+            "display": "flex !important",
+            "flex-direction": "column !important",
+            "align-items": "center !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important"
+        },
+        ".part.activitybar .action-item .action-label": {
+            "font-size": "25px !important",
+            "width": "42px !important",
+            "height": "42px !important",
+            "line-height": "42px !important",
+            "display": "flex !important",
+            "align-items": "center !important",
+            "justify-content": "center !important",
+            "border-radius": "9999px !important"
+        },
+        ".part.activitybar .action-item:hover .action-label": {
+            "background": "var(--vscode-list-hoverBackground) !important",
+            "transform": "translateY(-1px) !important",
+            "filter": "none !important"
+        },
+        ".part.activitybar .action-item .active-item-indicator": {
+            "display": "none !important"
+        },
+        // Sidebar and Explorer.
+        ".part.sidebar": {
+            "font-family": "'Bear Sans UI', sans-serif !important",
+            "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
+            "border-radius": "var(--ui-panel-radius) !important",
+            "overflow": "hidden !important",
+            "max-height": "calc(100% - 8px) !important",
+            "background": "var(--vscode-sideBar-background) !important",
+            "color": "var(--vscode-sideBar-foreground) !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+        },
+        ".part.sidebar .content": {
+            "width": "100% !important",
+            "padding-left": "0 !important",
+            "margin-left": "0 !important"
+        },
+        ".part.sidebar .title-label h2": {
+            "font-family": "'Bear Sans UI Heading', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-size": "12px !important",
+            "font-weight": "600 !important",
+            "text-transform": "uppercase !important",
+            "letter-spacing": "1.1px !important",
+            "color": "var(--vscode-sideBarTitle-foreground) !important"
+        },
+        ".monaco-tl-indent > .indent-guide": {
+            "border-color": "var(--vscode-tree-indentGuidesStroke) !important",
+            "opacity": "1 !important"
+        },
+        ".explorer-viewlet .monaco-tl-row": {
+            "min-height": "25px !important"
+        },
+        ".explorer-viewlet .monaco-list-row": {
+            "border-radius": "var(--ui-item-radius) !important",
+            "margin-left": "5px !important",
+            "margin-right": "5px !important",
+            "width": "calc(100% - 10px) !important"
+        },
+        ".explorer-viewlet .monaco-list-row:hover": {
+            "background": "var(--vscode-list-hoverBackground) !important",
+            "transform": "none !important"
+        },
+        ".explorer-viewlet .monaco-list-row.focused, .explorer-viewlet .monaco-list-row.selected": {
+            "background": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground) 88%, white 3%) !important",
+            "box-shadow": "inset 3px 0 0 var(--ui-ios-border-strong) !important"
+        },
+        ".explorer-viewlet .monaco-icon-label, .explorer-viewlet .monaco-icon-label::before, .explorer-viewlet .label-name": {
+            "filter": "none !important",
+            "text-shadow": "none !important"
+        },
+        // Problems, Search, and SCM lists.
+        ".markers-panel .monaco-list-row, .search-view .monaco-list-row, .scm-view .monaco-list-row, .scm-viewlet .monaco-list-row": {
+            "border-radius": "10px !important",
+            "margin-left": "4px !important",
+            "margin-right": "4px !important",
+            "width": "calc(100% - 8px) !important"
+        },
+        ".markers-panel .monaco-list-row:hover, .search-view .monaco-list-row:hover, .scm-view .monaco-list-row:hover, .scm-viewlet .monaco-list-row:hover": {
+            "background": "var(--vscode-list-hoverBackground) !important"
+        },
+        // Bottom panel and terminal.
+        ".part.panel.bottom": {
+            "margin": "0 var(--ui-panel-gap) var(--ui-panel-gap) var(--ui-panel-gap)",
+            "border-radius": "var(--ui-panel-radius) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-panel-background) !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+        },
+        ".part.panel.bottom > .content": {
+            "border-radius": "0 0 calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-panel-background) !important"
+        },
+        ".part.panel.bottom > .composite.title": {
+            "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-panel-background) !important",
+            "border-bottom": "1px solid var(--ui-ios-border) !important"
+        },
+        ".terminal-wrapper": {
+            "padding": "10px !important",
+            "border-radius": "0 0 calc(var(--ui-panel-radius) - 4px) calc(var(--ui-panel-radius) - 4px) !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-panel-background) !important"
+        },
+        ".terminal-instance": {
+            "border-radius": "16px !important",
+            "overflow": "hidden !important",
+            "background": "var(--vscode-terminal-background) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-foreground) 10%, transparent) !important",
+            "box-shadow": "inset 0 1px 0 color-mix(in srgb, white 6%, transparent), 0 6px 16px color-mix(in srgb, var(--vscode-widget-shadow) 24%, transparent) !important"
+        },
+        // Inputs, command palette, hovers, notifications.
+        ".monaco-list-row, .tab, .action-label, .monaco-button, .monaco-inputbox, .pane-header": {
+            "transition": "background-color 0.18s ease, opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important"
+        },
+        ".monaco-inputbox": {
+            "border-radius": "var(--ui-input-radius) !important",
+            "background": "var(--vscode-input-background) !important",
+            "border": "1px solid var(--vscode-input-border) !important"
+        },
+        ".monaco-inputbox.focused": {
+            "border-color": "var(--ui-ios-border-strong) !important",
+            "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important"
+        },
+        ".quick-input-widget": {
+            "border-radius": "26px !important",
+            "overflow": "hidden !important",
+            "background": "color-mix(in srgb, var(--vscode-quickInput-background) 88%, transparent) !important",
+            "border": "1px solid var(--ui-ios-border-strong) !important",
+            "box-shadow": "var(--ui-ios-popover-shadow), var(--ui-ios-inner) !important"
+        },
+        ".monaco-hover": {
+            "border-radius": "var(--ui-input-radius) !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "0 12px 36px color-mix(in srgb, var(--vscode-widget-shadow) 48%, transparent), var(--ui-ios-inner) !important",
+            "overflow": "hidden !important",
+            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 90%, transparent) !important"
+        },
+        ".notification-toast, .notifications-center": {
+            "border-radius": "22px !important",
+            "overflow": "hidden !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "box-shadow": "0 16px 46px color-mix(in srgb, var(--vscode-widget-shadow) 52%, transparent), var(--ui-ios-inner) !important",
+            "background": "color-mix(in srgb, var(--vscode-notifications-background) 90%, transparent) !important"
+        },
+        // Status bar.
+        ".part.statusbar": {
+            "background-color": "var(--ui-ios-canvas) !important",
+            "font-family": "'Bear Sans UI', sans-serif !important"
+        }
+    },
+    // ======================================================================
+    // 15. Language-specific settings
+    // ======================================================================
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.renderWhitespace": "boundary",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "workbench.editor.tabActionLocation": "right",
+    "workbench.colorTheme": "Note Book Dark"
+}

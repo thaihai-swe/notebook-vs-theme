@@ -306,8 +306,7 @@
         "constant.character"
       ],
       "settings": {
-        "foreground": "#ab5a00",
-        "fontStyle": "bold"
+        "foreground": "#ab5a00"
       }
     },
     {
