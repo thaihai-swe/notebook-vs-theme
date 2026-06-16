@@ -52,14 +52,14 @@
     "editor.scrollbar.verticalScrollbarSize": 22,
     "editor.scrollbar.horizontalScrollbarSize": 16,
     "editor.scrollbar.useShadows": true,
-    "editor.scrollbar.scrollByPage": false,
+    "editor.scrollbar.scrollByPage": true,
     "editor.minimap.enabled": true,
     "editor.minimap.side": "right",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
-    "editor.minimap.showSlider": "mouseover",
+    "editor.minimap.showSlider": "always",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
@@ -417,9 +417,10 @@
     // 13. Theme-Specific Color Customizations
     // ======================================================================
     "workbench.colorCustomizations": {
-        "scrollbarSlider.background": "#AEB9C766",
-        "scrollbarSlider.hoverBackground": "#D6DEE8AA",
-        "scrollbarSlider.activeBackground": "#FFFFFFCC",
+        "scrollbar.background": "#00000015",
+        "scrollbarSlider.background": "#AEB9C799",
+        "scrollbarSlider.hoverBackground": "#D6DEE8CC",
+        "scrollbarSlider.activeBackground": "#FFFFFFEE",
         "minimapSlider.background": "#AEB9C766",
         "minimapSlider.hoverBackground": "#D6DEE8AA",
         "minimapSlider.activeBackground": "#FFFFFFCC",
@@ -478,9 +479,10 @@
         "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
         "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA",
         "[Note Book Dark]": {
-            "scrollbarSlider.background": "#AEB9C766",
-            "scrollbarSlider.hoverBackground": "#D6DEE8AA",
-            "scrollbarSlider.activeBackground": "#FFFFFFCC",
+            "scrollbar.background": "#00212B66",
+            "scrollbarSlider.background": "#AEB9C799",
+            "scrollbarSlider.hoverBackground": "#D6DEE8CC",
+            "scrollbarSlider.activeBackground": "#FFFFFFEE",
             "minimapSlider.background": "#AEB9C766",
             "minimapSlider.hoverBackground": "#D6DEE8AA",
             "minimapSlider.activeBackground": "#FFFFFFCC",
@@ -540,9 +542,10 @@
             "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
         },
         "[Note Book]": {
-            "scrollbarSlider.background": "#c5c2c655",
-            "scrollbarSlider.hoverBackground": "#8c8a8e77",
-            "scrollbarSlider.activeBackground": "#47496599",
+            "scrollbar.background": "#ebe6e066",
+            "scrollbarSlider.background": "#c5c2c6aa",
+            "scrollbarSlider.hoverBackground": "#8c8a8ecc",
+            "scrollbarSlider.activeBackground": "#474965dd",
             "minimapSlider.background": "#c5c2c655",
             "minimapSlider.hoverBackground": "#8c8a8e77",
             "minimapSlider.activeBackground": "#47496599",
@@ -692,7 +695,6 @@
         },
         ".monaco-editor": {
             "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
-            "overflow": "hidden !important",
             "background": "var(--vscode-editor-background) !important",
             "color": "var(--vscode-editor-foreground) !important",
             "outline": "1px solid color-mix(in srgb, var(--vscode-foreground) 6%, transparent) !important",
