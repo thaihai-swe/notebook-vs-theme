@@ -49,8 +49,8 @@
     // ======================================================================
     "editor.scrollbar.vertical": "visible",
     "editor.scrollbar.horizontal": "auto",
-    "editor.scrollbar.verticalScrollbarSize": 16,
-    "editor.scrollbar.horizontalScrollbarSize": 12,
+    "editor.scrollbar.verticalScrollbarSize": 22,
+    "editor.scrollbar.horizontalScrollbarSize": 16,
     "editor.scrollbar.useShadows": true,
     "editor.scrollbar.scrollByPage": false,
     "editor.minimap.enabled": true,
@@ -697,34 +697,6 @@
             "color": "var(--vscode-editor-foreground) !important",
             "outline": "1px solid color-mix(in srgb, var(--vscode-foreground) 6%, transparent) !important",
             "outline-offset": "-1px !important"
-        },
-        // Large but calmer editor scrollbar.
-        ".part.editor .monaco-editor .scrollbar.vertical": {
-            "width": "16px !important",
-            "opacity": "1 !important"
-        },
-        ".part.editor .monaco-editor .scrollbar.horizontal": {
-            "height": "12px !important",
-            "opacity": "1 !important"
-        },
-        ".part.editor .monaco-editor .scrollbar.vertical > .slider": {
-            "left": "4px !important",
-            "width": "8px !important",
-            "border-radius": "9999px !important",
-            "background": "var(--vscode-scrollbarSlider-background) !important",
-            "box-shadow": "inset 0 1px 0 color-mix(in srgb, white 14%, transparent), 0 1px 5px color-mix(in srgb, var(--vscode-widget-shadow) 34%, transparent) !important"
-        },
-        ".part.editor .monaco-editor .scrollbar.horizontal > .slider": {
-            "top": "2px !important",
-            "height": "7px !important",
-            "border-radius": "9999px !important",
-            "background": "var(--vscode-scrollbarSlider-background) !important"
-        },
-        ".part.editor .monaco-editor .scrollbar > .slider:hover": {
-            "background": "var(--vscode-scrollbarSlider-hoverBackground) !important"
-        },
-        ".part.editor .monaco-editor .scrollbar > .slider.active": {
-            "background": "var(--vscode-scrollbarSlider-activeBackground) !important"
         },
         // Editor detail polish.
         ".monaco-editor .line-numbers.active-line-number": {
