@@ -27,6 +27,36 @@
         "label": "Note Book Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/note-book-dark-theme.json"
+      },
+      {
+        "label": "Ghostty Farmhouse",
+        "uiTheme": "vs",
+        "path": "./themes/ghostty-farmhouse.json"
+      },
+      {
+        "label": "Ghostty Farmhouse Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ghostty-farmhouse-dark.json"
+      },
+      {
+        "label": "Gruvbox Light",
+        "uiTheme": "vs",
+        "path": "./themes/gruvbox-light.json"
+      },
+      {
+        "label": "Gruvbox Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/gruvbox-dark.json"
+      },
+      {
+        "label": "Ghostty Default Light",
+        "uiTheme": "vs",
+        "path": "./themes/ghostty-default-light.json"
+      },
+      {
+        "label": "Ghostty Default Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ghostty-default-dark.json"
       }
     ]
   },
