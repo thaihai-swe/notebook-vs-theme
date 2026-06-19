@@ -36,7 +36,7 @@
     "zenMode.restore": true,
     "workbench.startupEditor": "welcomePage",
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": 1.05,
+    "window.zoomLevel": 1.15,
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -66,7 +66,7 @@
     // Goal: readable long coding sessions. Font size and line height are still
     // large, but slightly calmer than before for better information density.
     // ======================================================================
-    "editor.fontFamily": "'IBM Plex Mono', 'Monaspace Neon NF', 'JetBrains Mono', 'Menlo', 'Monaco', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 17,
     "editor.fontWeight": "400",
     "editor.lineHeight": 1.7,
@@ -137,7 +137,7 @@
     "editor.hover.delay": 350,
     "editor.hover.sticky": true,
     "editor.codeLens": true,
-    "editor.codeLensFontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'Menlo', 'Monaco', monospace",
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
     "editor.codeLensFontSize": 13,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlayHints.fontSize": 14,
@@ -351,7 +351,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'IBM Plex Mono', 'Monaspace Neon NF', 'FiraCode Nerd Font Mono', 'JetBrains Mono', 'Menlo', 'Monaco', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 17,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.lineHeight": 1.25,
@@ -383,7 +383,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
     "diffEditor.wordWrap": "on",
-    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.hideUnchangedRegions.enabled": false,
     "diffEditor.showMoves": true,
     "diffEditor.diffAlgorithm": "advanced",
     "diffEditor.renderIndicators": true,
@@ -985,5 +985,5 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Note Book Dark"
+    "workbench.colorTheme": "Ghostty Farmhouse"
 }
