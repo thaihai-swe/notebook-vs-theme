@@ -8,6 +8,7 @@
 // - If a font is not installed, VS Code falls back to the next font in the list.
 // ============================================================================
 {
+    "terminal.external.osxExec": "Ghostty.app",
     "extensions.allowed": {
         "anthropic.claude-code": false,
         "*": true
@@ -985,5 +986,5 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Ghostty Farmhouse"
+    "workbench.colorTheme": "Note Book Dark"
 }
