@@ -618,51 +618,66 @@
     // ======================================================================
     "custom-ui-style.stylesheet": {
         // ===================================================================
-        // iOS 26-inspired clean frosted UI
+        // iOS / macOS 26-inspired "Liquid Glass" UI
         // ===================================================================
-        // Softer than the previous Liquid Glass attempt:
-        // - main code surfaces remain opaque and readable
-        // - borders are subtle, not bright white
-        // - blur is limited to floating UI only
-        // - rounded panels match the Apple-like sheet/card feeling
+        // Ultra-translucent, heavily blurred, glassmorphic design.
+        // - High transparency on main panels
+        // - Heavy blur (backdrop-filter)
+        // - Glossy specular borders
+        // - Liquid sheet/card feeling
         ".monaco-workbench": {
-            "--ui-panel-radius": "22px",
-            "--ui-widget-radius": "18px",
-            "--ui-input-radius": "13px",
-            "--ui-item-radius": "9px",
-            "--ui-panel-gap": "7px",
-            "--ui-panel-top": "7px",
-            "--ui-ios-canvas": "color-mix(in srgb, var(--vscode-editor-background) 95%, black)",
-            "--ui-ios-surface": "color-mix(in srgb, var(--vscode-editor-background) 96%, white 4%)",
-            "--ui-ios-border": "color-mix(in srgb, var(--vscode-foreground) 11%, transparent)",
-            "--ui-ios-border-strong": "color-mix(in srgb, var(--vscode-foreground) 17%, transparent)",
-            "--ui-ios-inner": "inset 0 1px 0 color-mix(in srgb, white 7%, transparent)",
-            "--ui-ios-shadow": "0 10px 28px color-mix(in srgb, var(--vscode-widget-shadow) 28%, transparent)",
-            "--ui-ios-shadow-soft": "0 4px 16px color-mix(in srgb, var(--vscode-widget-shadow) 20%, transparent)",
-            "--ui-ios-popover-shadow": "0 24px 72px color-mix(in srgb, var(--vscode-widget-shadow) 58%, transparent)",
+            "--ui-panel-radius": "24px",
+            "--ui-widget-radius": "20px",
+            "--ui-input-radius": "14px",
+            "--ui-item-radius": "10px",
+            "--ui-panel-gap": "8px",
+            "--ui-panel-top": "8px",
+            "--ui-ios-canvas": "transparent",
+            "--ui-ios-surface": "color-mix(in srgb, var(--vscode-editor-background) 60%, transparent)",
+            "--ui-ios-border": "color-mix(in srgb, var(--vscode-foreground) 15%, color-mix(in srgb, white 20%, transparent))",
+            "--ui-ios-border-strong": "color-mix(in srgb, var(--vscode-foreground) 25%, color-mix(in srgb, white 30%, transparent))",
+            "--ui-ios-inner": "inset 0 1.5px 0 color-mix(in srgb, white 20%, transparent)",
+            "--ui-ios-shadow": "0 10px 30px color-mix(in srgb, var(--vscode-widget-shadow) 35%, transparent)",
+            "--ui-ios-shadow-soft": "0 4px 16px color-mix(in srgb, var(--vscode-widget-shadow) 25%, transparent)",
+            "--ui-ios-popover-shadow": "0 24px 72px color-mix(in srgb, var(--vscode-widget-shadow) 65%, transparent)",
             "background-color": "var(--ui-ios-canvas) !important",
             "color": "var(--vscode-editor-foreground) !important"
         },
-        // Frosted floating surfaces only. Do not blur editor/terminal text.
+        // Frosted floating surfaces with deep liquid blur.
         ".quick-input-widget, .monaco-hover, .notification-toast, .notifications-center, .monaco-dialog-box": {
-            "backdrop-filter": "blur(14px) saturate(135%) !important",
-            "-webkit-backdrop-filter": "blur(14px) saturate(135%) !important"
+            "backdrop-filter": "blur(28px) saturate(180%) !important",
+            "-webkit-backdrop-filter": "blur(28px) saturate(180%) !important",
+            "background": "color-mix(in srgb, var(--vscode-editor-background) 65%, transparent) !important"
         },
-        // Main rounded panels.
+        // Main rounded glass panels.
         ".part.editor, .part.sidebar, .part.panel.bottom": {
             "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
+            "background": "var(--ui-ios-surface) !important"
         },
         // Titlebar.
         ".part.titlebar": {
-            "background-color": "var(--ui-ios-canvas) !important",
+            "background-color": "transparent !important",
             "border-bottom": "none !important",
-            "box-shadow": "none !important"
+            "box-shadow": "none !important",
+            "backdrop-filter": "blur(10px) saturate(120%) !important",
+            "-webkit-backdrop-filter": "blur(10px) saturate(120%) !important"
         },
         // Breadcrumbs.
         ".monaco-breadcrumbs": {
             "border-top": "none !important",
-            "background": "var(--vscode-breadcrumb-background) !important"
+            "background": "transparent !important",
+            "padding": "4px 8px !important"
+        },
+        ".monaco-breadcrumbs .breadcrumb-item": {
+            "padding": "2px 8px !important",
+            "border-radius": "6px !important",
+            "transition": "background-color 0.15s ease, color 0.15s ease !important"
+        },
+        ".monaco-breadcrumbs .breadcrumb-item:hover": {
+            "background-color": "color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important"
         },
         ".monaco-breadcrumbs *": {
             "opacity": "1 !important",
@@ -678,25 +693,27 @@
             "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
             "border-radius": "var(--ui-panel-radius) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-editor-background) !important",
+            "background": "var(--ui-ios-surface) !important",
             "color": "var(--vscode-editor-foreground) !important",
             "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
         },
         ".part.editor > .content": {
             "border-radius": "calc(var(--ui-panel-radius) - 1px) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-editor-background) !important"
+            "background": "transparent !important"
         },
         ".editor-instance, .editor-group-container": {
             "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-editor-background) !important",
+            "background": "transparent !important",
             "color": "var(--vscode-editor-foreground) !important"
         },
         ".monaco-editor": {
             "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
-            "background": "var(--vscode-editor-background) !important",
+            "background": "transparent !important",
             "color": "var(--vscode-editor-foreground) !important",
             "outline": "1px solid color-mix(in srgb, var(--vscode-foreground) 6%, transparent) !important",
             "outline-offset": "-1px !important"
@@ -710,7 +727,7 @@
             "border-radius": "8px !important"
         },
         ".monaco-editor .cursors-layer .cursor": {
-            "box-shadow": "0 0 8px color-mix(in srgb, var(--vscode-editorCursor-foreground) 30%, transparent) !important"
+            "box-shadow": "0 0 12px var(--vscode-editorCursor-foreground), 0 0 4px var(--vscode-editorCursor-foreground) !important"
         },
         // Rich bookish typography for comments and keywords
         ".monaco-editor .token.comment, .monaco-editor span[class*=\"comment\"]": {
@@ -728,7 +745,7 @@
             "min-height": "38px !important",
             "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-editorGroupHeader-tabsBackground) !important"
+            "background": "transparent !important"
         },
         ".editor-actions, .tabs-container": {
             "background-image": "none !important",
@@ -745,9 +762,11 @@
             "box-sizing": "border-box !important"
         },
         ".tab.active": {
-            "background": "color-mix(in srgb, var(--vscode-tab-activeBackground) 90%, white 4%) !important",
+            "background": "color-mix(in srgb, var(--vscode-tab-activeBackground) 60%, transparent) !important",
             "border": "1px solid var(--ui-ios-border-strong) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important"
+            "box-shadow": "var(--ui-ios-inner), 0 4px 12px color-mix(in srgb, var(--vscode-tab-activeBackground) 30%, transparent), var(--ui-ios-shadow-soft) !important",
+            "backdrop-filter": "blur(12px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(12px) saturate(150%) !important"
         },
         ".tab .label-name": {
             "font-size": "12.5px !important"
@@ -764,7 +783,8 @@
         },
         ".tab:not(.active):hover": {
             "opacity": "0.95 !important",
-            "background": "color-mix(in srgb, var(--vscode-tab-hoverBackground) 84%, transparent) !important"
+            "background": "color-mix(in srgb, var(--vscode-tab-hoverBackground) 50%, transparent) !important",
+            "transform": "translateY(-1px) !important"
         },
         ".tab .tab-actions": {
             "opacity": "0 !important"
@@ -774,7 +794,7 @@
         },
         // Activity bar: soft floating capsule.
         ".part.activitybar": {
-            "background": "var(--ui-ios-canvas) !important",
+            "background": "transparent !important",
             "margin": "8px 0 28px 0",
             "overflow": "visible !important",
             "width": "64px !important"
@@ -782,7 +802,7 @@
         ".part.activitybar .composite-bar": {
             "padding": "12px 4px !important",
             "gap": "8px !important",
-            "background": "color-mix(in srgb, var(--vscode-editorWidget-background) 92%, transparent) !important",
+            "background": "color-mix(in srgb, var(--vscode-editorWidget-background) 50%, transparent) !important",
             "border-radius": "9999px !important",
             "width": "calc(100% - 8px) !important",
             "margin-left": "auto !important",
@@ -791,7 +811,9 @@
             "flex-direction": "column !important",
             "align-items": "center !important",
             "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important"
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important",
+            "backdrop-filter": "blur(24px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(150%) !important"
         },
         ".part.activitybar .action-item .action-label": {
             "font-size": "25px !important",
@@ -804,14 +826,14 @@
             "border-radius": "9999px !important"
         },
         ".part.activitybar .action-item:hover .action-label": {
-            "background": "var(--vscode-list-hoverBackground) !important",
-            "transform": "translateY(-1px) !important",
+            "background": "color-mix(in srgb, var(--vscode-list-hoverBackground) 70%, transparent) !important",
+            "transform": "scale(1.1) translateY(-1px) !important",
             "filter": "none !important"
         },
         ".part.activitybar .action-item.checked .action-label, .part.activitybar .action-item.active .action-label": {
             "background": "var(--vscode-activityBar-foreground) !important",
             "color": "var(--vscode-activityBar-background) !important",
-            "box-shadow": "var(--ui-ios-shadow-soft) !important"
+            "box-shadow": "0 0 16px color-mix(in srgb, var(--vscode-activityBar-foreground) 40%, transparent), var(--ui-ios-shadow-soft) !important"
         },
         ".part.activitybar .action-item .active-item-indicator": {
             "display": "none !important"
@@ -823,15 +845,18 @@
             "border-radius": "var(--ui-panel-radius) !important",
             "overflow": "hidden !important",
             "max-height": "calc(100% - 8px) !important",
-            "background": "var(--vscode-sideBar-background) !important",
+            "background": "var(--ui-ios-surface) !important",
             "color": "var(--vscode-sideBar-foreground) !important",
             "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
         },
         ".part.sidebar .content": {
             "width": "100% !important",
             "padding-left": "0 !important",
-            "margin-left": "0 !important"
+            "margin-left": "0 !important",
+            "background": "transparent !important"
         },
         ".part.sidebar .title-label h2": {
             "font-family": "'Bear Sans UI Heading', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
@@ -847,22 +872,27 @@
         },
         // Panel Header.
         ".pane-header": {
-            "background-color": "var(--ui-ios-surface) !important"
+            "background-color": "transparent !important",
+            "backdrop-filter": "blur(10px) saturate(120%) !important",
+            "-webkit-backdrop-filter": "blur(10px) saturate(120%) !important"
         },
         // Generalized clean rounded list-rows across all panels (Explorer, Search, SCM, etc.)
         ".monaco-workbench .monaco-list-row": {
             "border-radius": "var(--ui-item-radius) !important",
-            "margin-left": "6px !important",
-            "margin-right": "6px !important",
-            "width": "calc(100% - 12px) !important"
+            "margin-left": "8px !important",
+            "margin-right": "8px !important",
+            "width": "calc(100% - 16px) !important",
+            "height": "28px !important",
+            "line-height": "28px !important",
+            "padding-left": "4px !important"
         },
         ".monaco-workbench .monaco-list-row:hover": {
-            "background": "var(--vscode-list-hoverBackground) !important",
-            "transform": "none !important"
+            "background": "color-mix(in srgb, var(--vscode-list-hoverBackground) 60%, transparent) !important",
+            "transform": "translateX(2px) !important"
         },
         ".monaco-workbench .monaco-list-row.focused, .monaco-workbench .monaco-list-row.selected": {
-            "background": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground) 88%, white 3%) !important",
-            "box-shadow": "inset 3px 0 0 var(--ui-ios-border-strong) !important"
+            "background": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground) 60%, white 5%) !important",
+            "box-shadow": "inset 3px 0 0 var(--vscode-activityBar-foreground) !important"
         },
         ".monaco-workbench .monaco-icon-label, .monaco-workbench .monaco-icon-label::before, .monaco-workbench .label-name": {
             "filter": "none !important",
@@ -877,31 +907,33 @@
             "margin": "0 var(--ui-panel-gap) var(--ui-panel-gap) var(--ui-panel-gap)",
             "border-radius": "var(--ui-panel-radius) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-panel-background) !important",
+            "background": "var(--ui-ios-surface) !important",
             "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important"
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
         },
         ".part.panel.bottom > .content": {
             "border-radius": "0 0 calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-panel-background) !important"
+            "background": "transparent !important"
         },
         ".part.panel.bottom > .composite.title": {
             "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-panel-background) !important",
+            "background": "transparent !important",
             "border-bottom": "1px solid var(--ui-ios-border) !important"
         },
         ".terminal-wrapper": {
             "padding": "10px !important",
             "border-radius": "0 0 calc(var(--ui-panel-radius) - 4px) calc(var(--ui-panel-radius) - 4px) !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-panel-background) !important"
+            "background": "transparent !important"
         },
         ".terminal-instance": {
             "border-radius": "16px !important",
             "overflow": "hidden !important",
-            "background": "var(--vscode-terminal-background) !important",
+            "background": "color-mix(in srgb, var(--vscode-terminal-background) 40%, transparent) !important",
             "border": "1px solid color-mix(in srgb, var(--vscode-foreground) 10%, transparent) !important",
             "box-shadow": "inset 0 1px 0 color-mix(in srgb, white 6%, transparent), 0 6px 16px color-mix(in srgb, var(--vscode-widget-shadow) 24%, transparent) !important"
         },
@@ -909,9 +941,13 @@
         ".monaco-list-row, .tab, .action-label, .monaco-button, .monaco-inputbox, .pane-header": {
             "transition": "background-color 0.18s ease, opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important"
         },
+        ".monaco-button:hover": {
+            "transform": "scale(1.02) !important",
+            "box-shadow": "var(--ui-ios-shadow-soft) !important"
+        },
         ".monaco-inputbox": {
             "border-radius": "var(--ui-input-radius) !important",
-            "background": "var(--vscode-input-background) !important",
+            "background": "color-mix(in srgb, var(--vscode-input-background) 70%, transparent) !important",
             "border": "1px solid var(--vscode-input-border) !important"
         },
         ".monaco-inputbox.focused": {
@@ -921,7 +957,7 @@
         ".quick-input-widget": {
             "border-radius": "26px !important",
             "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-quickInput-background) 88%, transparent) !important",
+            "background": "color-mix(in srgb, var(--vscode-quickInput-background) 65%, transparent) !important",
             "border": "1px solid var(--ui-ios-border-strong) !important",
             "box-shadow": "var(--ui-ios-popover-shadow), var(--ui-ios-inner) !important"
         },
@@ -930,19 +966,77 @@
             "border": "1px solid var(--ui-ios-border) !important",
             "box-shadow": "0 12px 36px color-mix(in srgb, var(--vscode-widget-shadow) 48%, transparent), var(--ui-ios-inner) !important",
             "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 90%, transparent) !important"
+            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 65%, transparent) !important"
         },
         ".notification-toast, .notifications-center": {
             "border-radius": "22px !important",
             "overflow": "hidden !important",
             "border": "1px solid var(--ui-ios-border) !important",
             "box-shadow": "0 16px 46px color-mix(in srgb, var(--vscode-widget-shadow) 52%, transparent), var(--ui-ios-inner) !important",
-            "background": "color-mix(in srgb, var(--vscode-notifications-background) 90%, transparent) !important"
+            "background": "color-mix(in srgb, var(--vscode-notifications-background) 65%, transparent) !important"
         },
         // Status bar.
+        // Status bar: floating macOS Dynamic Island dock
         ".part.statusbar": {
-            "background-color": "var(--ui-ios-canvas) !important",
-            "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important"
+            "margin": "0 var(--ui-panel-gap) var(--ui-panel-gap) var(--ui-panel-gap) !important",
+            "border-radius": "var(--ui-panel-radius) !important",
+            "border": "1px solid var(--ui-ios-border) !important",
+            "background": "var(--ui-ios-surface) !important",
+            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
+            "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "height": "30px !important"
+        },
+        ".part.statusbar .statusbar-item": {
+            "padding": "0 8px !important"
+        },
+        // Thin macOS/iOS-style Glass Scrollbars
+        ".monaco-scrollable-element .scrollbar": {
+            "background": "transparent !important",
+            "width": "8px !important",
+            "opacity": "0.3 !important",
+            "transition": "opacity 0.2s ease, width 0.2s ease !important"
+        },
+        ".monaco-scrollable-element .scrollbar:hover": {
+            "opacity": "1.0 !important",
+            "width": "10px !important"
+        },
+        ".monaco-scrollable-element .scrollbar .slider": {
+            "background": "color-mix(in srgb, var(--vscode-foreground) 30%, transparent) !important",
+            "border-radius": "9999px !important",
+            "border": "none !important"
+        },
+        ".monaco-scrollable-element .scrollbar .slider:hover": {
+            "background": "color-mix(in srgb, var(--vscode-foreground) 50%, transparent) !important"
+        },
+        // deep background blur when Quick Input / Spotlight is active
+        ".quick-input-overlay": {
+            "backdrop-filter": "blur(6px) !important",
+            "-webkit-backdrop-filter": "blur(6px) !important",
+            "background-color": "rgba(0, 0, 0, 0.2) !important"
+        },
+        // Autohiding Glass Minimap
+        ".minimap-container, .minimap": {
+            "opacity": "0.15 !important",
+            "transition": "opacity 0.25s ease-in-out !important"
+        },
+        ".minimap-container:hover, .minimap:hover": {
+            "opacity": "0.9 !important"
+        },
+        // Inactive window focus fade & desaturate
+        ".monaco-workbench.window-inactive": {
+            "filter": "opacity(0.82) saturate(85%) !important",
+            "transition": "filter 0.3s ease !important"
+        },
+        // Glowing active indent guides
+        ".monaco-editor .focused-indent-guide": {
+            "background-color": "color-mix(in srgb, var(--vscode-activityBar-foreground) 50%, transparent) !important",
+            "box-shadow": "0 0 6px color-mix(in srgb, var(--vscode-activityBar-foreground) 40%, transparent) !important"
+        },
+        // Hide window layout control buttons for a minimal titlebar header
+        ".part.titlebar .titlebar-actions": {
+            "display": "none !important"
         }
     },
     // ======================================================================
