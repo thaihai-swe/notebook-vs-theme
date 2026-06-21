@@ -480,6 +480,11 @@
         "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
         "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA",
         "[Note Book Dark]": {
+            "sideBar.background": "#002B36",
+            "panel.background": "#002B36",
+            "terminal.background": "#002B36",
+            "activityBar.background": "#002B36",
+            "editorWidget.background": "#002B36",
             "scrollbar.background": "#00212B66",
             "scrollbarSlider.background": "#AEB9C799",
             "scrollbarSlider.hoverBackground": "#D6DEE8CC",
@@ -543,6 +548,11 @@
             "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
         },
         "[Note Book]": {
+            "sideBar.background": "#efebe2",
+            "panel.background": "#efebe2",
+            "terminal.background": "#efebe2",
+            "activityBar.background": "#efebe2",
+            "editorWidget.background": "#efebe2",
             "scrollbar.background": "#ebe6e066",
             "scrollbarSlider.background": "#c5c2c6aa",
             "scrollbarSlider.hoverBackground": "#8c8a8ecc",
