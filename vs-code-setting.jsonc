@@ -748,7 +748,14 @@
         ".monaco-editor .token.keyword, .monaco-editor span[class*=\"keyword\"]": {
             "font-family": "'Monaspace Xenon', 'IBM Plex Mono', 'Monaspace Neon NF', monospace !important",
             "font-weight": "600 !important",
-            "font-style": "italic !important"
+            "font-style": "italic !important",
+            "text-shadow": "0 0 8px color-mix(in srgb, currentColor 40%, transparent) !important"
+        },
+        ".monaco-editor .token.string, .monaco-editor span[class*=\"string\"]": {
+            "text-shadow": "0 0 6px color-mix(in srgb, currentColor 30%, transparent) !important"
+        },
+        ".monaco-editor .token.entity.name.function, .monaco-editor span[class*=\"entity-name-function\"]": {
+            "text-shadow": "0 0 8px color-mix(in srgb, currentColor 40%, transparent) !important"
         },
         // Tabs: iOS-like segmented chips (pill-shaped floating tabs)
         ".tabs-and-actions-container": {
@@ -969,14 +976,22 @@
             "overflow": "hidden !important",
             "background": "color-mix(in srgb, var(--vscode-quickInput-background) 65%, transparent) !important",
             "border": "1px solid var(--ui-ios-border-strong) !important",
-            "box-shadow": "var(--ui-ios-popover-shadow), var(--ui-ios-inner) !important"
+            "box-shadow": "var(--ui-ios-popover-shadow), var(--ui-ios-inner) !important",
+            "top": "25% !important",
+            "transform": "translateY(-50%) !important",
+            "margin": "0 auto !important"
         },
         ".monaco-hover": {
             "border-radius": "var(--ui-input-radius) !important",
             "border": "1px solid var(--ui-ios-border) !important",
             "box-shadow": "0 12px 36px color-mix(in srgb, var(--vscode-widget-shadow) 48%, transparent), var(--ui-ios-inner) !important",
             "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 65%, transparent) !important"
+            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 65%, transparent) !important",
+            "animation": "hoverSlideUp 0.15s cubic-bezier(0.2, 0.9, 0.3, 1) forwards !important"
+        },
+        "@keyframes hoverSlideUp": {
+            "0%": { "opacity": "0", "transform": "translateY(6px)" },
+            "100%": { "opacity": "1", "transform": "translateY(0)" }
         },
         ".notification-toast, .notifications-center": {
             "border-radius": "22px !important",
@@ -1047,6 +1062,13 @@
         // Hide window layout control buttons for a minimal titlebar header
         ".part.titlebar .titlebar-actions": {
             "display": "none !important"
+        },
+        // Glass Command Center Pill (top titlebar search)
+        ".command-center": {
+            "background": "color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important",
+            "border-radius": "99px !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-foreground) 10%, transparent) !important",
+            "box-shadow": "var(--ui-ios-inner), 0 2px 8px color-mix(in srgb, var(--vscode-widget-shadow) 20%, transparent) !important"
         }
     },
     // ======================================================================
@@ -1090,5 +1112,8 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Note Book Dark"
+    "workbench.colorTheme": "Note Book Dark",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true
 }
