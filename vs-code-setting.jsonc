@@ -67,7 +67,7 @@
     // Goal: readable long coding sessions. Font size and line height are still
     // large, but slightly calmer than before for better information density.
     // ======================================================================
-    "editor.fontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 17,
     "editor.fontWeight": "400",
     "editor.lineHeight": 1.7,
@@ -138,7 +138,7 @@
     "editor.hover.delay": 350,
     "editor.hover.sticky": true,
     "editor.codeLens": true,
-    "editor.codeLensFontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "editor.codeLensFontSize": 13,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlayHints.fontSize": 14,
@@ -352,7 +352,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'IBM Plex Mono','Monaspace Neon NF', 'Menlo', 'Monaco', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 17,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.lineHeight": 1.25,
@@ -741,12 +741,12 @@
         },
         // Rich bookish typography for comments and keywords
         ".monaco-editor .token.comment, .monaco-editor span[class*=\"comment\"]": {
-            "font-family": "'Monaspace Radon', 'Bear Sans UI', Georgia, 'Times New Roman', serif !important",
+            "font-family": "'Monaspace Radon', 'Inter', Georgia, 'Times New Roman', serif !important",
             "font-style": "italic !important",
             "opacity": "0.75 !important"
         },
         ".monaco-editor .token.keyword, .monaco-editor span[class*=\"keyword\"]": {
-            "font-family": "'Monaspace Xenon', 'IBM Plex Mono', 'Monaspace Neon NF', monospace !important",
+            "font-family": "'Monaspace Xenon', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', monospace !important",
             "font-weight": "600 !important",
             "font-style": "italic !important",
             "text-shadow": "0 0 8px color-mix(in srgb, currentColor 40%, transparent) !important"
@@ -773,7 +773,7 @@
             "height": "28px !important",
             "border-radius": "8px !important",
             "border": "1px solid transparent !important",
-            "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
             "display": "flex !important",
             "align-items": "center !important",
             "box-sizing": "border-box !important"
@@ -857,7 +857,7 @@
         },
         // Sidebar and Explorer.
         ".part.sidebar": {
-            "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
             "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
             "border-radius": "var(--ui-panel-radius) !important",
             "overflow": "hidden !important",
@@ -876,7 +876,7 @@
             "background": "transparent !important"
         },
         ".part.sidebar .title-label h2": {
-            "font-family": "'Bear Sans UI Heading', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Inter', 'Bear Sans UI Heading', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
             "font-size": "12px !important",
             "font-weight": "600 !important",
             "text-transform": "uppercase !important",
@@ -1016,7 +1016,7 @@
             "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important",
             "backdrop-filter": "blur(20px) saturate(150%) !important",
             "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
-            "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
             "height": "30px !important"
         },
         ".part.statusbar .statusbar-item": {
@@ -1087,8 +1087,13 @@
             "comments": "on",
             "strings": "on",
             "other": "on"
-        }
+        },
+        "editor.fontFamily": "'Inter', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "editor.fontSize": 16,
+        "editor.lineHeight": 1.8
     },
+    "markdown.preview.fontFamily": "'Inter', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "markdown.preview.fontSize": 16,
     "[javascript]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true
