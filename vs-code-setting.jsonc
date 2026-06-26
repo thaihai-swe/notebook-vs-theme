@@ -48,7 +48,7 @@
     // Goal: keep navigation visible without making the editor feel heavy.
     // Scrollbar sizes are set to 16px and 12px to match custom CSS overrides.
     // ======================================================================
-    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "auto",
     "editor.scrollbar.verticalScrollbarSize": 22,
     "editor.scrollbar.horizontalScrollbarSize": 16,
@@ -60,7 +60,7 @@
     "editor.minimap.size": "proportional",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
-    "editor.minimap.showSlider": "always",
+    "editor.minimap.showSlider": "mouseOver",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
@@ -155,7 +155,7 @@
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.stickyScroll.enabled": true,
-    "editor.stickyScroll.maxLineCount": 3,
+    "editor.stickyScroll.maxLineCount": 4,
     // ======================================================================
     // 6. Breadcrumbs
     // ======================================================================
@@ -201,7 +201,7 @@
     "workbench.editor.wrapTabs": false,
     // Cleaner tabs: close button remains predictable; editor actions do not dominate the header.
     "workbench.editor.tabCloseButton": "right",
-    "workbench.editor.alwaysShowEditorActions": false,
+    "workbench.editor.alwaysShowEditorActions": true,
     "workbench.editor.showIcons": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.labelFormat": "short",
@@ -220,13 +220,14 @@
     // 8. Explorer / solution-view behavior
     // ======================================================================
     "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.renderIndentGuides": "onHover",
     "workbench.tree.enableStickyScroll": true,
     "workbench.tree.expandMode": "singleClick",
     "workbench.list.smoothScrolling": true,
+    "workbench.list.keyboardNavigation": "highlight",
     "explorer.autoReveal": "focusNoScroll",
     "explorer.incrementalNaming": "smart",
-    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDragAndDrop": true,
     "explorer.confirmDelete": false,
     "explorer.confirmPasteNative": false,
     "explorer.compactFolders": false,
@@ -364,7 +365,7 @@
     "terminal.integrated.tabs.hideCondition": "singleTerminal",
     "terminal.integrated.mouseWheelScrollSensitivity": 3,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.gpuAcceleration": "auto",
+    "terminal.integrated.gpuAcceleration": "on",
     // ======================================================================
     // 11. Git, diff, merge, AI tools
     // ======================================================================
@@ -534,15 +535,14 @@
             "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 40%, transparent) !important",
             "backdrop-filter": "blur(12px) !important",
             "-webkit-backdrop-filter": "blur(12px) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
-            "margin": "4px 3px !important",
-            "height": "calc(100% - 8px) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
+            "margin": "2px 3px !important",
             "box-sizing": "border-box !important",
             "transition": "background-color 0.2s ease !important"
         },
         ".tab.active": {
             "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 85%, transparent) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
             "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
         },
         ".part.panel.bottom": {
