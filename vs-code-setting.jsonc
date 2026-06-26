@@ -419,71 +419,6 @@
     // ======================================================================
     // 13. Theme-Specific Color Customizations
     // ======================================================================
-    "workbench.colorCustomizations": {
-        "focusBorder": "#00000000",
-        "widget.border": "#00000000",
-        "scrollbar.background": "#00000015",
-        "scrollbarSlider.background": "#AEB9C799",
-        "scrollbarSlider.hoverBackground": "#D6DEE8CC",
-        "scrollbarSlider.activeBackground": "#FFFFFFEE",
-        "minimapSlider.background": "#AEB9C766",
-        "minimapSlider.hoverBackground": "#D6DEE8AA",
-        "minimapSlider.activeBackground": "#FFFFFFCC",
-        "editor.lineHighlightBorder": "#4097762a",
-        "editor.selectionBackground": "#4D8DFF66",
-        "editor.inactiveSelectionBackground": "#4D8DFF33",
-        "editor.selectionHighlightBackground": "#4D8DFF2E",
-        "editor.selectionHighlightBorder": "#4D8DFF88",
-        "terminal.selectionBackground": "#4D8DFF66",
-        "terminal.inactiveSelectionBackground": "#4D8DFF33",
-        "editor.wordHighlightBackground": "#FFD16633",
-        "editor.wordHighlightStrongBackground": "#FFD16655",
-        "editor.wordHighlightBorder": "#FFD16666",
-        "editor.wordHighlightStrongBorder": "#FFD16688",
-        "tree.indentGuidesStroke": "#6EE7B766",
-        "editorIndentGuide.background1": "#0DBC7933",
-        "editorIndentGuide.background2": "#7DD3FC2E",
-        "editorIndentGuide.background3": "#C084FC2E",
-        "editorIndentGuide.activeBackground1": "#0DBC7955",
-        "editorIndentGuide.activeBackground2": "#7DD3FC55",
-        "editorIndentGuide.activeBackground3": "#C084FC55",
-        "editorBracketPairGuide.background1": "#0DBC7933",
-        "editorBracketPairGuide.background2": "#7DD3FC2E",
-        "editorBracketPairGuide.background3": "#C084FC2E",
-        "editorBracketPairGuide.activeBackground1": "#0DBC7955",
-        "editorBracketPairGuide.activeBackground2": "#7DD3FC55",
-        "editorBracketPairGuide.activeBackground3": "#C084FC55",
-        "editorBracketHighlight.foreground1": "#FFD166",
-        "editorBracketHighlight.foreground2": "#7DD3FC",
-        "editorBracketHighlight.foreground3": "#C084FC",
-        "editorBracketHighlight.foreground4": "#86EFAC",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#FF6B6B",
-        "editorGutter.modifiedBackground": "#F6C177",
-        "editorGutter.addedBackground": "#86EFAC",
-        "editorGutter.deletedBackground": "#FF6B6B",
-        "editorOverviewRuler.modifiedForeground": "#F6C177AA",
-        "editorOverviewRuler.addedForeground": "#86EFACAA",
-        "editorOverviewRuler.deletedForeground": "#FF6B6BAA",
-        "diffEditor.insertedLineBackground": "#123D2470",
-        "diffEditor.removedLineBackground": "#4A1F2A70",
-        "diffEditor.insertedTextBackground": "#1FA15A55",
-        "diffEditor.removedTextBackground": "#FF4D6D55",
-        "diffEditorGutter.insertedLineBackground": "#1F8F4D88",
-        "diffEditorGutter.removedLineBackground": "#B63A4B88",
-        "diffEditorOverview.insertedForeground": "#9BE7C0CC",
-        "diffEditorOverview.removedForeground": "#FF7A90CC",
-        "editor.findMatchBackground": "#D6A94A66",
-        "editor.findMatchBorder": "#E8C76A",
-        "editor.findMatchHighlightBackground": "#54596366",
-        "editor.findRangeHighlightBackground": "#31323844",
-        "editorBracketMatch.background": "#0DBC7926",
-        "editorBracketMatch.border": "#0DBC79AA",
-        "editorOverviewRuler.errorForeground": "#FF6B6BAA",
-        "editorOverviewRuler.warningForeground": "#D6A94AAA",
-        "editorOverviewRuler.infoForeground": "#7DD3FCAA",
-        "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
-        "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
-    },
     // ======================================================================
     // 14. Custom UI stylesheet
     // ----------------------------------------------------------------------
@@ -495,8 +430,8 @@
     // it does not enlarge Terminal, Explorer, Search, Problems, or other panels.
     //
     // ANIMATIONS: @keyframes are defined inline here so no separate CSS file
-    // is needed. For advanced CSS (scrollbar styling, aurora borders, etc.),
-    // see the companion animations.css file in the theme repo.
+    // is needed. We only preserve hierarchy-clarifying interaction animations
+    // in accordance with the design system.
     // ======================================================================
     "custom-ui-style.stylesheet": {
         ".monaco-workbench": {
@@ -804,16 +739,6 @@
             "box-shadow": "0 4px 16px 0 rgba(0,0,0,0.2) !important",
             "overflow": "hidden !important",
             "animation": "nb-emerge 0.15s ease-out !important"
-        },
-        "@property --nb-border-angle": {
-            "syntax": "'<angle>'",
-            "initial-value": "0deg",
-            "inherits": "false"
-        },
-        "@keyframes nb-aurora": {
-            "to": {
-                "--nb-border-angle": "360deg"
-            }
         },
         "@keyframes nb-emerge": {
             "from": {
