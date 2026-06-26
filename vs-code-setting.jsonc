@@ -380,6 +380,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.pruneOnFetch": true,
     "git.branchProtectionPrompt": "alwaysPrompt",
+    "scm.defaultViewMode": "tree",
     "scm.showHistoryGraph": true,
     "scm.alwaysShowRepositories": true,
     "scm.diffDecorations": "all",
