@@ -1022,25 +1022,6 @@
         ".part.statusbar .statusbar-item": {
             "padding": "0 8px !important"
         },
-        // Thin macOS/iOS-style Glass Scrollbars
-        ".monaco-scrollable-element .scrollbar": {
-            "background": "transparent !important",
-            "width": "8px !important",
-            "opacity": "0.3 !important",
-            "transition": "opacity 0.2s ease, width 0.2s ease !important"
-        },
-        ".monaco-scrollable-element .scrollbar:hover": {
-            "opacity": "1.0 !important",
-            "width": "10px !important"
-        },
-        ".monaco-scrollable-element .scrollbar .slider": {
-            "background": "color-mix(in srgb, var(--vscode-foreground) 30%, transparent) !important",
-            "border-radius": "9999px !important",
-            "border": "none !important"
-        },
-        ".monaco-scrollable-element .scrollbar .slider:hover": {
-            "background": "color-mix(in srgb, var(--vscode-foreground) 50%, transparent) !important"
-        },
         // deep background blur when Quick Input / Spotlight is active
         ".quick-input-overlay": {
             "backdrop-filter": "blur(6px) !important",
