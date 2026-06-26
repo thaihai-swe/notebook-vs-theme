@@ -4,12 +4,29 @@
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "function": "#5a4286",
+    "function.declaration": "#5a4286",
     "method": "#5a4286",
+    "method.declaration": "#5a4286",
     "class": "#9c5266",
     "interface": "#9c5266",
     "type": "#9c5266",
     "parameter": "#5a4286",
-    "variable.readonly": "#8e4f02"
+    "variable": "#3f3e4f",
+    "variable.readonly": "#8e4f02",
+    "variable.declaration": "#3f3e4f",
+    "property": "#5a4286",
+    "property.declaration": "#5a4286",
+    "property.readonly": "#5a4286",
+    "namespace": "#9c5266",
+    "enumMember": "#9c5266",
+    "typeParameter": "#9c5266",
+    "decorator": "#8e4f02",
+    "macro": { "foreground": "#5a4286", "fontStyle": "bold" },
+    "string": "#28664b",
+    "number": "#8e4f02",
+    "keyword": "#28587b",
+    "comment": { "foreground": "#787570", "fontStyle": "italic" },
+    "regexp": "#8e4f02"
   },
   "colors": {
     "editor.background": "#efebe2",
@@ -254,7 +271,27 @@
     "editorOverviewRuler.warningForeground": "#8e4f02aa",
     "editorOverviewRuler.infoForeground": "#28587baa",
     "editorOverviewRuler.findMatchForeground": "#8e4f02aa",
-    "editorOverviewRuler.bracketMatchForeground": "#28664baa"
+    "editorOverviewRuler.bracketMatchForeground": "#28664baa",
+    "commandCenter.background": "#e5e1d7",
+    "commandCenter.foreground": "#9a968f",
+    "commandCenter.border": "#9e9584",
+    "commandCenter.activeBackground": "#ecdcd3",
+    "commandCenter.activeForeground": "#353330",
+    "extensionButton.prominentBackground": "#28587b",
+    "extensionButton.prominentForeground": "#efebe2",
+    "extensionButton.prominentHoverBackground": "#28587bcc",
+    "testing.iconFailed": "#9e3544",
+    "testing.iconErrored": "#9e3544",
+    "testing.iconPassed": "#28664b",
+    "testing.iconQueued": "#8e4f02",
+    "testing.iconUnset": "#9a968f",
+    "testing.iconSkipped": "#9a968f",
+    "testing.runAction": "#28664b",
+    "welcomePage.background": "#efebe2",
+    "welcomePage.tileBackground": "#e5e1d7",
+    "welcomePage.tileHoverBackground": "#dcd6ca",
+    "welcomePage.tileBorder": "#9e9584",
+    "walkThrough.embeddedEditorBackground": "#efebe2"
   },
   "tokenColors": [
     {
@@ -537,6 +574,195 @@
       ],
       "settings": {
         "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "String interpolation",
+      "scope": [
+        "punctuation.definition.template-expression.begin",
+        "punctuation.definition.template-expression.end",
+        "punctuation.section.embedded"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Decorators / Annotations",
+      "scope": [
+        "meta.decorator",
+        "meta.decorator entity.name.function",
+        "punctuation.decorator",
+        "meta.annotation",
+        "storage.type.annotation"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "JSON property names",
+      "scope": [
+        "support.type.property-name.json",
+        "string.json support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#5a4286"
+      }
+    },
+    {
+      "name": "YAML anchors and aliases",
+      "scope": [
+        "entity.name.type.anchor.yaml",
+        "variable.other.alias.yaml",
+        "keyword.control.flow.block-scalar.yaml"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Markdown heading punctuation",
+      "scope": [
+        "punctuation.definition.heading.markdown"
+      ],
+      "settings": {
+        "foreground": "#28587b"
+      }
+    },
+    {
+      "name": "Markdown inline code",
+      "scope": [
+        "markup.inline.raw",
+        "markup.fenced_code.block"
+      ],
+      "settings": {
+        "foreground": "#28664b"
+      }
+    },
+    {
+      "name": "Python function decorators",
+      "scope": [
+        "meta.function.decorator.python",
+        "entity.name.function.decorator.python"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Python magic methods",
+      "scope": [
+        "support.function.magic.python"
+      ],
+      "settings": {
+        "foreground": "#5a4286"
+      }
+    },
+    {
+      "name": "Python f-string braces",
+      "scope": [
+        "constant.character.format.placeholder.other.python"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Go package name",
+      "scope": [
+        "entity.name.package.go"
+      ],
+      "settings": {
+        "foreground": "#3f3e4f"
+      }
+    },
+    {
+      "name": "Go imports",
+      "scope": [
+        "entity.name.import.go"
+      ],
+      "settings": {
+        "foreground": "#28664b"
+      }
+    },
+    {
+      "name": "Rust lifetimes",
+      "scope": [
+        "entity.name.type.lifetime.rust",
+        "storage.modifier.lifetime.rust",
+        "punctuation.definition.lifetime.rust"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Rust macros",
+      "scope": [
+        "entity.name.function.macro.rust",
+        "support.macro.rust"
+      ],
+      "settings": {
+        "foreground": "#5a4286",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Rust attributes",
+      "scope": [
+        "meta.attribute.rust"
+      ],
+      "settings": {
+        "foreground": "#8e4f02"
+      }
+    },
+    {
+      "name": "Markup inserted (diff)",
+      "scope": [
+        "markup.inserted"
+      ],
+      "settings": {
+        "foreground": "#28664b"
+      }
+    },
+    {
+      "name": "Markup deleted (diff)",
+      "scope": [
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "#9e3544"
+      }
+    },
+    {
+      "name": "Markup changed (diff)",
+      "scope": [
+        "markup.changed"
+      ],
+      "settings": {
+        "foreground": "#28587b"
+      }
+    },
+    {
+      "name": "Namespace / Module",
+      "scope": [
+        "entity.name.namespace",
+        "entity.name.module",
+        "entity.name.type.module"
+      ],
+      "settings": {
+        "foreground": "#9c5266"
+      }
+    },
+    {
+      "name": "Deprecated",
+      "scope": [
+        "invalid.deprecated"
+      ],
+      "settings": {
+        "foreground": "#8e4f02",
+        "fontStyle": "strikethrough"
       }
     }
   ]

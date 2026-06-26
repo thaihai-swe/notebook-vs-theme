@@ -37,7 +37,7 @@
     "zenMode.restore": true,
     "workbench.startupEditor": "welcomePage",
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": 1.15,
+    "window.zoomLevel": 1.0,
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -68,10 +68,10 @@
     // large, but slightly calmer than before for better information density.
     // ======================================================================
     "editor.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
-    "editor.fontSize": 17,
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
-    "editor.lineHeight": 1.7,
-    "editor.letterSpacing": 0.25,
+    "editor.lineHeight": 1.55,
+    "editor.letterSpacing": 0.15,
     "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorStyle": "line",
@@ -189,19 +189,19 @@
     // ======================================================================
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.reduceMotion": "off",
+    "workbench.reduceMotion": "on",
     "workbench.editor.emptyWindowText": "off",
     // Open settings in JSON mode by default so advanced UI/CSS tuning is easier.
     "workbench.settings.useSplitJSON": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.showTabs": "multiple",
-    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.editor.pinnedTabsOnSeparateRow": false,
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.editor.tabSizing": "fit",
     "workbench.editor.wrapTabs": false,
-    // Cleaner tabs: close button remains predictable; editor actions do not dominate the header.
+    // Cleaner tabs: close button remains predictable; editor actions hidden until hover for reduced chrome.
     "workbench.editor.tabCloseButton": "right",
-    "workbench.editor.alwaysShowEditorActions": true,
+    "workbench.editor.alwaysShowEditorActions": false,
     "workbench.editor.showIcons": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.labelFormat": "short",
@@ -214,7 +214,7 @@
     "workbench.editor.closeEmptyGroups": true,
     "workbench.editor.splitSizing": "split",
     "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 12,
+    "workbench.editor.limit.value": 10,
     "workbench.editor.limit.perEditorGroup": true,
     // ======================================================================
     // 8. Explorer / solution-view behavior
@@ -354,7 +354,7 @@
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
     "terminal.integrated.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
-    "terminal.integrated.fontSize": 17,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.lineHeight": 1.45,
     "terminal.integrated.cursorStyle": "line",
@@ -380,6 +380,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.pruneOnFetch": true,
     "git.branchProtectionPrompt": "alwaysPrompt",
+    "scm.showHistoryGraph": true,
     "scm.alwaysShowRepositories": true,
     "scm.diffDecorations": "all",
     "diffEditor.ignoreTrimWhitespace": false,
@@ -419,6 +420,8 @@
     // 13. Theme-Specific Color Customizations
     // ======================================================================
     "workbench.colorCustomizations": {
+        "focusBorder": "#00000000",
+        "widget.border": "#00000000",
         "scrollbar.background": "#00000015",
         "scrollbarSlider.background": "#AEB9C799",
         "scrollbarSlider.hoverBackground": "#D6DEE8CC",
@@ -490,53 +493,67 @@
     // modern editor/terminal cards. Requires the Custom UI Style extension.
     // The editor scrollbar CSS is scoped to .part.editor .monaco-editor so
     // it does not enlarge Terminal, Explorer, Search, Problems, or other panels.
+    //
+    // ANIMATIONS: @keyframes are defined inline here so no separate CSS file
+    // is needed. For advanced CSS (scrollbar styling, aurora borders, etc.),
+    // see the companion animations.css file in the theme repo.
     // ======================================================================
     "custom-ui-style.stylesheet": {
         ".monaco-workbench": {
-            "--islands-panel-radius": "16px",
-            "--islands-widget-radius": "12px",
-            "--islands-input-radius": "8px",
-            "--islands-item-radius": "6px",
-            "--islands-panel-gap": "8px",
-            "--islands-panel-top": "8px",
-            "background-color": "var(--vscode-workbench-background) !important",
+            "--nb-panel-radius": "16px",
+            "--nb-widget-radius": "12px",
+            "--nb-input-radius": "8px",
+            "--nb-item-radius": "6px",
+            "--nb-panel-gap": "8px",
+            "--nb-panel-top": "8px",
+            "--nb-bg-canvas": "var(--vscode-workbench-background)",
+            "--nb-bg-surface": "color-mix(in srgb, var(--vscode-sideBar-background) 85%, var(--vscode-editor-background) 15%)",
+            "background-color": "var(--nb-bg-canvas) !important",
             "font-family": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace !important"
         },
         ".part.sidebar": {
-            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
-            "border-radius": "var(--islands-panel-radius) !important",
-            "overflow": "hidden !important",
-            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(24px) saturate(180%) !important",
-            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
+            "backdrop-filter": "blur(8px) !important",
+            "-webkit-backdrop-filter": "blur(8px) !important",
+            "border-right": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".part.sidebar .monaco-list-row": {
-            "border-radius": "var(--islands-item-radius) !important",
+            "border-radius": "var(--nb-item-radius) !important",
             "margin-left": "4px !important",
             "margin-right": "4px !important",
-            "width": "calc(100% - 8px) !important"
+            "width": "calc(100% - 8px) !important",
+            "transition": "background 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".part.sidebar .monaco-list-row.focused": {
+            "outline": "none !important",
+            "box-shadow": "inset 0 0 0 1px color-mix(in srgb, var(--vscode-list-focusOutline, var(--vscode-focusBorder, rgba(128, 128, 128, 0.3))) 60%, transparent) !important"
+        },
+        ".part.sidebar .monaco-list-row:hover": {
+            "outline": "none !important"
         },
         ".part.editor": {
-            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
-            "border-radius": "var(--islands-panel-radius) !important",
+            "margin": "var(--nb-panel-top) var(--nb-panel-gap) var(--nb-panel-gap) var(--nb-panel-gap) !important",
+            "border-radius": "var(--nb-panel-radius) !important",
             "overflow": "hidden !important",
-            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "max-height": "calc(100% - var(--nb-panel-top) - var(--nb-panel-gap) - 2px) !important",
             "background-color": "color-mix(in srgb, var(--vscode-editor-background) 90%, transparent) !important",
-            "backdrop-filter": "blur(20px) !important",
-            "-webkit-backdrop-filter": "blur(20px) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
+            "backdrop-filter": "blur(0px) !important",
+            "-webkit-backdrop-filter": "blur(0px) !important",
+            "border-top": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 80%, var(--vscode-foreground) 20%) !important",
+            "border-left": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 75%, var(--vscode-foreground) 25%) !important",
+            "border-bottom": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
+            "border-right": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".tab": {
-            "border-radius": "var(--islands-item-radius) !important",
+            "border-radius": "var(--nb-item-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 40%, transparent) !important",
-            "backdrop-filter": "blur(12px) !important",
-            "-webkit-backdrop-filter": "blur(12px) !important",
+            "backdrop-filter": "blur(0px) !important",
+            "-webkit-backdrop-filter": "blur(0px) !important",
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
-            "margin": "2px 3px !important",
+            "margin": "2px 2px !important",
             "box-sizing": "border-box !important",
             "transition": "background-color 0.2s ease !important"
         },
@@ -545,40 +562,27 @@
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
             "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
         },
+        ".tab:active": {
+            "transform": "scale(0.97) !important",
+            "opacity": "0.8 !important",
+            "transition": "transform 0.1s ease, opacity 0.1s ease !important"
+        },
         ".part.panel.bottom": {
-            "border-radius": "var(--islands-panel-radius) !important",
-            "overflow": "hidden !important",
-            "margin-top": "var(--islands-panel-gap) !important",
-            "margin-bottom": "var(--islands-panel-gap) !important",
-            "border-left": "var(--islands-panel-gap) solid var(--vscode-workbench-background) !important",
-            "border-right": "var(--islands-panel-gap) solid var(--vscode-workbench-background) !important",
-            "border-bottom": "none !important",
+            "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-panel-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(24px) saturate(180%) !important",
-            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
-            "border-top": "1.5px solid color-mix(in srgb, var(--vscode-panel-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
-        },
-        ".part.panel.bottom > .content": {
-            "border-radius": "0 0 calc(var(--islands-panel-radius) - var(--islands-panel-gap)) calc(var(--islands-panel-radius) - var(--islands-panel-gap)) !important",
-            "overflow": "hidden !important"
-        },
-        ".part.panel.bottom .terminal-outer-container": {
-            "border-radius": "0 0 0 10px !important",
-            "overflow": "hidden !important"
-        },
-        ".part.panel.bottom .terminal.xterm": {
-            "border-radius": "0 0 0 10px !important"
+            "backdrop-filter": "blur(8px) !important",
+            "-webkit-backdrop-filter": "blur(8px) !important",
+            "border-top": "1px solid color-mix(in srgb, var(--vscode-panel-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important"
         },
         ".part.activitybar": {
             "background": "var(--vscode-workbench-background) !important",
-            "margin": "var(--islands-panel-top) 0 var(--islands-panel-gap) 0",
+            "margin": "var(--nb-panel-top) 0 var(--nb-panel-gap) 0",
             "overflow": "visible !important"
         },
         ".part.activitybar .composite-bar": {
             "background": "color-mix(in srgb, var(--vscode-activityBar-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
-            "backdrop-filter": "blur(24px) saturate(180%) !important",
-            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
+            "backdrop-filter": "blur(8px) !important",
+            "-webkit-backdrop-filter": "blur(8px) !important",
             "border-radius": "9999px",
             "overflow": "hidden !important",
             "width": "calc(100% - 8px) !important",
@@ -597,74 +601,212 @@
             "border-radius": "50% !important"
         },
         ".part.auxiliarybar": {
-            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
-            "border-radius": "var(--islands-panel-radius) !important",
-            "overflow": "hidden !important",
-            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(24px) saturate(180%) !important",
-            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
+            "backdrop-filter": "blur(8px) !important",
+            "-webkit-backdrop-filter": "blur(8px) !important",
+            "border-left": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".quick-input-widget": {
-            "border-radius": "var(--islands-widget-radius) !important",
+            "top": "50% !important",
+            "transform": "translateY(-50%) !important",
+            "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
             "background-color": "color-mix(in srgb, var(--vscode-quickInput-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
             "backdrop-filter": "blur(32px) saturate(200%) !important",
             "-webkit-backdrop-filter": "blur(32px) saturate(200%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 16px 48px 0 rgba(0, 0, 0, 0.35) !important"
+            "box-shadow": "0 30px 90px rgba(0, 0, 0, 0.4), 0 0 0 100vw rgba(0, 0, 0, 0.2) !important",
+            "animation": "nb-spotlight 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important"
         },
         ".quick-input-widget .monaco-list-row": {
-            "border-radius": "var(--islands-item-radius) !important",
+            "border-radius": "var(--nb-item-radius) !important",
             "margin-left": "4px !important",
             "margin-right": "4px !important",
-            "width": "calc(100% - 8px) !important"
+            "width": "calc(100% - 8px) !important",
+            "transition": "background 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".quick-input-widget .monaco-list-row.focused": {
+            "outline": "none !important",
+            "box-shadow": "inset 0 0 0 1px color-mix(in srgb, var(--vscode-list-focusOutline, var(--vscode-focusBorder, rgba(128, 128, 128, 0.3))) 60%, transparent) !important"
         },
         ".notification-toast": {
-            "border-radius": "var(--islands-widget-radius) !important",
+            "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
             "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
             "backdrop-filter": "blur(24px) !important",
             "-webkit-backdrop-filter": "blur(24px) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important"
+            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important",
+            "animation": "nb-notify 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important"
         },
         ".notifications-center": {
-            "border-radius": "var(--islands-widget-radius) !important",
+            "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
             "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
             "backdrop-filter": "blur(24px) !important",
             "-webkit-backdrop-filter": "blur(24px) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important"
+            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important",
+            "animation": "nb-emerge 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important"
         },
         ".monaco-inputbox": {
-            "border-radius": "var(--islands-input-radius) !important"
+            "border-radius": "var(--nb-input-radius) !important"
+        },
+        ".monaco-list-row:active": {
+            "transform": "scale(0.98) !important",
+            "transition": "transform 0.1s ease !important"
+        },
+        ".action-label": {
+            "transition": "transform 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".action-label:hover": {
+            "transform": "scale(1.1) !important"
+        },
+        ".action-label:active": {
+            "transform": "scale(0.9) !important"
+        },
+        ".monaco-scrollable-element > .scrollbar > .slider": {
+            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-background) 80%, transparent) !important",
+            "border-radius": "10px !important",
+            "transition": "opacity 0.3s ease, transform 0.2s ease !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.vertical > .slider:hover": {
+            "transform": "scaleX(1.5) !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.horizontal > .slider:hover": {
+            "transform": "scaleY(1.5) !important"
         },
         ".scm-editor": {
-            "border-radius": "var(--islands-input-radius) !important",
+            "border-radius": "var(--nb-input-radius) !important",
             "overflow": "hidden !important"
         },
         ".scm-input": {
-            "border-radius": "var(--islands-input-radius) !important",
+            "border-radius": "var(--nb-input-radius) !important",
             "overflow": "hidden !important"
         },
         ".scrollbar .slider": {
             "border-radius": "9999px !important"
         },
         ".monaco-dialog-box": {
-            "border-radius": "var(--islands-widget-radius) !important",
+            "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 80%, transparent) !important",
             "backdrop-filter": "blur(32px) !important",
             "-webkit-backdrop-filter": "blur(32px) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 16px 48px rgba(0, 0, 0, 0.3) !important"
+            "box-shadow": "0 16px 48px rgba(0, 0, 0, 0.3) !important",
+            "animation": "nb-emerge 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important"
         },
         ".monaco-dialog-box .dialog-buttons .monaco-button": {
-            "border-radius": "var(--islands-input-radius) !important"
+            "border-radius": "var(--nb-input-radius) !important"
+        },
+        ".monaco-breadcrumbs *": {
+            "opacity": "0 !important",
+            "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".monaco-breadcrumbs:hover *": {
+            "opacity": "1 !important"
+        },
+        ".tab .tab-actions": {
+            "opacity": "0 !important",
+            "transition": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".tab:hover .tab-actions, .tab.active .tab-actions": {
+            "opacity": "1 !important"
+        },
+        ".minimap canvas": {
+            "opacity": "0.7 !important",
+            "transition": "opacity 0.3s ease !important"
+        },
+        ".minimap:hover canvas": {
+            "opacity": "1 !important"
+        },
+        ".part.statusbar .statusbar-item-label, .part.statusbar .codicon": {
+            "opacity": "0.65 !important",
+            "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".part.statusbar:hover .statusbar-item-label, .part.statusbar:hover .codicon": {
+            "opacity": "1 !important"
+        },
+        ".monaco-icon-label.file-icon::before": {
+            "filter": "drop-shadow(0 0 2.5px currentColor) !important",
+            "opacity": "1 !important"
+        },
+        ".command-center-center": {
+            "border-radius": "9999px !important",
+            "overflow": "hidden !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
+            "backdrop-filter": "blur(6px) !important",
+            "-webkit-backdrop-filter": "blur(6px) !important",
+            "box-shadow": "0 2px 8px rgba(0,0,0,0.1) !important"
+        },
+        ".command-center-center *": {
+            "border-radius": "9999px !important"
+        },
+        ".monaco-count-badge": {
+            "border-radius": "9999px !important",
+            "padding": "0 6px !important",
+            "min-height": "16px !important",
+            "line-height": "16px !important",
+            "font-size": "12px !important"
+        },
+        ".sticky-widget": {
+            "box-shadow": "0 4px 8px -2px rgba(0,0,0,0.2) !important"
+        },
+        ".chat-input-container, .interactive-input-part": {
+            "border-radius": "var(--nb-widget-radius) !important",
+            "overflow": "visible !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 80%, transparent) !important",
+            "backdrop-filter": "blur(6px) !important",
+            "-webkit-backdrop-filter": "blur(6px) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important"
+        },
+        ".notebookOverlay": {
+            "border-radius": "0 0 var(--nb-panel-radius) var(--nb-panel-radius) !important"
+        },
+        ".notifications-toasts": {
+            "margin-right": "var(--nb-panel-gap) !important",
+            "margin-bottom": "var(--nb-panel-gap) !important"
+        },
+        ".monaco-hover": {
+            "border-radius": "var(--nb-input-radius) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
+            "box-shadow": "0 4px 16px 0 rgba(0,0,0,0.2) !important",
+            "overflow": "hidden !important",
+            "animation": "nb-emerge 0.15s ease-out !important"
+        },
+        "@property --nb-border-angle": {
+            "syntax": "'<angle>'",
+            "initial-value": "0deg",
+            "inherits": "false"
+        },
+        "@keyframes nb-aurora": {
+            "to": {
+                "--nb-border-angle": "360deg"
+            }
+        },
+        "@keyframes nb-emerge": {
+            "from": {
+                "opacity": "0",
+                "transform": "translateY(-4px) scale(0.98)"
+            },
+            "to": {
+                "opacity": "1",
+                "transform": "translateY(0) scale(1)"
+            }
+        },
+        "@keyframes nb-notify": {
+            "from": {
+                "opacity": "0",
+                "transform": "translateX(20px) scale(0.96)"
+            },
+            "to": {
+                "opacity": "1",
+                "transform": "translateX(0) scale(1)"
+            }
         }
     },
     // ======================================================================
