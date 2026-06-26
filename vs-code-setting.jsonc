@@ -67,7 +67,7 @@
     // Goal: readable long coding sessions. Font size and line height are still
     // large, but slightly calmer than before for better information density.
     // ======================================================================
-    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 17,
     "editor.fontWeight": "400",
     "editor.lineHeight": 1.7,
@@ -138,7 +138,7 @@
     "editor.hover.delay": 350,
     "editor.hover.sticky": true,
     "editor.codeLens": true,
-    "editor.codeLensFontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.codeLensFontSize": 13,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlayHints.fontSize": 14,
@@ -352,10 +352,10 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 17,
     "terminal.integrated.fontWeight": "400",
-    "terminal.integrated.lineHeight": 1.25,
+    "terminal.integrated.lineHeight": 1.45,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorWidth": 2,
@@ -425,7 +425,7 @@
         "minimapSlider.background": "#AEB9C766",
         "minimapSlider.hoverBackground": "#D6DEE8AA",
         "minimapSlider.activeBackground": "#FFFFFFCC",
-        "editor.lineHighlightBorder": "#40977676",
+        "editor.lineHighlightBorder": "#4097762a",
         "editor.selectionBackground": "#4D8DFF66",
         "editor.inactiveSelectionBackground": "#4D8DFF33",
         "editor.selectionHighlightBackground": "#4D8DFF2E",
@@ -440,15 +440,15 @@
         "editorIndentGuide.background1": "#0DBC7933",
         "editorIndentGuide.background2": "#7DD3FC2E",
         "editorIndentGuide.background3": "#C084FC2E",
-        "editorIndentGuide.activeBackground1": "#0DBC79CC",
-        "editorIndentGuide.activeBackground2": "#7DD3FCCC",
-        "editorIndentGuide.activeBackground3": "#C084FCCC",
+        "editorIndentGuide.activeBackground1": "#0DBC7955",
+        "editorIndentGuide.activeBackground2": "#7DD3FC55",
+        "editorIndentGuide.activeBackground3": "#C084FC55",
         "editorBracketPairGuide.background1": "#0DBC7933",
         "editorBracketPairGuide.background2": "#7DD3FC2E",
         "editorBracketPairGuide.background3": "#C084FC2E",
-        "editorBracketPairGuide.activeBackground1": "#0DBC79CC",
-        "editorBracketPairGuide.activeBackground2": "#7DD3FCCC",
-        "editorBracketPairGuide.activeBackground3": "#C084FCCC",
+        "editorBracketPairGuide.activeBackground1": "#0DBC7955",
+        "editorBracketPairGuide.activeBackground2": "#7DD3FC55",
+        "editorBracketPairGuide.activeBackground3": "#C084FC55",
         "editorBracketHighlight.foreground1": "#FFD166",
         "editorBracketHighlight.foreground2": "#7DD3FC",
         "editorBracketHighlight.foreground3": "#C084FC",
@@ -498,7 +498,8 @@
             "--islands-item-radius": "6px",
             "--islands-panel-gap": "8px",
             "--islands-panel-top": "8px",
-            "background-color": "var(--vscode-workbench-background) !important"
+            "background-color": "var(--vscode-workbench-background) !important",
+            "font-family": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace !important"
         },
         ".part.sidebar": {
             "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
@@ -529,7 +530,20 @@
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".tab": {
-            "border-radius": "var(--islands-item-radius) var(--islands-item-radius) 0 0 !important"
+            "border-radius": "var(--islands-item-radius) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 40%, transparent) !important",
+            "backdrop-filter": "blur(12px) !important",
+            "-webkit-backdrop-filter": "blur(12px) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
+            "margin": "4px 3px !important",
+            "height": "calc(100% - 8px) !important",
+            "box-sizing": "border-box !important",
+            "transition": "background-color 0.2s ease !important"
+        },
+        ".tab.active": {
+            "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 85%, transparent) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
+            "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
         },
         ".part.panel.bottom": {
             "border-radius": "var(--islands-panel-radius) !important",
