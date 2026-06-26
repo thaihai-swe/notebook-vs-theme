@@ -478,143 +478,7 @@
         "editorOverviewRuler.warningForeground": "#D6A94AAA",
         "editorOverviewRuler.infoForeground": "#7DD3FCAA",
         "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
-        "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA",
-        "[Note Book Dark]": {
-            "sideBar.background": "#002B36",
-            "panel.background": "#002B36",
-            "terminal.background": "#002B36",
-            "activityBar.background": "#002B36",
-            "editorWidget.background": "#002B36",
-            "scrollbar.background": "#00212B66",
-            "scrollbarSlider.background": "#AEB9C799",
-            "scrollbarSlider.hoverBackground": "#D6DEE8CC",
-            "scrollbarSlider.activeBackground": "#FFFFFFEE",
-            "minimapSlider.background": "#AEB9C766",
-            "minimapSlider.hoverBackground": "#D6DEE8AA",
-            "minimapSlider.activeBackground": "#FFFFFFCC",
-            "editor.lineHighlightBorder": "#40977676",
-            "editor.selectionBackground": "#4D8DFF66",
-            "editor.inactiveSelectionBackground": "#4D8DFF33",
-            "editor.selectionHighlightBackground": "#4D8DFF2E",
-            "editor.selectionHighlightBorder": "#4D8DFF88",
-            "terminal.selectionBackground": "#4D8DFF66",
-            "terminal.inactiveSelectionBackground": "#4D8DFF33",
-            "editor.wordHighlightBackground": "#FFD16633",
-            "editor.wordHighlightStrongBackground": "#FFD16655",
-            "editor.wordHighlightBorder": "#FFD16666",
-            "editor.wordHighlightStrongBorder": "#FFD16688",
-            "tree.indentGuidesStroke": "#6EE7B766",
-            "editorIndentGuide.background1": "#0DBC7933",
-            "editorIndentGuide.background2": "#7DD3FC2E",
-            "editorIndentGuide.background3": "#C084FC2E",
-            "editorIndentGuide.activeBackground1": "#0DBC79CC",
-            "editorIndentGuide.activeBackground2": "#7DD3FCCC",
-            "editorIndentGuide.activeBackground3": "#C084FCCC",
-            "editorBracketPairGuide.background1": "#0DBC7933",
-            "editorBracketPairGuide.background2": "#7DD3FC2E",
-            "editorBracketPairGuide.background3": "#C084FC2E",
-            "editorBracketPairGuide.activeBackground1": "#0DBC79CC",
-            "editorBracketPairGuide.activeBackground2": "#7DD3FCCC",
-            "editorBracketPairGuide.activeBackground3": "#C084FCCC",
-            "editorBracketHighlight.foreground1": "#FFD166",
-            "editorBracketHighlight.foreground2": "#7DD3FC",
-            "editorBracketHighlight.foreground3": "#C084FC",
-            "editorBracketHighlight.foreground4": "#86EFAC",
-            "editorBracketHighlight.unexpectedBracket.foreground": "#FF6B6B",
-            "editorGutter.modifiedBackground": "#F6C177",
-            "editorGutter.addedBackground": "#86EFAC",
-            "editorGutter.deletedBackground": "#FF6B6B",
-            "editorOverviewRuler.modifiedForeground": "#F6C177AA",
-            "editorOverviewRuler.addedForeground": "#86EFACAA",
-            "editorOverviewRuler.deletedForeground": "#FF6B6BAA",
-            "diffEditor.insertedLineBackground": "#123D2470",
-            "diffEditor.removedLineBackground": "#4A1F2A70",
-            "diffEditor.insertedTextBackground": "#1FA15A55",
-            "diffEditor.removedTextBackground": "#FF4D6D55",
-            "diffEditorGutter.insertedLineBackground": "#1F8F4D88",
-            "diffEditorGutter.removedLineBackground": "#B63A4B88",
-            "diffEditorOverview.insertedForeground": "#9BE7C0CC",
-            "diffEditorOverview.removedForeground": "#FF7A90CC",
-            "editor.findMatchBackground": "#D6A94A66",
-            "editor.findMatchBorder": "#E8C76A",
-            "editor.findMatchHighlightBackground": "#54596366",
-            "editor.findRangeHighlightBackground": "#31323844",
-            "editorBracketMatch.background": "#0DBC7926",
-            "editorBracketMatch.border": "#0DBC79AA",
-            "editorOverviewRuler.errorForeground": "#FF6B6BAA",
-            "editorOverviewRuler.warningForeground": "#D6A94AAA",
-            "editorOverviewRuler.infoForeground": "#7DD3FCAA",
-            "editorOverviewRuler.findMatchForeground": "#E8C76AAA",
-            "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
-        },
-        "[Note Book]": {
-            "sideBar.background": "#efebe2",
-            "panel.background": "#efebe2",
-            "terminal.background": "#efebe2",
-            "activityBar.background": "#efebe2",
-            "editorWidget.background": "#efebe2",
-            "scrollbar.background": "#ebe6e066",
-            "scrollbarSlider.background": "#c5c2c6aa",
-            "scrollbarSlider.hoverBackground": "#8c8a8ecc",
-            "scrollbarSlider.activeBackground": "#3f3e4fdd",
-            "minimapSlider.background": "#c5c2c655",
-            "minimapSlider.hoverBackground": "#8c8a8e77",
-            "minimapSlider.activeBackground": "#3f3e4f99",
-            "editor.lineHighlightBorder": "#ebe6e077",
-            "editor.selectionBackground": "#eedcd3a0",
-            "editor.inactiveSelectionBackground": "#eedcd355",
-            "editor.selectionHighlightBackground": "#eedcd333",
-            "editor.selectionHighlightBorder": "#eedcd355",
-            "terminal.selectionBackground": "#eedcd377",
-            "terminal.inactiveSelectionBackground": "#eedcd355",
-            "editor.wordHighlightBackground": "#8e4f0212",
-            "editor.wordHighlightStrongBackground": "#8e4f0224",
-            "editor.wordHighlightBorder": "#8e4f0222",
-            "editor.wordHighlightStrongBorder": "#8e4f0244",
-            "tree.indentGuidesStroke": "#c5c2c677",
-            "editorIndentGuide.background1": "#1462a422",
-            "editorIndentGuide.background2": "#28664b22",
-            "editorIndentGuide.background3": "#7f5eb522",
-            "editorIndentGuide.activeBackground1": "#1462a4aa",
-            "editorIndentGuide.activeBackground2": "#28664baa",
-            "editorIndentGuide.activeBackground3": "#7f5eb5aa",
-            "editorBracketPairGuide.background1": "#1462a422",
-            "editorBracketPairGuide.background2": "#28664b22",
-            "editorBracketPairGuide.background3": "#7f5eb522",
-            "editorBracketPairGuide.activeBackground1": "#1462a4aa",
-            "editorBracketPairGuide.activeBackground2": "#28664baa",
-            "editorBracketPairGuide.activeBackground3": "#7f5eb5aa",
-            "editorBracketHighlight.foreground1": "#1462a4",
-            "editorBracketHighlight.foreground2": "#28664b",
-            "editorBracketHighlight.foreground3": "#7f5eb5",
-            "editorBracketHighlight.foreground4": "#8e4f02",
-            "editorBracketHighlight.unexpectedBracket.foreground": "#9e3544",
-            "editorGutter.modifiedBackground": "#8e4f02",
-            "editorGutter.addedBackground": "#28664b",
-            "editorGutter.deletedBackground": "#9e3544",
-            "editorOverviewRuler.modifiedForeground": "#8e4f02aa",
-            "editorOverviewRuler.addedForeground": "#28664baa",
-            "editorOverviewRuler.deletedForeground": "#9e3544aa",
-            "diffEditor.insertedLineBackground": "#28664b1a",
-            "diffEditor.removedLineBackground": "#9e35441a",
-            "diffEditor.insertedTextBackground": "#28664b33",
-            "diffEditor.removedTextBackground": "#9e354433",
-            "diffEditorGutter.insertedLineBackground": "#28664b33",
-            "diffEditorGutter.removedLineBackground": "#9e354433",
-            "diffEditorOverview.insertedForeground": "#28664baa",
-            "diffEditorOverview.removedForeground": "#9e3544aa",
-            "editor.findMatchBackground": "#8e4f0244",
-            "editor.findMatchBorder": "#8e4f0277",
-            "editor.findMatchHighlightBackground": "#8e4f0222",
-            "editor.findRangeHighlightBackground": "#c5c2c622",
-            "editorBracketMatch.background": "#28664b15",
-            "editorBracketMatch.border": "#28664b44",
-            "editorOverviewRuler.errorForeground": "#9e3544aa",
-            "editorOverviewRuler.warningForeground": "#8e4f02aa",
-            "editorOverviewRuler.infoForeground": "#1462a4aa",
-            "editorOverviewRuler.findMatchForeground": "#8e4f02aa",
-            "editorOverviewRuler.bracketMatchForeground": "#28664baa"
-        }
+        "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA"
     },
     // ======================================================================
     // 14. Custom UI stylesheet
@@ -627,437 +491,169 @@
     // it does not enlarge Terminal, Explorer, Search, Problems, or other panels.
     // ======================================================================
     "custom-ui-style.stylesheet": {
-        // ===================================================================
-        // iOS / macOS 26-inspired "Liquid Glass" UI
-        // ===================================================================
-        // Ultra-translucent, heavily blurred, glassmorphic design.
-        // - High transparency on main panels
-        // - Heavy blur (backdrop-filter)
-        // - Glossy specular borders
-        // - Liquid sheet/card feeling
         ".monaco-workbench": {
-            "--ui-panel-radius": "24px",
-            "--ui-widget-radius": "20px",
-            "--ui-input-radius": "14px",
-            "--ui-item-radius": "10px",
-            "--ui-panel-gap": "8px",
-            "--ui-panel-top": "8px",
-            "--ui-ios-canvas": "transparent",
-            "--ui-ios-surface": "color-mix(in srgb, var(--vscode-editor-background) 60%, transparent)",
-            "--ui-ios-border": "color-mix(in srgb, var(--vscode-foreground) 15%, color-mix(in srgb, white 20%, transparent))",
-            "--ui-ios-border-strong": "color-mix(in srgb, var(--vscode-foreground) 25%, color-mix(in srgb, white 30%, transparent))",
-            "--ui-ios-inner": "inset 0 1.5px 0 color-mix(in srgb, white 20%, transparent)",
-            "--ui-ios-shadow": "0 10px 30px color-mix(in srgb, var(--vscode-widget-shadow) 35%, transparent)",
-            "--ui-ios-shadow-soft": "0 4px 16px color-mix(in srgb, var(--vscode-widget-shadow) 25%, transparent)",
-            "--ui-ios-popover-shadow": "0 24px 72px color-mix(in srgb, var(--vscode-widget-shadow) 65%, transparent)",
-            "background-color": "var(--ui-ios-canvas) !important",
-            "color": "var(--vscode-editor-foreground) !important"
+            "--islands-panel-radius": "16px",
+            "--islands-widget-radius": "12px",
+            "--islands-input-radius": "8px",
+            "--islands-item-radius": "6px",
+            "--islands-panel-gap": "8px",
+            "--islands-panel-top": "8px",
+            "background-color": "var(--vscode-workbench-background) !important"
         },
-        // Frosted floating surfaces with deep liquid blur.
-        ".quick-input-widget, .monaco-hover, .notification-toast, .notifications-center, .monaco-dialog-box": {
-            "backdrop-filter": "blur(28px) saturate(180%) !important",
-            "-webkit-backdrop-filter": "blur(28px) saturate(180%) !important",
-            "background": "color-mix(in srgb, var(--vscode-editor-background) 65%, transparent) !important"
+        ".part.sidebar": {
+            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
+            "border-radius": "var(--islands-panel-radius) !important",
+            "overflow": "hidden !important",
+            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
+            "backdrop-filter": "blur(24px) saturate(180%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, rgba(128, 128, 128, 0.25)) 30%, transparent) !important",
+            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
-        // Main rounded glass panels.
-        ".part.editor, .part.sidebar, .part.panel.bottom": {
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
-            "backdrop-filter": "blur(20px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
-            "background": "var(--ui-ios-surface) !important"
+        ".part.sidebar .monaco-list-row": {
+            "border-radius": "var(--islands-item-radius) !important",
+            "margin-left": "4px !important",
+            "margin-right": "4px !important",
+            "width": "calc(100% - 8px) !important"
         },
-        // Titlebar.
-        ".part.titlebar": {
-            "background-color": "transparent !important",
-            "border-bottom": "none !important",
-            "box-shadow": "none !important",
-            "backdrop-filter": "blur(10px) saturate(120%) !important",
-            "-webkit-backdrop-filter": "blur(10px) saturate(120%) !important"
-        },
-        // Breadcrumbs.
-        ".monaco-breadcrumbs": {
-            "border-top": "none !important",
-            "background": "transparent !important",
-            "padding": "4px 8px !important"
-        },
-        ".monaco-breadcrumbs .breadcrumb-item": {
-            "padding": "2px 8px !important",
-            "border-radius": "6px !important",
-            "transition": "background-color 0.15s ease, color 0.15s ease !important"
-        },
-        ".monaco-breadcrumbs .breadcrumb-item:hover": {
-            "background-color": "color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important"
-        },
-        ".monaco-breadcrumbs *": {
-            "opacity": "1 !important",
-            "visibility": "visible !important",
-            "color": "var(--vscode-breadcrumb-foreground) !important",
-            "transition": "color 0.18s ease !important"
-        },
-        ".monaco-breadcrumbs:hover *": {
-            "color": "var(--vscode-breadcrumb-focusForeground) !important"
-        },
-        // Editor shell.
         ".part.editor": {
-            "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
-            "border-radius": "var(--ui-panel-radius) !important",
+            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
+            "border-radius": "var(--islands-panel-radius) !important",
             "overflow": "hidden !important",
-            "background": "var(--ui-ios-surface) !important",
-            "color": "var(--vscode-editor-foreground) !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
-            "backdrop-filter": "blur(20px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
-        },
-        ".part.editor > .content": {
-            "border-radius": "calc(var(--ui-panel-radius) - 1px) !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important"
-        },
-        ".editor-instance, .editor-group-container": {
-            "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important",
-            "color": "var(--vscode-editor-foreground) !important"
-        },
-        ".monaco-editor": {
-            "border-radius": "calc(var(--ui-panel-radius) - 2px) !important",
-            "background": "transparent !important",
-            "color": "var(--vscode-editor-foreground) !important",
-            "outline": "1px solid color-mix(in srgb, var(--vscode-foreground) 6%, transparent) !important",
-            "outline-offset": "-1px !important"
-        },
-        // Editor detail polish.
-        ".monaco-editor .line-numbers.active-line-number": {
-            "color": "var(--vscode-editorLineNumber-activeForeground) !important",
-            "font-weight": "600 !important"
-        },
-        ".monaco-editor .current-line, .monaco-editor .view-overlays .current-line": {
-            "border-radius": "8px !important"
-        },
-        ".monaco-editor .cursors-layer .cursor": {
-            "box-shadow": "0 0 12px var(--vscode-editorCursor-foreground), 0 0 4px var(--vscode-editorCursor-foreground) !important"
-        },
-        // Rich bookish typography for comments and keywords
-        ".monaco-editor .token.comment, .monaco-editor span[class*=\"comment\"]": {
-            "font-family": "'Monaspace Radon', 'Inter', Georgia, 'Times New Roman', serif !important",
-            "font-style": "italic !important",
-            "opacity": "0.75 !important"
-        },
-        ".monaco-editor .token.keyword, .monaco-editor span[class*=\"keyword\"]": {
-            "font-family": "'Monaspace Xenon', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', monospace !important",
-            "font-weight": "600 !important",
-            "font-style": "italic !important",
-            "text-shadow": "0 0 8px color-mix(in srgb, currentColor 40%, transparent) !important"
-        },
-        ".monaco-editor .token.string, .monaco-editor span[class*=\"string\"]": {
-            "text-shadow": "0 0 6px color-mix(in srgb, currentColor 30%, transparent) !important"
-        },
-        ".monaco-editor .token.entity.name.function, .monaco-editor span[class*=\"entity-name-function\"]": {
-            "text-shadow": "0 0 8px color-mix(in srgb, currentColor 40%, transparent) !important"
-        },
-        // Tabs: iOS-like segmented chips (pill-shaped floating tabs)
-        ".tabs-and-actions-container": {
-            "min-height": "38px !important",
-            "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important"
-        },
-        ".editor-actions, .tabs-container": {
-            "background-image": "none !important",
-            "background-color": "transparent !important"
+            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-editor-background) 90%, transparent) !important",
+            "backdrop-filter": "blur(20px) !important",
+            "-webkit-backdrop-filter": "blur(20px) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, rgba(128, 128, 128, 0.2)) 30%, transparent) !important",
+            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".tab": {
-            "margin": "4px 3px 4px 3px !important",
-            "height": "28px !important",
-            "border-radius": "8px !important",
-            "border": "1px solid transparent !important",
-            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
-            "display": "flex !important",
-            "align-items": "center !important",
-            "box-sizing": "border-box !important"
+            "border-radius": "var(--islands-item-radius) var(--islands-item-radius) 0 0 !important"
         },
-        ".tab.active": {
-            "background": "color-mix(in srgb, var(--vscode-tab-activeBackground) 60%, transparent) !important",
-            "border": "1px solid var(--ui-ios-border-strong) !important",
-            "box-shadow": "var(--ui-ios-inner), 0 4px 12px color-mix(in srgb, var(--vscode-tab-activeBackground) 30%, transparent), var(--ui-ios-shadow-soft) !important",
-            "backdrop-filter": "blur(12px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(12px) saturate(150%) !important"
+        ".part.panel.bottom": {
+            "border-radius": "var(--islands-panel-radius) !important",
+            "overflow": "hidden !important",
+            "margin-top": "var(--islands-panel-gap) !important",
+            "margin-bottom": "var(--islands-panel-gap) !important",
+            "border-left": "var(--islands-panel-gap) solid var(--vscode-workbench-background) !important",
+            "border-right": "var(--islands-panel-gap) solid var(--vscode-workbench-background) !important",
+            "border-bottom": "none !important",
+            "background-color": "color-mix(in srgb, var(--vscode-panel-background) 70%, transparent) !important",
+            "backdrop-filter": "blur(24px) saturate(180%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
+            "border-top": "1px solid color-mix(in srgb, var(--vscode-panel-border, rgba(128, 128, 128, 0.25)) 30%, transparent) !important",
+            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
-        ".tab .label-name": {
-            "font-size": "12.5px !important"
+        ".part.panel.bottom > .content": {
+            "border-radius": "0 0 calc(var(--islands-panel-radius) - var(--islands-panel-gap)) calc(var(--islands-panel-radius) - var(--islands-panel-gap)) !important",
+            "overflow": "hidden !important"
         },
-        ".tab.active .label-name": {
-            "font-weight": "600 !important",
-            "color": "var(--vscode-tab-activeForeground) !important"
+        ".part.panel.bottom .terminal-outer-container": {
+            "border-radius": "0 0 0 10px !important",
+            "overflow": "hidden !important"
         },
-        ".tab.dirty .label-name": {
-            "font-style": "italic !important"
+        ".part.panel.bottom .terminal.xterm": {
+            "border-radius": "0 0 0 10px !important"
         },
-        ".tab:not(.active)": {
-            "opacity": "0.66 !important"
-        },
-        ".tab:not(.active):hover": {
-            "opacity": "0.95 !important",
-            "background": "color-mix(in srgb, var(--vscode-tab-hoverBackground) 50%, transparent) !important",
-            "transform": "translateY(-1px) !important"
-        },
-        ".tab .tab-actions": {
-            "opacity": "0 !important"
-        },
-        ".tab:hover .tab-actions, .tab.active .tab-actions": {
-            "opacity": "1 !important"
-        },
-        // Activity bar: soft floating capsule.
         ".part.activitybar": {
-            "background": "transparent !important",
-            "margin": "8px 0 28px 0",
-            "overflow": "visible !important",
-            "width": "64px !important"
+            "background": "var(--vscode-workbench-background) !important",
+            "margin": "var(--islands-panel-top) 0 var(--islands-panel-gap) 0",
+            "overflow": "visible !important"
         },
         ".part.activitybar .composite-bar": {
-            "padding": "12px 4px !important",
-            "gap": "8px !important",
-            "background": "color-mix(in srgb, var(--vscode-editorWidget-background) 50%, transparent) !important",
-            "border-radius": "9999px !important",
+            "background": "color-mix(in srgb, var(--vscode-activityBar-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
+            "backdrop-filter": "blur(24px) saturate(180%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
+            "border-radius": "9999px",
+            "overflow": "hidden !important",
             "width": "calc(100% - 8px) !important",
             "margin-left": "auto !important",
             "margin-right": "auto !important",
+            "padding": "8px 3px !important",
+            "box-sizing": "border-box !important",
             "display": "flex !important",
             "flex-direction": "column !important",
             "align-items": "center !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important",
-            "backdrop-filter": "blur(24px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(24px) saturate(150%) !important"
+            "border": "1px solid rgba(255, 255, 255, 0.08) !important",
+            "box-shadow": "0 4px 16px rgba(0, 0, 0, 0.15) !important"
         },
-        ".part.activitybar .action-item .action-label": {
-            "font-size": "25px !important",
-            "width": "42px !important",
-            "height": "42px !important",
-            "line-height": "42px !important",
-            "display": "flex !important",
-            "align-items": "center !important",
-            "justify-content": "center !important",
-            "border-radius": "9999px !important"
+        ".part.activitybar .action-item.checked .action-label": {
+            "background": "var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.2)) !important",
+            "border-radius": "50% !important"
         },
-        ".part.activitybar .action-item:hover .action-label": {
-            "background": "color-mix(in srgb, var(--vscode-list-hoverBackground) 70%, transparent) !important",
-            "transform": "scale(1.1) translateY(-1px) !important",
-            "filter": "none !important"
-        },
-        ".part.activitybar .action-item.checked .action-label, .part.activitybar .action-item.active .action-label": {
-            "background": "var(--vscode-activityBar-foreground) !important",
-            "color": "var(--vscode-activityBar-background) !important",
-            "box-shadow": "0 0 16px color-mix(in srgb, var(--vscode-activityBar-foreground) 40%, transparent), var(--ui-ios-shadow-soft) !important"
-        },
-        ".part.activitybar .action-item .active-item-indicator": {
-            "display": "none !important"
-        },
-        // Sidebar and Explorer.
-        ".part.sidebar": {
-            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
-            "margin": "var(--ui-panel-top) var(--ui-panel-gap) 0 var(--ui-panel-gap)",
-            "border-radius": "var(--ui-panel-radius) !important",
+        ".part.auxiliarybar": {
+            "margin": "var(--islands-panel-top) var(--islands-panel-gap) var(--islands-panel-gap) var(--islands-panel-gap) !important",
+            "border-radius": "var(--islands-panel-radius) !important",
             "overflow": "hidden !important",
-            "max-height": "calc(100% - 8px) !important",
-            "background": "var(--ui-ios-surface) !important",
-            "color": "var(--vscode-sideBar-foreground) !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
-            "backdrop-filter": "blur(20px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
-        },
-        ".part.sidebar .content": {
-            "width": "100% !important",
-            "padding-left": "0 !important",
-            "margin-left": "0 !important",
-            "background": "transparent !important"
-        },
-        ".part.sidebar .title-label h2": {
-            "font-family": "'Inter', 'Bear Sans UI Heading', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
-            "font-size": "12px !important",
-            "font-weight": "600 !important",
-            "text-transform": "uppercase !important",
-            "letter-spacing": "1.1px !important",
-            "color": "var(--vscode-sideBarTitle-foreground) !important"
-        },
-        ".monaco-tl-indent > .indent-guide": {
-            "border-color": "color-mix(in srgb, var(--vscode-foreground) 15%, transparent) !important",
-            "opacity": "0.6 !important"
-        },
-        // Panel Header.
-        ".pane-header": {
-            "background-color": "transparent !important",
-            "backdrop-filter": "blur(10px) saturate(120%) !important",
-            "-webkit-backdrop-filter": "blur(10px) saturate(120%) !important"
-        },
-        // Generalized clean rounded list-rows across all panels (Explorer, Search, SCM, etc.)
-        ".monaco-workbench .monaco-list-row": {
-            "border-radius": "var(--ui-item-radius) !important",
-            "margin-left": "8px !important",
-            "margin-right": "8px !important",
-            "width": "calc(100% - 16px) !important",
-            "height": "28px !important",
-            "line-height": "28px !important",
-            "padding-left": "4px !important"
-        },
-        ".monaco-workbench .monaco-list-row:hover": {
-            "background": "color-mix(in srgb, var(--vscode-list-hoverBackground) 60%, transparent) !important",
-            "transform": "translateX(2px) !important"
-        },
-        ".monaco-workbench .monaco-list-row.focused, .monaco-workbench .monaco-list-row.selected": {
-            "background": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground) 60%, white 5%) !important",
-            "box-shadow": "inset 3px 0 0 var(--vscode-activityBar-foreground) !important"
-        },
-        ".monaco-workbench .monaco-icon-label, .monaco-workbench .monaco-icon-label::before, .monaco-workbench .label-name": {
-            "filter": "none !important",
-            "text-shadow": "none !important"
-        },
-        // Quick Input List padding tweak for spotlight feeling
-        ".quick-input-widget .monaco-list-row": {
-            "padding": "0 8px !important"
-        },
-        // Bottom panel and terminal.
-        ".part.panel.bottom": {
-            "margin": "0 var(--ui-panel-gap) var(--ui-panel-gap) var(--ui-panel-gap)",
-            "border-radius": "var(--ui-panel-radius) !important",
-            "overflow": "hidden !important",
-            "background": "var(--ui-ios-surface) !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow) !important",
-            "backdrop-filter": "blur(20px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important"
-        },
-        ".part.panel.bottom > .content": {
-            "border-radius": "0 0 calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important"
-        },
-        ".part.panel.bottom > .composite.title": {
-            "border-radius": "calc(var(--ui-panel-radius) - 2px) calc(var(--ui-panel-radius) - 2px) 0 0 !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important",
-            "border-bottom": "1px solid var(--ui-ios-border) !important"
-        },
-        ".terminal-wrapper": {
-            "padding": "10px !important",
-            "border-radius": "0 0 calc(var(--ui-panel-radius) - 4px) calc(var(--ui-panel-radius) - 4px) !important",
-            "overflow": "hidden !important",
-            "background": "transparent !important"
-        },
-        ".terminal-instance": {
-            "border-radius": "16px !important",
-            "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-terminal-background) 40%, transparent) !important",
-            "border": "1px solid color-mix(in srgb, var(--vscode-foreground) 10%, transparent) !important",
-            "box-shadow": "inset 0 1px 0 color-mix(in srgb, white 6%, transparent), 0 6px 16px color-mix(in srgb, var(--vscode-widget-shadow) 24%, transparent) !important"
-        },
-        // Inputs, command palette, hovers, notifications.
-        ".monaco-list-row, .tab, .action-label, .monaco-button, .monaco-inputbox, .pane-header": {
-            "transition": "background-color 0.18s ease, opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important"
-        },
-        ".monaco-button:hover": {
-            "transform": "scale(1.02) !important",
-            "box-shadow": "var(--ui-ios-shadow-soft) !important"
-        },
-        ".monaco-inputbox": {
-            "border-radius": "var(--ui-input-radius) !important",
-            "background": "color-mix(in srgb, var(--vscode-input-background) 70%, transparent) !important",
-            "border": "1px solid var(--vscode-input-border) !important"
-        },
-        ".monaco-inputbox.focused": {
-            "border-color": "var(--ui-ios-border-strong) !important",
-            "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important"
+            "max-height": "calc(100% - var(--islands-panel-top) - var(--islands-panel-gap) - 2px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
+            "backdrop-filter": "blur(24px) saturate(180%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(180%) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, rgba(128, 128, 128, 0.25)) 30%, transparent) !important",
+            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".quick-input-widget": {
-            "border-radius": "26px !important",
+            "border-radius": "var(--islands-widget-radius) !important",
             "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-quickInput-background) 65%, transparent) !important",
-            "border": "1px solid var(--ui-ios-border-strong) !important",
-            "box-shadow": "var(--ui-ios-popover-shadow), var(--ui-ios-inner) !important",
-            "top": "25% !important",
-            "transform": "translateY(-50%) !important",
-            "margin": "0 auto !important"
+            "background-color": "color-mix(in srgb, var(--vscode-quickInput-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
+            "backdrop-filter": "blur(32px) saturate(200%) !important",
+            "-webkit-backdrop-filter": "blur(32px) saturate(200%) !important",
+            "border": "1px solid rgba(255, 255, 255, 0.12) !important",
+            "box-shadow": "0 16px 48px 0 rgba(0, 0, 0, 0.35) !important"
         },
-        ".monaco-hover": {
-            "border-radius": "var(--ui-input-radius) !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "0 12px 36px color-mix(in srgb, var(--vscode-widget-shadow) 48%, transparent), var(--ui-ios-inner) !important",
+        ".quick-input-widget .monaco-list-row": {
+            "border-radius": "var(--islands-item-radius) !important",
+            "margin-left": "4px !important",
+            "margin-right": "4px !important",
+            "width": "calc(100% - 8px) !important"
+        },
+        ".notification-toast": {
+            "border-radius": "var(--islands-widget-radius) !important",
             "overflow": "hidden !important",
-            "background": "color-mix(in srgb, var(--vscode-editorHoverWidget-background) 65%, transparent) !important",
-            "animation": "hoverSlideUp 0.15s cubic-bezier(0.2, 0.9, 0.3, 1) forwards !important"
+            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
+            "backdrop-filter": "blur(24px) !important",
+            "-webkit-backdrop-filter": "blur(24px) !important",
+            "border": "1px solid rgba(255, 255, 255, 0.1) !important",
+            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important"
         },
-        "@keyframes hoverSlideUp": {
-            "0%": {
-                "opacity": "0",
-                "transform": "translateY(6px)"
-            },
-            "100%": {
-                "opacity": "1",
-                "transform": "translateY(0)"
-            }
-        },
-        ".notification-toast, .notifications-center": {
-            "border-radius": "22px !important",
+        ".notifications-center": {
+            "border-radius": "var(--islands-widget-radius) !important",
             "overflow": "hidden !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "box-shadow": "0 16px 46px color-mix(in srgb, var(--vscode-widget-shadow) 52%, transparent), var(--ui-ios-inner) !important",
-            "background": "color-mix(in srgb, var(--vscode-notifications-background) 65%, transparent) !important"
+            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
+            "backdrop-filter": "blur(24px) !important",
+            "-webkit-backdrop-filter": "blur(24px) !important",
+            "border": "1px solid rgba(255, 255, 255, 0.1) !important",
+            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important"
         },
-        // Status bar.
-        // Status bar: floating macOS Dynamic Island dock
-        ".part.statusbar": {
-            "margin": "0 var(--ui-panel-gap) var(--ui-panel-gap) var(--ui-panel-gap) !important",
-            "border-radius": "var(--ui-panel-radius) !important",
-            "border": "1px solid var(--ui-ios-border) !important",
-            "background": "var(--ui-ios-surface) !important",
-            "box-shadow": "var(--ui-ios-inner), var(--ui-ios-shadow-soft) !important",
-            "backdrop-filter": "blur(20px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
-            "font-family": "'Inter', 'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
-            "height": "30px !important"
+        ".monaco-inputbox": {
+            "border-radius": "var(--islands-input-radius) !important"
         },
-        ".part.statusbar .statusbar-item": {
-            "padding": "0 8px !important"
+        ".scm-editor": {
+            "border-radius": "var(--islands-input-radius) !important",
+            "overflow": "hidden !important"
         },
-        // deep background blur when Quick Input / Spotlight is active
-        ".quick-input-overlay": {
-            "backdrop-filter": "blur(6px) !important",
-            "-webkit-backdrop-filter": "blur(6px) !important",
-            "background-color": "rgba(0, 0, 0, 0.2) !important"
+        ".scm-input": {
+            "border-radius": "var(--islands-input-radius) !important",
+            "overflow": "hidden !important"
         },
-        // Autohiding Glass Minimap
-        ".minimap-container, .minimap": {
-            "opacity": "0.15 !important",
-            "transition": "opacity 0.25s ease-in-out !important"
+        ".scrollbar .slider": {
+            "border-radius": "9999px !important"
         },
-        ".minimap-container:hover, .minimap:hover": {
-            "opacity": "0.9 !important"
+        ".monaco-dialog-box": {
+            "border-radius": "var(--islands-widget-radius) !important",
+            "overflow": "hidden !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 80%, transparent) !important",
+            "backdrop-filter": "blur(32px) !important",
+            "-webkit-backdrop-filter": "blur(32px) !important",
+            "border": "1px solid rgba(255, 255, 255, 0.1) !important",
+            "box-shadow": "0 16px 48px rgba(0, 0, 0, 0.3) !important"
         },
-        // Inactive window focus fade & desaturate
-        ".monaco-workbench.window-inactive": {
-            "filter": "opacity(0.82) saturate(85%) !important",
-            "transition": "filter 0.3s ease !important"
-        },
-        // Glowing active indent guides
-        ".monaco-editor .focused-indent-guide": {
-            "background-color": "color-mix(in srgb, var(--vscode-activityBar-foreground) 50%, transparent) !important",
-            "box-shadow": "0 0 6px color-mix(in srgb, var(--vscode-activityBar-foreground) 40%, transparent) !important"
-        },
-        // Hide window layout control buttons for a minimal titlebar header
-        ".part.titlebar .titlebar-actions": {
-            "display": "none !important"
-        },
-        // Glass Command Center Pill (top titlebar search)
-        ".command-center": {
-            "background": "color-mix(in srgb, var(--vscode-foreground) 8%, transparent) !important",
-            "border-radius": "99px !important",
-            "border": "1px solid color-mix(in srgb, var(--vscode-foreground) 10%, transparent) !important",
-            "box-shadow": "var(--ui-ios-inner), 0 2px 8px color-mix(in srgb, var(--vscode-widget-shadow) 20%, transparent) !important"
+        ".monaco-dialog-box .dialog-buttons .monaco-button": {
+            "border-radius": "var(--islands-input-radius) !important"
         }
     },
+    // ======================================================================
     // ======================================================================
     // 15. Language-specific settings
     // ======================================================================
@@ -1089,6 +685,5 @@
     "[jsonc]": {
         "editor.tabSize": 4
     },
-    "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Ghostty Farmhouse"
+    "workbench.editor.tabActionLocation": "right"
 }
