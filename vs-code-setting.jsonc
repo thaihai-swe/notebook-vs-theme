@@ -450,8 +450,8 @@
             "font-family": "'Bear Sans UI', sans-serif !important",
             "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(8px) !important",
-            "-webkit-backdrop-filter": "blur(8px) !important",
+            "backdrop-filter": "blur(8px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(8px) saturate(150%) !important",
             "border-right": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
@@ -485,8 +485,8 @@
             "overflow": "hidden !important",
             "max-height": "calc(100% - var(--nb-panel-top) - var(--nb-panel-gap) - 2px) !important",
             "background-color": "color-mix(in srgb, var(--vscode-editor-background) 90%, transparent) !important",
-            "backdrop-filter": "blur(0px) !important",
-            "-webkit-backdrop-filter": "blur(0px) !important",
+            "backdrop-filter": "blur(30px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(30px) saturate(150%) !important",
             "border-top": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 80%, var(--vscode-foreground) 20%) !important",
             "border-left": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 75%, var(--vscode-foreground) 25%) !important",
             "border-bottom": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
@@ -495,16 +495,16 @@
         },
         ".tab": {
             "border-radius": "var(--nb-item-radius) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 40%, transparent) !important",
-            "backdrop-filter": "blur(0px) !important",
-            "-webkit-backdrop-filter": "blur(0px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 20%, transparent) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
             "margin": "2px 2px !important",
             "box-sizing": "border-box !important",
             "transition": "background-color 0.2s ease !important"
         },
         ".tab.active": {
-            "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 85%, transparent) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 50%, transparent) !important",
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
             "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
         },
@@ -519,9 +519,9 @@
         },
         ".part.panel.bottom": {
             "border-radius": "var(--nb-panel-radius) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-panel-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(8px) !important",
-            "-webkit-backdrop-filter": "blur(8px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-panel-background) 40%, transparent) !important",
+            "backdrop-filter": "blur(40px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(40px) saturate(150%) !important",
             "border-top": "1px solid color-mix(in srgb, var(--vscode-panel-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important"
         },
         ".part.panel.bottom > .content": {
@@ -534,9 +534,9 @@
             "overflow": "visible !important"
         },
         ".part.activitybar .composite-bar": {
-            "background": "color-mix(in srgb, var(--vscode-activityBar-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
-            "backdrop-filter": "blur(8px) !important",
-            "-webkit-backdrop-filter": "blur(8px) !important",
+            "background": "color-mix(in srgb, var(--vscode-activityBar-background, var(--vscode-sideBar-background)) 40%, transparent) !important",
+            "backdrop-filter": "blur(40px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(40px) saturate(150%) !important",
             "border-radius": "9999px",
             "overflow": "hidden !important",
             "width": "calc(100% - 8px) !important",
@@ -560,9 +560,9 @@
         },
         ".part.auxiliarybar": {
             "border-radius": "var(--nb-panel-radius) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(8px) !important",
-            "-webkit-backdrop-filter": "blur(8px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 40%, transparent) !important",
+            "backdrop-filter": "blur(40px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(40px) saturate(150%) !important",
             "border-left": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
@@ -571,9 +571,9 @@
             "transform": "translateY(-50%) !important",
             "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
-            "background-color": "color-mix(in srgb, var(--vscode-quickInput-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
-            "backdrop-filter": "blur(32px) saturate(200%) !important",
-            "-webkit-backdrop-filter": "blur(32px) saturate(200%) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-quickInput-background, var(--vscode-sideBar-background)) 40%, transparent) !important",
+            "backdrop-filter": "blur(48px) saturate(200%) !important",
+            "-webkit-backdrop-filter": "blur(48px) saturate(200%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 30px 90px rgba(0, 0, 0, 0.4), 0 0 0 100vw rgba(0, 0, 0, 0.2) !important",
             "animation": "nb-spotlight 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important"
@@ -592,9 +592,9 @@
         ".notification-toast": {
             "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
-            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
-            "backdrop-filter": "blur(24px) !important",
-            "-webkit-backdrop-filter": "blur(24px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 40%, transparent) !important",
+            "backdrop-filter": "blur(48px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(48px) saturate(150%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important",
             "animation": "nb-notify 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important"
@@ -602,9 +602,9 @@
         ".notifications-center": {
             "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
-            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 75%, transparent) !important",
-            "backdrop-filter": "blur(24px) !important",
-            "-webkit-backdrop-filter": "blur(24px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-notifications-background, var(--vscode-sideBar-background)) 40%, transparent) !important",
+            "backdrop-filter": "blur(48px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(48px) saturate(150%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.2) !important",
             "animation": "nb-emerge 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important"
@@ -654,9 +654,9 @@
         ".monaco-dialog-box": {
             "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "hidden !important",
-            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 80%, transparent) !important",
-            "backdrop-filter": "blur(32px) !important",
-            "-webkit-backdrop-filter": "blur(32px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 40%, transparent) !important",
+            "backdrop-filter": "blur(48px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(48px) saturate(150%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 16px 48px rgba(0, 0, 0, 0.3) !important",
             "animation": "nb-emerge 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important"
@@ -664,11 +664,11 @@
         ".monaco-dialog-box .dialog-buttons .monaco-button": {
             "border-radius": "var(--nb-input-radius) !important"
         },
-        ".monaco-breadcrumbs *": {
-            "opacity": "0.7 !important",
+        ".monaco-breadcrumbs": {
+            "opacity": "1 !important",
             "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important"
         },
-        ".monaco-breadcrumbs:hover *": {
+        ".monaco-breadcrumbs:hover": {
             "opacity": "1 !important"
         },
         ".tab .tab-actions": {
@@ -700,9 +700,9 @@
             "border-radius": "9999px !important",
             "overflow": "hidden !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(6px) !important",
-            "-webkit-backdrop-filter": "blur(6px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 30%, transparent) !important",
+            "backdrop-filter": "blur(20px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
             "box-shadow": "0 2px 8px rgba(0,0,0,0.1) !important"
         },
         ".command-center-center *": {
@@ -721,9 +721,9 @@
         ".chat-input-container, .interactive-input-part": {
             "border-radius": "var(--nb-widget-radius) !important",
             "overflow": "visible !important",
-            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 80%, transparent) !important",
-            "backdrop-filter": "blur(6px) !important",
-            "-webkit-backdrop-filter": "blur(6px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 40%, transparent) !important",
+            "backdrop-filter": "blur(24px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(24px) saturate(150%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important"
         },
         ".notebookOverlay": {
@@ -735,6 +735,9 @@
         },
         ".monaco-hover": {
             "border-radius": "var(--nb-input-radius) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-editorHoverWidget-background, var(--vscode-sideBar-background)) 50%, transparent) !important",
+            "backdrop-filter": "blur(30px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(30px) saturate(150%) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 4px 16px 0 rgba(0,0,0,0.2) !important",
             "overflow": "hidden !important",
