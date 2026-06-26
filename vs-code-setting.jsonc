@@ -8,7 +8,6 @@
 // - If a font is not installed, VS Code falls back to the next font in the list.
 // ============================================================================
 {
-    "terminal.external.osxExec": "Ghostty.app",
     "extensions.allowed": {
         "anthropic.claude-code": false,
         "*": true
@@ -60,17 +59,17 @@
     "editor.minimap.size": "proportional",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
-    "editor.minimap.showSlider": "mouseOver",
+    "editor.minimap.showSlider": "always",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
     // Goal: readable long coding sessions. Font size and line height are still
     // large, but slightly calmer than before for better information density.
     // ======================================================================
-    "editor.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
+    "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 15,
     "editor.fontWeight": "400",
-    "editor.lineHeight": 1.55,
+    "editor.lineHeight": 1.8,
     "editor.letterSpacing": 0.15,
     "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
     "editor.cursorSmoothCaretAnimation": "on",
@@ -138,7 +137,7 @@
     "editor.hover.delay": 350,
     "editor.hover.sticky": true,
     "editor.codeLens": true,
-    "editor.codeLensFontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
+    "editor.codeLensFontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.codeLensFontSize": 13,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlayHints.fontSize": 14,
@@ -220,7 +219,7 @@
     // 8. Explorer / solution-view behavior
     // ======================================================================
     "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.tree.renderIndentGuides": "always",
     "workbench.tree.enableStickyScroll": true,
     "workbench.tree.expandMode": "singleClick",
     "workbench.list.smoothScrolling": true,
@@ -353,8 +352,8 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'JetBrains Mono', 'IBM Plex Mono', 'Monaspace Neon', monospace",
+    "terminal.integrated.fontSize": 17,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.lineHeight": 1.45,
     "terminal.integrated.cursorStyle": "line",
@@ -501,24 +500,35 @@
     // ======================================================================
     "custom-ui-style.stylesheet": {
         ".monaco-workbench": {
-            "--nb-panel-radius": "16px",
-            "--nb-widget-radius": "12px",
-            "--nb-input-radius": "8px",
+            "--nb-panel-radius": "24px",
+            "--nb-widget-radius": "14px",
+            "--nb-input-radius": "12px",
             "--nb-item-radius": "6px",
-            "--nb-panel-gap": "8px",
-            "--nb-panel-top": "8px",
+            "--nb-panel-gap": "6px",
+            "--nb-panel-top": "6px",
             "--nb-bg-canvas": "var(--vscode-workbench-background)",
             "--nb-bg-surface": "color-mix(in srgb, var(--vscode-sideBar-background) 85%, var(--vscode-editor-background) 15%)",
             "background-color": "var(--nb-bg-canvas) !important",
-            "font-family": "'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace !important"
+            "font-family": "'Bear Sans UI', sans-serif !important"
         },
         ".part.sidebar": {
+            "font-family": "'Bear Sans UI', sans-serif !important",
             "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
             "backdrop-filter": "blur(8px) !important",
             "-webkit-backdrop-filter": "blur(8px) !important",
             "border-right": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
+        },
+        ".part.sidebar .composite.title": {
+            "padding": "8px 20px 0 0 !important"
+        },
+        ".part.sidebar .title-label h2": {
+            "font-family": "'Bear Sans UI Heading', sans-serif !important",
+            "font-size": "12px !important",
+            "font-weight": "700 !important",
+            "text-transform": "uppercase !important",
+            "letter-spacing": "1px !important"
         },
         ".part.sidebar .monaco-list-row": {
             "border-radius": "var(--nb-item-radius) !important",
@@ -563,6 +573,10 @@
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
             "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
         },
+        ".tab:hover .label-name": {
+            "text-shadow": "0 0 5px color-mix(in srgb, var(--vscode-tab-activeForeground) 40%, transparent) !important",
+            "transition": "text-shadow 0.3s ease !important"
+        },
         ".tab:active": {
             "transform": "scale(0.97) !important",
             "opacity": "0.8 !important",
@@ -574,6 +588,10 @@
             "backdrop-filter": "blur(8px) !important",
             "-webkit-backdrop-filter": "blur(8px) !important",
             "border-top": "1px solid color-mix(in srgb, var(--vscode-panel-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important"
+        },
+        ".part.panel.bottom > .content": {
+            "border-radius": "0 0 calc(var(--nb-panel-radius) - var(--nb-panel-gap)) calc(var(--nb-panel-radius) - var(--nb-panel-gap)) !important",
+            "overflow": "hidden !important"
         },
         ".part.activitybar": {
             "background": "var(--vscode-workbench-background) !important",
@@ -597,9 +615,13 @@
             "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
             "box-shadow": "0 4px 16px rgba(0, 0, 0, 0.15) !important"
         },
+        ".part.activitybar .action-item .active-item-indicator": {
+            "display": "none !important"
+        },
         ".part.activitybar .action-item.checked .action-label": {
-            "background": "var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.2)) !important",
-            "border-radius": "50% !important"
+            "background": "linear-gradient(135deg, color-mix(in srgb, var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.2)) 80%, transparent), color-mix(in srgb, var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.2)) 40%, transparent)) !important",
+            "border-radius": "50% !important",
+            "box-shadow": "inset 0 1px 2px color-mix(in srgb, var(--vscode-widget-border) 60%, transparent), 0 2px 6px rgba(0,0,0,0.15) !important"
         },
         ".part.auxiliarybar": {
             "border-radius": "var(--nb-panel-radius) !important",
@@ -683,6 +705,10 @@
             "border-radius": "var(--nb-input-radius) !important",
             "overflow": "hidden !important"
         },
+        ".search-widget .replace-input .monaco-findInput, .search-widget .search-container .monaco-findInput, .extensions-search-container .suggest-input-container": {
+            "border-radius": "var(--nb-input-radius) !important",
+            "overflow": "hidden !important"
+        },
         ".scm-input": {
             "border-radius": "var(--nb-input-radius) !important",
             "overflow": "hidden !important"
@@ -704,7 +730,7 @@
             "border-radius": "var(--nb-input-radius) !important"
         },
         ".monaco-breadcrumbs *": {
-            "opacity": "0 !important",
+            "opacity": "0.7 !important",
             "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important"
         },
         ".monaco-breadcrumbs:hover *": {
@@ -842,5 +868,6 @@
     "[jsonc]": {
         "editor.tabSize": 4
     },
-    "workbench.editor.tabActionLocation": "right"
+    "workbench.editor.tabActionLocation": "right",
+    "workbench.colorTheme": "Note Book Dark"
 }
