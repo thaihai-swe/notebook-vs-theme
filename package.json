@@ -24,6 +24,11 @@
   "contributes": {
     "themes": [
       {
+        "label": "Note Book Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/note-book-dark-theme.json"
+      },
+      {
         "label": "Note Book Farmhouse",
         "uiTheme": "vs",
         "path": "./themes/note-book-farmhouse.json"

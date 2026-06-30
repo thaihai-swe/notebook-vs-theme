@@ -493,6 +493,7 @@
             "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important"
         },
         ".tab": {
+            "position": "relative !important",
             "border-radius": "var(--nb-item-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 20%, transparent) !important",
             "backdrop-filter": "blur(20px) saturate(150%) !important",
@@ -506,6 +507,20 @@
             "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 50%, transparent) !important",
             "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
             "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15) !important"
+        },
+        ".tab::after": {
+            "content": "'' !important",
+            "position": "absolute !important",
+            "bottom": "0 !important",
+            "left": "50% !important",
+            "width": "0 !important",
+            "height": "2px !important",
+            "background-color": "var(--vscode-tab-activeBorder, var(--vscode-foreground)) !important",
+            "transition": "width 0.2s cubic-bezier(0.4, 0, 0.2, 1), left 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important"
+        },
+        ".tab.active::after": {
+            "left": "15% !important",
+            "width": "70% !important"
         },
         ".tab:hover .label-name": {
             "text-shadow": "0 0 5px color-mix(in srgb, var(--vscode-tab-activeForeground) 40%, transparent) !important",
@@ -610,6 +625,10 @@
         },
         ".monaco-inputbox": {
             "border-radius": "var(--nb-input-radius) !important"
+        },
+        ".monaco-inputbox.focused": {
+            "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-focusBorder) 30%, transparent) !important",
+            "transition": "box-shadow 0.2s ease !important"
         },
         ".monaco-list-row:active": {
             "transform": "scale(0.98) !important",
@@ -742,6 +761,16 @@
             "overflow": "hidden !important",
             "animation": "nb-emerge 0.15s ease-out !important"
         },
+        ".suggest-widget": {
+            "border-radius": "var(--nb-widget-radius) !important",
+            "overflow": "hidden !important",
+            "background-color": "color-mix(in srgb, var(--vscode-editorSuggestWidget-background) 70%, transparent) !important",
+            "backdrop-filter": "blur(30px) saturate(150%) !important",
+            "-webkit-backdrop-filter": "blur(30px) saturate(150%) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 70%, var(--vscode-foreground) 30%) !important",
+            "box-shadow": "0 8px 32px rgba(0, 0, 0, 0.25) !important",
+            "animation": "nb-emerge 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important"
+        },
         "@keyframes nb-emerge": {
             "from": {
                 "opacity": "0",
@@ -760,6 +789,16 @@
             "to": {
                 "opacity": "1",
                 "transform": "translateX(0) scale(1)"
+            }
+        },
+        "@keyframes nb-spotlight": {
+            "from": {
+                "opacity": "0",
+                "transform": "translateY(-12px) scale(0.98)"
+            },
+            "to": {
+                "opacity": "1",
+                "transform": "translateY(0) scale(1)"
             }
         }
     },
@@ -796,5 +835,5 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Note Book Farmhouse Dark"
+    "workbench.colorTheme": "Note Book Dark"
 }
