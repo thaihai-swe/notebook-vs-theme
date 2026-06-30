@@ -24,24 +24,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "Note Book Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/note-book-dark-theme.json"
-      },
-      {
-        "label": "Ghostty Farmhouse",
+        "label": "Note Book Farmhouse",
         "uiTheme": "vs",
-        "path": "./themes/ghostty-farmhouse.json"
+        "path": "./themes/note-book-farmhouse.json"
       },
       {
-        "label": "Ghostty Farmhouse Dark",
+        "label": "Note Book Farmhouse Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/ghostty-farmhouse-dark.json"
+        "path": "./themes/note-book-farmhouse-dark.json"
       },
       {
-        "label": "Ghostty Default Light",
+        "label": "Note Book Minimal",
         "uiTheme": "vs",
-        "path": "./themes/ghostty-default-light.json"
+        "path": "./themes/note-book-minimal.json"
       }
     ]
   },
