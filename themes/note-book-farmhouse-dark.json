@@ -331,7 +331,12 @@
     }
   ],
   "colors": {
-    "focusBorder": "#c87300aa",
+    "focusBorder": "#a9560088",
+    "editorGroupHeader.tabsBorder": "#d6d2cf00",
+    "tab.activeBorder": "#a95600",
+    "tab.activeBorderTop": "#a95600",
+    "widget.shadow": "#00000055",
+    "editorWidget.border": "#cfcbc722",
     "selection.background": "#4d5658aa",
     "input.background": "#15171c",
     "input.foreground": "#e8e4e1",

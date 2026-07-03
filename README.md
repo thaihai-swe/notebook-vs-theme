@@ -1,8 +1,12 @@
 # Note Book Theme for VS Code
 
-A warm, comfortable light theme and a new "book-style" Solarized dark theme for VS Code that are easy on the eyes. 
-The light theme is perfectly blended between the Rosé Pine Dawn palette and the Claude Light UI to create a calm, middle-range aesthetic.
-The dark theme provides a warm, low-contrast dark sepia experience inspired by Solarized Dark+.
+A premium suite of warm, comfortable themes for VS Code offering soft paper-like backgrounds, sepia tones, and a highly polished UI. 
+
+This extension contributes four distinct visual experiences:
+- **Note Book Farmhouse** (Light theme): A hybrid light design blended between Rosé Pine Dawn and Claude Light UI to create a calm, editorial aesthetic.
+- **Note Book Dark** (Dark theme): A warm, low-contrast dark sepia experience inspired by Solarized Dark+.
+- **Note Book Farmhouse Dark** (Dark theme): A cozy, deep sepia dark mode for comfortable long-duration coding sessions.
+- **Note Book Minimal** (Light theme): A clean, high-clarity minimalist light theme focusing on semantic simplicity.
 
 ## Installation
 
@@ -39,7 +43,7 @@ If you've cloned the repository and want to build and install the theme locally:
 
 1. Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows/Linux)
 2. Type and select **Preferences: Color Theme**
-3. Select **Note Book** for the light theme, or **Note Book Dark** for the dark theme.
+3. Select one of the contributed themes (e.g. **Note Book Farmhouse**, **Note Book Dark**, **Note Book Farmhouse Dark**, or **Note Book Minimal**).
 
 ## License
 

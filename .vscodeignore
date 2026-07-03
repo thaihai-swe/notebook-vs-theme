@@ -10,3 +10,8 @@ src/**
 *.py
 user-setting.jsonc
 .antigravitycli/**
+DESIGN.md
+design.md
+AGENTS.md
+agents.md
+vs-code-setting.jsonc

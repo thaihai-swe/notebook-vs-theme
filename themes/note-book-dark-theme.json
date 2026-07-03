@@ -35,7 +35,12 @@
         "regexp": "#dc322f"
     },
     "colors": {
-        "focusBorder": "#00000000",
+        "focusBorder": "#2aa19888",
+        "editorGroupHeader.tabsBorder": "#00212b",
+        "tab.activeBorder": "#2aa198",
+        "tab.activeBorderTop": "#2aa198",
+        "widget.shadow": "#00000055",
+        "editorWidget.border": "#2aa19866",
         "sideBar.border": "#00000000",
         "activityBar.border": "#00000000",
         "statusBar.border": "#00000000",
