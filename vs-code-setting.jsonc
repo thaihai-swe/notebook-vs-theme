@@ -67,12 +67,11 @@
     // Goal: readable long coding sessions. Font size and line height are still
     // large, but slightly calmer than before for better information density.
     // ======================================================================
-    "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 15,
     "editor.fontWeight": "400",
-    "editor.lineHeight": 1.8,
-    "editor.letterSpacing": 0.15,
-    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'tnum', 'kern', 'cv11'",
+    "editor.lineHeight": 1.45,
+    "editor.letterSpacing": 0.5,
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "smooth",
@@ -139,7 +138,7 @@
     "editor.hover.delay": 350,
     "editor.hover.sticky": true,
     "editor.codeLens": true,
-    "editor.codeLensFontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "editor.codeLensFontSize": 13,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlayHints.fontSize": 14,
@@ -353,8 +352,8 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
-    "terminal.integrated.fontSize": 17,
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.lineHeight": 1.45,
     "terminal.integrated.cursorStyle": "line",
@@ -365,7 +364,6 @@
     "terminal.integrated.tabs.hideCondition": "singleTerminal",
     "terminal.integrated.mouseWheelScrollSensitivity": 3,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.gpuAcceleration": "on",
     // ======================================================================
     // 11. Git, diff, merge, AI tools
     // ======================================================================
@@ -881,6 +879,23 @@
     // ======================================================================
     // 15. Language-specific settings
     // ======================================================================
+    "[markdown]": {
+        "editor.fontFamily": "'Merriweather', Georgia, serif",
+        "editor.fontSize": 16,
+        "editor.lineHeight": 1.8,
+        "editor.lineNumbers": "off",
+        "editor.minimap.enabled": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": "off",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.parameterHints.enabled": false
+    },
+    "markdown.preview.fontFamily": "'Merriweather', Georgia, serif",
+    "markdown.preview.fontSize": 16,
+    "markdown.preview.lineHeight": 1.8,
     "[javascript]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true
@@ -910,5 +925,5 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Note Book Dark"
+    "workbench.colorTheme": "Note Book Rosé Pine Dawn"
 }

@@ -2,11 +2,12 @@
 
 A premium suite of warm, comfortable themes for VS Code offering soft paper-like backgrounds, sepia tones, and a highly polished UI. 
 
-This extension contributes four distinct visual experiences:
+This extension contributes five distinct visual experiences:
 - **Note Book Farmhouse** (Light theme): A hybrid light design blended between Rosé Pine Dawn and Claude Light UI to create a calm, editorial aesthetic.
 - **Note Book Dark** (Dark theme): A warm, low-contrast dark sepia experience inspired by Solarized Dark+.
 - **Note Book Farmhouse Dark** (Dark theme): A cozy, deep sepia dark mode for comfortable long-duration coding sessions.
 - **Note Book Minimal** (Light theme): A clean, high-clarity minimalist light theme focusing on semantic simplicity.
+- **Note Book Rosé Pine Dawn** (Light theme): A cozy, warm pastel-toned light theme directly implementing the beautiful Rosé Pine Dawn palette.
 
 ## Installation
 
@@ -48,3 +49,5 @@ If you've cloned the repository and want to build and install the theme locally:
 ## License
 
 MIT
+
+

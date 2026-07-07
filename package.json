@@ -1,53 +1,63 @@
 {
-  "name": "note-book-theme",
-  "displayName": "Note Book Theme",
-  "description": "Warm, comfortable light & dark themes for VS Code — soft paper-like backgrounds, sepia tones, and premium UI",
-  "version": "0.1.0",
-  "publisher": "note-book",
-  "license": "MIT",
-  "engines": {
-    "vscode": "^1.60.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "theme",
-    "light theme",
-    "dark theme",
-    "notebook",
-    "warm",
-    "sepia",
-    "low contrast",
-    "comfortable",
-    "paper"
-  ],
-  "contributes": {
-    "themes": [
-      {
-        "label": "Note Book Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/note-book-dark-theme.json"
-      },
-      {
-        "label": "Note Book Farmhouse",
-        "uiTheme": "vs",
-        "path": "./themes/note-book-farmhouse.json"
-      },
-      {
-        "label": "Note Book Farmhouse Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/note-book-farmhouse-dark.json"
-      },
-      {
-        "label": "Note Book Minimal",
-        "uiTheme": "vs",
-        "path": "./themes/note-book-minimal.json"
-      }
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  }
+    "name": "note-book-theme",
+    "displayName": "Note Book Theme",
+    "description": "Warm, comfortable light & dark themes for VS Code \u2014 soft paper-like backgrounds, sepia tones, and premium UI",
+    "version": "0.1.0",
+    "publisher": "note-book",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "theme",
+        "light theme",
+        "dark theme",
+        "notebook",
+        "warm",
+        "sepia",
+        "low contrast",
+        "comfortable",
+        "paper"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Note Book Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/note-book-dark-theme.json"
+            },
+            {
+                "label": "Note Book Farmhouse",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-farmhouse.json"
+            },
+            {
+                "label": "Note Book Minimal",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-minimal.json"
+            },
+            {
+                "label": "Note Book Rosé Pine Dawn",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-rose-pine-dawn.json"
+            },
+            {
+                "label": "Note Book Parchment",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-parchment.json"
+            },
+            {
+                "label": "Note Book Sage",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-sage.json"
+            }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    }
 }
