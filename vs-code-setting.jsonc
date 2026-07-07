@@ -472,35 +472,37 @@
             "font-family": "'Bear Sans UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
             "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 70%, transparent) !important",
-            "backdrop-filter": "blur(8px) saturate(150%) !important",
-            "-webkit-backdrop-filter": "blur(8px) saturate(150%) !important",
-            "border-right": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
-            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important",
+            "backdrop-filter": "blur(16px) saturate(140%) !important",
+            "-webkit-backdrop-filter": "blur(16px) saturate(140%) !important",
+            "border-right": "1px solid color-mix(in srgb, var(--vscode-sideBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.15))) 50%, transparent) !important",
+            "box-shadow": "0 8px 30px -10px rgba(0, 0, 0, 0.15) !important",
             "transition": "background var(--nb-motion-slow) var(--nb-ease-standard), border-color var(--nb-motion-slow) var(--nb-ease-standard) !important"
         },
         ".part.sidebar .composite.title": {
-            "padding": "8px 20px 0 0 !important"
+            "padding": "10px 20px 0 0 !important"
         },
         ".part.sidebar .title-label h2": {
             "font-family": "'Bear Sans UI Heading', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
-            "font-size": "12px !important",
-            "font-weight": "700 !important",
+            "font-size": "11px !important",
+            "font-weight": "600 !important",
             "text-transform": "uppercase !important",
-            "letter-spacing": "1px !important"
+            "letter-spacing": "1.5px !important",
+            "opacity": "0.8 !important"
         },
         ".part.sidebar .monaco-list-row": {
             "border-radius": "var(--nb-item-radius) !important",
-            "margin-left": "4px !important",
-            "margin-right": "4px !important",
-            "width": "calc(100% - 8px) !important",
-            "transition": "background var(--nb-motion-base) var(--nb-ease-standard), box-shadow var(--nb-motion-base) var(--nb-ease-standard) !important"
+            "margin-left": "6px !important",
+            "margin-right": "6px !important",
+            "width": "calc(100% - 12px) !important",
+            "transition": "background var(--nb-motion-base) var(--nb-ease-standard), box-shadow var(--nb-motion-base) var(--nb-ease-standard), transform var(--nb-motion-fast) var(--nb-ease-standard) !important"
         },
         ".part.sidebar .monaco-list-row.focused": {
             "outline": "none !important",
-            "box-shadow": "inset 0 0 0 1px color-mix(in srgb, var(--vscode-list-focusOutline, var(--vscode-focusBorder, rgba(128, 128, 128, 0.3))) 60%, transparent) !important"
+            "box-shadow": "inset 0 0 0 1px color-mix(in srgb, var(--vscode-list-focusOutline, var(--vscode-focusBorder, rgba(128, 128, 128, 0.2))) 60%, transparent) !important"
         },
         ".part.sidebar .monaco-list-row:hover": {
-            "outline": "none !important"
+            "outline": "none !important",
+            "transform": "translateX(2px) !important"
         },
         ".part.editor": {
             "margin": "var(--nb-panel-top) var(--nb-panel-gap) var(--nb-panel-gap) var(--nb-panel-gap) !important",
@@ -510,28 +512,25 @@
             "background-color": "color-mix(in srgb, var(--vscode-editor-background) 90%, transparent) !important",
             "backdrop-filter": "blur(30px) saturate(150%) !important",
             "-webkit-backdrop-filter": "blur(30px) saturate(150%) !important",
-            "border-top": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 80%, var(--vscode-foreground) 20%) !important",
-            "border-left": "1.5px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 75%, var(--vscode-foreground) 25%) !important",
-            "border-bottom": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
-            "border-right": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 60%, var(--vscode-foreground) 40%) !important",
-            "box-shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.2) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-editorGroup-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.15))) 50%, transparent) !important",
+            "box-shadow": "0 15px 35px -10px rgba(0, 0, 0, 0.15), 0 2px 8px -2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important",
             "transition": "margin var(--nb-motion-slow) var(--nb-ease-standard), border-color var(--nb-motion-slow) var(--nb-ease-standard) !important"
         },
         ".tab": {
             "position": "relative !important",
             "border-radius": "var(--nb-item-radius) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 20%, transparent) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 15%, transparent) !important",
             "backdrop-filter": "blur(20px) saturate(150%) !important",
             "-webkit-backdrop-filter": "blur(20px) saturate(150%) !important",
-            "border": "1px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
-            "margin": "2px 2px !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-tab-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.1))) 50%, transparent) !important",
+            "margin": "3px 2px !important",
             "box-sizing": "border-box !important",
-            "transition": "background-color var(--nb-motion-base) var(--nb-ease-standard), border-color var(--nb-motion-base) var(--nb-ease-standard) !important"
+            "transition": "background-color var(--nb-motion-base) var(--nb-ease-standard), border-color var(--nb-motion-base) var(--nb-ease-standard), transform var(--nb-motion-fast) var(--nb-ease-standard) !important"
         },
         ".tab.active": {
             "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 50%, transparent) !important",
-            "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-foreground)) 80%, transparent) !important",
-            "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0.5px rgba(255, 255, 255, 0.15) !important"
+            "border": "1px solid color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-progressBar-background, var(--vscode-foreground))) 40%, transparent) !important",
+            "box-shadow": "0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0.5px rgba(255, 255, 255, 0.1) !important"
         },
         ".tab::after": {
             "content": "'' !important",
@@ -587,8 +586,8 @@
             "display": "flex !important",
             "flex-direction": "column !important",
             "align-items": "center !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.4))) 70%, var(--vscode-foreground) 30%) !important",
-            "box-shadow": "0 4px 16px rgba(0, 0, 0, 0.15) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-activityBar-border, var(--vscode-widget-border, rgba(128, 128, 128, 0.15))) 50%, transparent) !important",
+            "box-shadow": "0 8px 24px rgba(0, 0, 0, 0.12) !important",
             "transition": "background-color var(--nb-motion-slow) var(--nb-ease-standard), border-color var(--nb-motion-slow) var(--nb-ease-standard) !important"
         },
         ".part.activitybar .action-item .active-item-indicator": {
@@ -623,8 +622,8 @@
             "background-color": "color-mix(in srgb, var(--vscode-quickInput-background, var(--vscode-sideBar-background)) 40%, transparent) !important",
             "backdrop-filter": "blur(48px) saturate(200%) !important",
             "-webkit-backdrop-filter": "blur(48px) saturate(200%) !important",
-            "border": "1px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.4)) 50%, rgba(255, 255, 255, 0.08)) !important",
-            "box-shadow": "0 30px 90px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 0 0 100vw rgba(0, 0, 0, 0.2) !important",
+            "border": "1px solid color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.15)) 50%, transparent) !important",
+            "box-shadow": "0 24px 64px -16px rgba(0, 0, 0, 0.35), 0 0 0 1px color-mix(in srgb, var(--vscode-widget-border, rgba(128, 128, 128, 0.2)) 50%, transparent), 0 0 0 100vw rgba(0, 0, 0, 0.15) !important",
             "animation": "nb-spotlight var(--nb-motion-slow) var(--nb-ease-standard) !important"
         },
         ".quick-input-widget .monaco-list-row": {
@@ -880,7 +879,7 @@
     // 15. Language-specific settings
     // ======================================================================
     "[markdown]": {
-        "editor.fontFamily": "'Merriweather', Georgia, serif",
+        "editor.fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         "editor.fontSize": 16,
         "editor.lineHeight": 1.8,
         "editor.lineNumbers": "off",
@@ -893,7 +892,7 @@
         },
         "editor.parameterHints.enabled": false
     },
-    "markdown.preview.fontFamily": "'Merriweather', Georgia, serif",
+    "markdown.preview.fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
     "markdown.preview.fontSize": 16,
     "markdown.preview.lineHeight": 1.8,
     "[javascript]": {
