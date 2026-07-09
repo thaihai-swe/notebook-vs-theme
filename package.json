@@ -30,6 +30,11 @@
                 "path": "./themes/note-book-dark-theme.json"
             },
             {
+                "label": "Note Book Rosé Pine Moon",
+                "uiTheme": "vs-dark",
+                "path": "./themes/note-book-rose-pine-moon.json"
+            },
+            {
                 "label": "Note Book Farmhouse",
                 "uiTheme": "vs",
                 "path": "./themes/note-book-farmhouse.json"
