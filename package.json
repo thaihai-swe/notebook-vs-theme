@@ -1,7 +1,7 @@
 {
     "name": "note-book-theme",
     "displayName": "Note Book Theme",
-    "description": "Warm, comfortable light & dark themes for VS Code \u2014 soft paper-like backgrounds, sepia tones, and premium UI",
+    "description": "Warm, comfortable light & dark themes for VS Code — soft paper-like backgrounds, sepia tones, and premium UI",
     "version": "0.1.0",
     "publisher": "note-book",
     "license": "MIT",
@@ -30,9 +30,14 @@
                 "path": "./themes/note-book-dark-theme.json"
             },
             {
-                "label": "Note Book Rosé Pine Moon",
+                "label": "Note Book Solarized Light",
+                "uiTheme": "vs",
+                "path": "./themes/note-book-solarized-light.json"
+            },
+            {
+                "label": "Note Book Solarized Dark HC",
                 "uiTheme": "vs-dark",
-                "path": "./themes/note-book-rose-pine-moon.json"
+                "path": "./themes/note-book-solarized-dark-hc.json"
             },
             {
                 "label": "Note Book Farmhouse",

@@ -40,7 +40,7 @@
         "tab.activeBorder": "#2aa198",
         "tab.activeBorderTop": "#2aa198",
         "widget.shadow": "#00000055",
-        "editorWidget.border": "#2aa19866",
+        "editorWidget.border": "#00000000",
         "sideBar.border": "#00000000",
         "activityBar.border": "#00000000",
         "statusBar.border": "#00000000",
@@ -260,7 +260,6 @@
         "editorBracketMatch.background": "#0DBC7926",
         "editorBracketMatch.border": "#0DBC79AA",
         "editorOverviewRuler.bracketMatchForeground": "#0DBC79AA",
-        "editorWidget.border": "#00000000",
         "editorHoverWidget.border": "#00000000",
         "notificationCenter.border": "#00000000",
         "notifications.border": "#00000000",
@@ -296,7 +295,8 @@
         "editor.findMatchBackground": "#D6A94A66",
         "editor.findMatchBorder": "#E8C76A",
         "editor.findMatchHighlightBackground": "#54596366",
-        "editor.findRangeHighlightBackground": "#31323844"
+        "editor.findRangeHighlightBackground": "#31323844",
+        "panel.background": "#00212b"
     },
     "tokenColors": [
         {

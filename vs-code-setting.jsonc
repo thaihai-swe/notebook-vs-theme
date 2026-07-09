@@ -1,6 +1,7 @@
 // ============================================================================
 // VS Code settings.json — Full UI/UX Upgrade
-// Purpose: premium, calm, readable, iOS-inspired VS Code workspace.
+// Purpose: premium, calm, readable, eye-safe VS Code for long coding sessions.
+// Eye-care: calmer motion, less chrome noise, balanced type density, high terminal contrast.
 // Notes:
 // - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
 // - Keep this as User Settings unless you intentionally want it project-specific.
@@ -60,21 +61,21 @@
     "editor.minimap.size": "proportional",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
-    "editor.minimap.showSlider": "always",
+    "editor.minimap.showSlider": "mouseover",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
-    // Goal: readable long coding sessions. Font size and line height are still
-    // large, but slightly calmer than before for better information density.
+    // Goal: long-session eye comfort. Slightly heavier glyphs, moderate tracking,
+    // generous line height, ligatures for cleaner shapes, less chrome flicker.
     // ======================================================================
-    "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
-    "editor.fontSize": 16,
+    "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'JetBrainsMono Nerd Font',  'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
-    "editor.lineHeight": 1.85,
-    "editor.letterSpacing": 0.9,
-    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.lineHeight": 1.8,
+    "editor.letterSpacing": 0.15,
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
     "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "smooth",
+    "editor.cursorBlinking": "solid",
     "editor.cursorWidth": 2,
     "editor.mouseWheelZoom": true,
     "editor.padding.top": 14,
@@ -84,11 +85,11 @@
     "editor.scrollPredominantAxis": true,
     "editor.fastScrollSensitivity": 5,
     "editor.mouseWheelScrollSensitivity": 1,
-    "editor.cursorSurroundingLines": 6,
+    "editor.cursorSurroundingLines": 8,
     "editor.scrollBeyondLastLine": false,
     "editor.wordWrap": "off",
     "editor.wrappingIndent": "same",
-    "editor.renderLineHighlight": "all",
+    "editor.renderLineHighlight": "line",
     "editor.renderFinalNewline": "dimmed",
     "editor.renderWhitespace": "selection",
     "editor.renderControlCharacters": false,
@@ -97,10 +98,17 @@
     "editor.stickyTabStops": true,
     "editor.largeFileOptimizations": true,
     "editor.accessibilitySupport": "auto",
+    // Eye-care: less constant glow, clear column anchors, calmer highlights.
+    "editor.matchBrackets": "near",
+    "editor.occurrencesHighlight": "singleFile",
+    "editor.selectionHighlight": true,
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
     // Formatting and save actions.
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",
         "source.organizeImports": "explicit"
@@ -135,11 +143,11 @@
     "editor.parameterHints.cycle": true,
     "editor.linkedEditing": true,
     "editor.hover.enabled": "on",
-    "editor.hover.delay": 350,
+    "editor.hover.delay": 500,
     "editor.hover.sticky": true,
-    "editor.codeLens": true,
+    "editor.codeLens": false,
     "editor.codeLensFontSize": 14,
-    "editor.inlayHints.enabled": "onUnlessPressed",
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.fontSize": 14,
     "editor.inlayHints.padding": true,
     "editor.inlayHints.maximumLength": 40,
@@ -149,12 +157,12 @@
     "editor.guides.indentation": true,
     "editor.guides.highlightActiveIndentation": "always",
     "editor.guides.bracketPairs": "active",
-    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.bracketPairsHorizontal": false,
     "editor.guides.highlightActiveBracketPair": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.stickyScroll.enabled": true,
-    "editor.stickyScroll.maxLineCount": 4,
+    "editor.stickyScroll.maxLineCount": 3,
     // ======================================================================
     // 6. Breadcrumbs
     // ======================================================================
@@ -188,7 +196,7 @@
     // ======================================================================
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.reduceMotion": "off",
+    "workbench.reduceMotion": "on",
     "workbench.editor.emptyWindowText": "off",
     // Open settings in JSON mode by default so advanced UI/CSS tuning is easier.
     "workbench.settings.useSplitJSON": false,
@@ -215,6 +223,8 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 10,
     "workbench.editor.limit.perEditorGroup": true,
+    // Dim inactive editor groups so focus stays on the active pane (less eye hunting).
+    "editor.dimUnfocusedEditors": true,
     // ======================================================================
     // 8. Explorer / solution-view behavior
     // ======================================================================
@@ -351,12 +361,12 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.enablePersistentSessions": true,
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font Mono', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontWeight": "450",
-    "terminal.integrated.lineHeight": 1.6,
+    "terminal.integrated.lineHeight": 1.7,
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorBlinking": false,
     "terminal.integrated.cursorWidth": 2,
     "terminal.integrated.customGlyphs": true,
     "terminal.integrated.tabs.enabled": true,
@@ -448,10 +458,10 @@
             "--nb-bg-canvas": "var(--vscode-workbench-background)",
             "--nb-bg-surface": "color-mix(in srgb, var(--vscode-sideBar-background) 85%, var(--vscode-editor-background) 15%)",
             // Timing tokens
-            "--nb-motion-fast": "100ms",
-            "--nb-motion-base": "160ms",
-            "--nb-motion-slow": "240ms",
-            "--nb-motion-page": "360ms",
+            "--nb-motion-fast": "80ms",
+            "--nb-motion-base": "120ms",
+            "--nb-motion-slow": "180ms",
+            "--nb-motion-page": "220ms",
             // Easing presets
             "--nb-ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
             "--nb-ease-out": "cubic-bezier(0, 0, 0.2, 1)",
@@ -729,7 +739,7 @@
             "opacity": "1 !important"
         },
         ".minimap canvas": {
-            "opacity": "0.7 !important",
+            "opacity": "0.45 !important",
             "transition": "opacity var(--nb-motion-base) var(--nb-ease-standard) !important"
         },
         ".minimap:hover canvas": {
@@ -888,5 +898,42 @@
         "editor.tabSize": 4
     },
     "workbench.editor.tabActionLocation": "right",
-    "workbench.colorTheme": "Note Book Rosé Pine Dawn"
+    // ======================================================================
+    // Theme-specific color customizations (glass-friendly chrome for RP trio)
+    // ======================================================================
+    "workbench.colorCustomizations": {
+        "[Note Book Dark]": {
+            "titleBar.activeBackground": "#002c39cc",
+            "statusBar.background": "#00212bcc",
+            "sideBar.background": "#00212bcc",
+            "panel.background": "#00212bcc",
+            "editorGroupHeader.tabsBackground": "#002b3600",
+            "tab.activeBorderTop": "#2aa198"
+        },
+        "[Note Book Solarized Light]": {
+            "titleBar.activeBackground": "#eee8d5cc",
+            "statusBar.background": "#eee8d5cc",
+            "sideBar.background": "#eee8d5cc",
+            "panel.background": "#fdf6e3cc",
+            "editorGroupHeader.tabsBackground": "#eee8d500",
+            "tab.activeBorderTop": "#2aa198"
+        },
+        "[Note Book Solarized Dark HC]": {
+            "titleBar.activeBackground": "#002b36cc",
+            "statusBar.background": "#073642cc",
+            "sideBar.background": "#073642cc",
+            "panel.background": "#073642cc",
+            "editorGroupHeader.tabsBackground": "#002b3600",
+            "tab.activeBorderTop": "#2aa198"
+        },
+        "[Note Book Rosé Pine Dawn]": {
+            "titleBar.activeBackground": "#faf4edcc",
+            "statusBar.background": "#faf4edcc",
+            "sideBar.background": "#faf4edcc",
+            "panel.background": "#fffaf3cc",
+            "editorGroupHeader.tabsBackground": "#faf4ed00",
+            "tab.activeBorderTop": "#d7827e"
+        }
+    },
+    "workbench.colorTheme": "Note Book Solarized Dark HC"
 }
