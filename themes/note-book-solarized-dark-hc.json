@@ -282,7 +282,8 @@
         "settings.numberInputBorder": "#657b8366",
         "settings.focusedRowBackground": "#657b8330",
         "settings.focusedRowBorder": "#657b8366",
-        "tree.indentGuidesStroke": "#657b8377"
+        "tree.indentGuidesStroke": "#586e75cc",
+        "tree.activeIndentGuidesStroke": "#2aa198e6"
     },
     "tokenColors": [
         {

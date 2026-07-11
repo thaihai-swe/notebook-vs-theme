@@ -49,7 +49,7 @@
     // ----------------------------------------------------------------------
     // Thin floating glass rails; minimap stays ghost until hover.
     // ======================================================================
-    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.vertical": "visible",
     "editor.scrollbar.horizontal": "auto",
     "editor.scrollbar.verticalScrollbarSize": 24,
     "editor.scrollbar.horizontalScrollbarSize": 18,
@@ -505,7 +505,7 @@
         // Sidebar — floating glass card
         // ------------------------------------------------------------------
         ".part.sidebar": {
-            "font-family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Bear Sans UI', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Bear Sans UI', sans-serif !important",
             "border-radius": "var(--nb-panel-radius) !important",
             "background-color": "var(--nb-glass-regular) !important",
             "backdrop-filter": "var(--nb-blur-regular) !important",
@@ -646,6 +646,10 @@
         ".tab .tab-close-button:hover, .tab .action-label.codicon-close:hover": {
             "background-color": "rgba(255, 255, 255, 0.16) !important",
             "transform": "scale(1.15) rotate(90deg) !important"
+        },
+        ".tabs-and-actions-container": {
+            "border-bottom": "var(--nb-hairline-soft) !important",
+            "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.05) !important"
         },
         // ------------------------------------------------------------------
         // Bottom panel — glass tray
@@ -925,6 +929,10 @@
         ".monaco-editor .selected-text": {
             "border-radius": "3px !important"
         },
+        ".monaco-editor .bracket-indent-guide.active": {
+            "filter": "drop-shadow(0 0 2.5px var(--vscode-editorBracketHighlight-foreground1, var(--vscode-focusBorder))) !important",
+            "opacity": "1 !important"
+        },
         // ------------------------------------------------------------------
         // Progress track — glass shimmer
         // ------------------------------------------------------------------
@@ -960,7 +968,7 @@
             "margin": "2px 8px !important",
             "width": "calc(100% - 16px) !important"
         },
-        ".settings-editor .setting-item-contents": {
+        ".settings-editor .setting-item-contents, .settings-editor-body .setting-item-contents, .setting-item-contents, .settings-editor .setting-item, .settings-body .setting-item": {
             "border-radius": "var(--nb-widget-radius) !important",
             "padding": "16px 20px !important",
             "margin-bottom": "12px !important",
@@ -969,14 +977,18 @@
             "box-shadow": "var(--nb-specular) !important",
             "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), border-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
-        ".settings-editor .setting-item-contents:hover": {
+        ".settings-editor .setting-item-contents:hover, .settings-editor-body .setting-item-contents:hover, .setting-item-contents:hover, .settings-editor .setting-item:hover, .settings-body .setting-item:hover": {
             "background-color": "var(--nb-glass-regular) !important",
             "border-color": "color-mix(in srgb, var(--vscode-focusBorder) 35%, rgba(255, 255, 255, 0.2)) !important",
             "box-shadow": "var(--nb-elev-1), var(--nb-specular-strong) !important",
             "transform": "translateY(-1.5px) !important"
         },
-        ".settings-editor .setting-item.setting-item-modified .setting-item-contents": {
+        ".settings-editor .setting-item.setting-item-modified .setting-item-contents, .settings-editor .setting-item.setting-item-modified, .setting-item.setting-item-modified": {
             "border-left": "4px solid var(--vscode-focusBorder) !important"
+        },
+        "input[type='checkbox']:active, .settings-editor .setting-item-bool:active": {
+            "transform": "scale(0.92) !important",
+            "transition": "transform var(--nb-motion-fast) var(--nb-ease-bounce) !important"
         },
         // ------------------------------------------------------------------
         // Breadcrumbs / minimap / icons — quiet until focus
