@@ -487,6 +487,7 @@
         // Status bar — glass-thin dock
         // ------------------------------------------------------------------
         ".part.statusbar": {
+            "font-family": "'Bear Sans UI', sans-serif !important",
             "background-color": "var(--nb-glass-thin) !important",
             "backdrop-filter": "var(--nb-blur-thin) !important",
             "-webkit-backdrop-filter": "var(--nb-blur-thin) !important",
@@ -520,7 +521,7 @@
             "padding": "12px 18px 0 0 !important"
         },
         ".part.sidebar .title-label h2": {
-            "font-family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Bear Sans UI Heading', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important",
+            "font-family": "'Bear Sans UI Heading', sans-serif !important",
             "font-size": "11px !important",
             "font-weight": "600 !important",
             "text-transform": "uppercase !important",
@@ -583,6 +584,7 @@
         // Tabs — liquid pills
         // ------------------------------------------------------------------
         ".tab": {
+            "font-family": "'Bear Sans UI', sans-serif !important",
             "position": "relative !important",
             "border-radius": "var(--nb-pill-radius) !important",
             "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 18%, transparent) !important",
@@ -668,6 +670,21 @@
         ".part.panel.bottom > .content": {
             "border-radius": "0 0 calc(var(--nb-panel-radius) - 4px) calc(var(--nb-panel-radius) - 4px) !important",
             "overflow": "hidden !important"
+        },
+        ".part.panel.bottom .terminal-outer-container": {
+            "border-left": "0.5px solid color-mix(in srgb, rgba(255, 255, 255, 0.1) 60%, transparent) !important",
+            "border-radius": "0 0 0 var(--nb-widget-radius) !important",
+            "box-sizing": "border-box !important",
+            "overflow": "hidden !important",
+            "isolation": "isolate",
+            "transform": "translateZ(0)",
+            "will-change": "transform",
+            "contain": "paint"
+        },
+        ".part.panel.bottom .terminal.xterm": {
+            "border-radius": "0 0 0 var(--nb-widget-radius) !important",
+            "transform": "translateZ(0)",
+            "will-change": "transform"
         },
         // ------------------------------------------------------------------
         // Activity bar — floating liquid dock
@@ -1032,6 +1049,7 @@
         // Command center — liquid capsule
         // ------------------------------------------------------------------
         ".command-center-center": {
+            "font-family": "'Bear Sans UI', sans-serif !important",
             "border-radius": "var(--nb-pill-radius) !important",
             "overflow": "hidden !important",
             "border": "var(--nb-hairline) !important",
@@ -1080,8 +1098,27 @@
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-1), var(--nb-specular) !important"
         },
+        ".chat-editing-session-container": {
+            "border-radius": "var(--nb-input-radius) !important",
+            "overflow": "hidden !important"
+        },
+        ".chat-confirmation-widget2": {
+            "border-radius": "var(--nb-input-radius) !important",
+            "overflow": "hidden !important"
+        },
+        ".chat-input-container .monaco-inputbox": {
+            "background-color": "color-mix(in srgb, var(--vscode-input-background, var(--vscode-sideBar-background)) 55%, transparent) !important"
+        },
+        ".interactive-input-part .monaco-editor": {
+            "overflow": "visible !important"
+        },
         ".notebookOverlay": {
-            "border-radius": "0 0 var(--nb-panel-radius) var(--nb-panel-radius) !important"
+            "border-radius": "0 0 var(--nb-panel-radius) var(--nb-panel-radius) !important",
+            "clip-path": "inset(0 18px var(--nb-panel-gap) var(--nb-panel-gap) round 0 0 var(--nb-panel-radius) var(--nb-panel-radius)) !important",
+            "isolation": "isolate",
+            "transform": "translateZ(0)",
+            "will-change": "transform",
+            "contain": "paint"
         },
         ".monaco-hover": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1178,6 +1215,44 @@
         ".extensions-list .monaco-list-row:hover": {
             "transform": "translateY(-1px) scale(1.005) !important",
             "box-shadow": "var(--nb-elev-1), var(--nb-specular) !important"
+        },
+        // Folder Tree item spacing
+        ".explorer-folders-view .monaco-tl-row": {
+            "padding-top": "1px !important",
+            "padding-bottom": "1px !important"
+        },
+        // Search & Replace widgets
+        ".search-widget .replace-input .monaco-findInput": {
+            "width": "100% !important",
+            "height": "26px !important",
+            "box-sizing": "border-box !important"
+        },
+        ".search-widget .search-container .monaco-findInput": {
+            "width": "100% !important",
+            "height": "26px !important",
+            "box-sizing": "border-box !important"
+        },
+        // Sidebar buttons
+        ".part.sidebar .monaco-button": {
+            "border-radius": "var(--nb-input-radius) !important"
+        },
+        // Terminal tabs UI layout
+        ".split-view-view:has(.terminal-tabs-entry)": {
+            "min-width": "220px !important",
+            "border-bottom": "none !important"
+        },
+        ".split-view-view:has(.terminal-tabs-entry) .monaco-list-row": {
+            "border-radius": "var(--nb-item-radius) !important",
+            "margin-right": "20px !important",
+            "width": "calc(100% - 20px) !important"
+        },
+        // Dropdown separator cleanup
+        ".monaco-button-dropdown-separator": {
+            "display": "none !important",
+            "background": "transparent !important",
+            "background-color": "transparent !important",
+            "width": "0 !important",
+            "opacity": "0 !important"
         },
         "@media (prefers-reduced-motion: reduce)": {
             ".monaco-workbench": {
