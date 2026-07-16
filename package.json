@@ -2,7 +2,7 @@
     "name": "note-book-theme",
     "displayName": "Note Book Theme",
     "description": "Warm, comfortable light & dark themes for VS Code — soft paper-like backgrounds, sepia tones, and premium UI",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "note-book",
     "license": "MIT",
     "engines": {
