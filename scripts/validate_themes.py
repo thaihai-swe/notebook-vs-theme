@@ -47,6 +47,7 @@ REQUIRED_SEMANTIC = (
 THEME_LABELS = {
     "Note Book Dark",
     "Note Book Solarized Light",
+    "Note Book Solarized Dark",
     "Note Book Solarized Dark HC",
     "Note Book Rosé Pine Dawn",
     "Note Book Farmhouse",
@@ -152,10 +153,11 @@ def main() -> int:
         editor_ratio = contrast(foreground, background)
         terminal_ratio = contrast(terminal_foreground, terminal_background)
         print(f"{path.name}: editor {editor_ratio:.2f}:1, terminal {terminal_ratio:.2f}:1")
-        if editor_ratio < 4.5:
-            failures.append(f"{path.name}: editor text contrast below 4.5:1")
-        if terminal_ratio < 4.5:
-            failures.append(f"{path.name}: terminal text contrast below 4.5:1")
+        minimum_ratio = 4.5 if path.name == "note-book-solarized-dark.json" else 7.0
+        if editor_ratio < minimum_ratio:
+            failures.append(f"{path.name}: editor text contrast below {minimum_ratio}:1")
+        if terminal_ratio < minimum_ratio:
+            failures.append(f"{path.name}: terminal text contrast below {minimum_ratio}:1")
         line = colors.get("editorLineNumber.foreground")
         if line and contrast(line, background) < 3.0:
             failures.append(f"{path.name}: line number contrast below 3:1")

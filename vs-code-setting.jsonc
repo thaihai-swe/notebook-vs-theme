@@ -1,6 +1,6 @@
 // ============================================================================
 // VS Code settings.json — iOS Liquid Glass UI/UX
-// Purpose: Rosé Pine-inspired calm chrome, stable contrast, and long-session readability (Comfortable density).
+// Purpose: Warm, low-glare chrome with a 7:1 text-contrast target for long-session readability.
 // Liquid Glass: restrained translucency, continuous radii, quiet elevation.
 // Notes:
 // - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
@@ -40,7 +40,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 1.15,
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Note Book Rosé Pine Dawn",
+    "workbench.preferredLightColorTheme": "Note Book Parchment",
     "workbench.preferredDarkColorTheme": "Note Book Solarized Dark HC",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
@@ -50,7 +50,7 @@
     // ======================================================================
     // 2. Editor scrollbar and minimap
     // ----------------------------------------------------------------------
-    // Thin floating glass rails; minimap stays ghost until hover.
+    // Thin floating rails; hide the minimap to remove persistent visual noise.
     // ======================================================================
     "editor.scrollbar.vertical": "visible",
     "editor.scrollbar.horizontal": "auto",
@@ -61,28 +61,28 @@
     "editor.minimap.side": "right",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
-    "editor.minimap.renderCharacters": true,
+    "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
     "editor.minimap.showSlider": "always",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
-    // Long-session comfort. Soft cursor, generous leading, calm chrome.
+    // Long-session comfort. Clear text, generous leading, and low motion.
     // ======================================================================
     "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'JetBrainsMono Nerd Font',  'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.fontWeight": "400",
-    "editor.lineHeight": 1.8,
-    "editor.letterSpacing": 0.15,
+    "editor.lineHeight": 1.9,
+    "editor.letterSpacing": 0.2,
     "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "solid",
-    "editor.cursorSmoothCaretAnimation": "explicit",
+    "editor.cursorSmoothCaretAnimation": "off",
     "editor.cursorWidth": 2,
-    "editor.mouseWheelZoom": true,
+    "editor.mouseWheelZoom": false,
     "editor.padding.top": 16,
     "editor.padding.bottom": 20,
-    "editor.smoothScrolling": true,
+    "editor.smoothScrolling": false,
     "editor.scrollBeyondLastColumn": 3,
     "editor.scrollPredominantAxis": true,
     "editor.fastScrollSensitivity": 5,
@@ -223,7 +223,7 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 10,
     "workbench.editor.limit.perEditorGroup": true,
-    "editor.dimUnfocusedEditors": true,
+    "editor.dimUnfocusedEditors": false,
     // ======================================================================
     // 8. Explorer / solution-view behavior
     // ======================================================================
@@ -350,8 +350,8 @@
     // ======================================================================
     // 10. Terminal
     // ======================================================================
-    "terminal.integrated.minimumContrastRatio": 4.5,
-    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.minimumContrastRatio": 7,
+    "terminal.integrated.smoothScrolling": false,
     "terminal.integrated.scrollback": 20000,
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -361,8 +361,8 @@
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
     "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontWeight": "450",
-    "terminal.integrated.lineHeight": 1.7,
+    "terminal.integrated.fontWeight": "500",
+    "terminal.integrated.lineHeight": 1.6,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": false,
     "terminal.integrated.cursorWidth": 2,
@@ -1385,6 +1385,16 @@
             "widget.shadow": "#00000000"
         },
         "[Note Book Solarized Dark HC]": {
+            "titleBar.activeBackground": "#002b36cc",
+            "statusBar.background": "#073642cc",
+            "sideBar.background": "#073642dd",
+            "panel.background": "#073642dd",
+            "editorGroupHeader.tabsBackground": "#002b3600",
+            "activityBar.background": "#07364200",
+            "tab.activeBorderTop": "#2aa198",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Solarized Dark]": {
             "titleBar.activeBackground": "#002b36cc",
             "statusBar.background": "#073642cc",
             "sideBar.background": "#073642dd",

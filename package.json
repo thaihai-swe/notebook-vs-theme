@@ -1,8 +1,8 @@
 {
     "name": "note-book-theme",
     "displayName": "Note Book Theme",
-    "description": "Rosé Pine-inspired, calm, readable light & dark themes for VS Code with long-session comfort settings",
-    "version": "0.3.0",
+    "description": "Solarized and Ros\u00e9 Pine-inspired, calm, readable themes for VS Code with long-session comfort settings",
+    "version": "0.5.1",
     "publisher": "note-book",
     "license": "MIT",
     "engines": {
@@ -17,6 +17,7 @@
         "dark theme",
         "notebook",
         "rose pine",
+        "solarized",
         "warm",
         "sepia",
         "accessible",
@@ -43,6 +44,11 @@
                 "path": "./themes/note-book-solarized-dark-hc.json"
             },
             {
+                "label": "Note Book Solarized Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/note-book-solarized-dark.json"
+            },
+            {
                 "label": "Note Book Farmhouse",
                 "uiTheme": "vs",
                 "path": "./themes/note-book-farmhouse.json"
@@ -53,7 +59,7 @@
                 "path": "./themes/note-book-minimal.json"
             },
             {
-                "label": "Note Book Rosé Pine Dawn",
+                "label": "Note Book Ros\u00e9 Pine Dawn",
                 "uiTheme": "vs",
                 "path": "./themes/note-book-rose-pine-dawn.json"
             },
