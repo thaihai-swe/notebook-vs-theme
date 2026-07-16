@@ -32,7 +32,8 @@
             "foreground": "#586e75",
             "fontStyle": "italic"
         },
-        "regexp": "#dc322f"
+        "regexp": "#dc322f",
+        "constant": "#b58900"
     },
     "colors": {
         "focusBorder": "#2aa198cc",
@@ -302,7 +303,11 @@
         "editorLineNumber.foreground": "#839496",
         "list.activeSelectionForeground": "#fdf6e3",
         "terminal.foreground": "#93a1a1",
-        "terminal.background": "#002b36"
+        "terminal.background": "#002b36",
+        "editorGhostText.foreground": "#657b83",
+        "editorHoverWidget.foreground": "#93a1a1",
+        "charts.foreground": "#93a1a1",
+        "charts.lines": "#839496"
     },
     "tokenColors": [
         {

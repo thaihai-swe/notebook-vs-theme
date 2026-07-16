@@ -1,10 +1,59 @@
 #!/usr/bin/env python3
-"""Validate theme JSON files and basic WCAG contrast targets."""
+"""Validate Note Book theme integrity, coverage, and contrast."""
 from __future__ import annotations
 
 import json
 import sys
 from pathlib import Path
+
+REQUIRED_COLORS = (
+    "editor.background",
+    "editor.foreground",
+    "editor.selectionBackground",
+    "editor.lineHighlightBackground",
+    "editor.findMatchBackground",
+    "editorError.foreground",
+    "editorWarning.foreground",
+    "editorInfo.foreground",
+    "editorGhostText.foreground",
+    "editorInlayHint.foreground",
+    "editorStickyScroll.background",
+    "editorHoverWidget.background",
+    "peekViewEditor.background",
+    "diffEditor.insertedTextBackground",
+    "diffEditor.removedTextBackground",
+    "charts.foreground",
+    "editorBracketHighlight.foreground1",
+    "terminalCursor.foreground",
+    "terminal.selectionBackground",
+    "focusBorder",
+)
+
+REQUIRED_SEMANTIC = (
+    "function",
+    "method",
+    "class",
+    "type",
+    "parameter",
+    "variable",
+    "property",
+    "string",
+    "number",
+    "keyword",
+    "decorator",
+    "comment",
+)
+
+THEME_LABELS = {
+    "Note Book Dark",
+    "Note Book Solarized Light",
+    "Note Book Solarized Dark HC",
+    "Note Book Rosé Pine Dawn",
+    "Note Book Farmhouse",
+    "Note Book Parchment",
+    "Note Book Sage",
+    "Note Book Minimal",
+}
 
 
 def parse_hex(value: str) -> tuple[float, float, float, float]:
@@ -36,18 +85,52 @@ def luminance(rgb: tuple[float, float, float]) -> float:
 def contrast(foreground: str, background: str) -> float:
     fr, fg, fb, alpha = parse_hex(foreground)
     br, bg, bb, _ = parse_hex(background)
-    blended = (fr * alpha + br * (1 - alpha), fg * alpha + bg * (1 - alpha), fb * alpha + bb * (1 - alpha))
+    blended = (
+        fr * alpha + br * (1 - alpha),
+        fg * alpha + bg * (1 - alpha),
+        fb * alpha + bb * (1 - alpha),
+    )
     first, second = luminance(blended), luminance((br, bg, bb))
     lighter, darker = max(first, second), min(first, second)
     return (lighter + 0.05) / (darker + 0.05)
+
+
+def check_settings_presets(root: Path, failures: list[str]) -> None:
+    path = root / "vs-code-setting.jsonc"
+    if not path.exists():
+        failures.append("missing settings preset vs-code-setting.jsonc")
+        return
+    text = path.read_text()
+    for key in (
+        "window.autoDetectColorScheme",
+        "workbench.preferredLightColorTheme",
+        "workbench.preferredDarkColorTheme",
+        "workbench.reduceMotion",
+        "custom-ui-style.stylesheet",
+        "--nb-border-visible",
+        "--nb-border-focus",
+        "--nb-surface-input",
+    ):
+        if key not in text:
+            failures.append(f"vs-code-setting.jsonc: missing {key}")
+    for label in THEME_LABELS:
+        if f"[{label}]" not in text:
+            failures.append(f"vs-code-setting.jsonc: missing colorCustomizations for {label}")
+    if "Note Book Rosé Pine Dawn" not in text or "Note Book Solarized Dark HC" not in text:
+        failures.append("vs-code-setting.jsonc: missing preferred theme pair")
 
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     themes_dir = root / "themes"
     package = json.loads((root / "package.json").read_text())
-    registered = {Path(entry["path"]).name for entry in package["contributes"]["themes"]}
+    registered = {Path(entry["path"]).name: entry["label"] for entry in package["contributes"]["themes"]}
     failures: list[str] = []
+
+    if package.get("license") != "MIT":
+        failures.append("package.json license must remain MIT")
+    if not (root / "LICENSE").exists():
+        failures.append("LICENSE file is missing")
 
     for path in sorted(themes_dir.glob("*.json")):
         try:
@@ -58,6 +141,7 @@ def main() -> int:
         if path.name not in registered:
             failures.append(f"{path.name}: not registered in package.json")
         colors = data.get("colors", {})
+        semantic = data.get("semanticTokenColors", {})
         background = colors.get("editor.background")
         foreground = colors.get("editor.foreground")
         terminal_background = colors.get("terminal.background", background)
@@ -72,13 +156,24 @@ def main() -> int:
             failures.append(f"{path.name}: editor text contrast below 4.5:1")
         if terminal_ratio < 4.5:
             failures.append(f"{path.name}: terminal text contrast below 4.5:1")
-        for required in ("editor.selectionBackground", "editor.lineHighlightBackground", "editor.findMatchBackground", "editorError.foreground", "editorWarning.foreground", "editorInfo.foreground"):
+        line = colors.get("editorLineNumber.foreground")
+        if line and contrast(line, background) < 3.0:
+            failures.append(f"{path.name}: line number contrast below 3:1")
+        focus = colors.get("focusBorder")
+        if focus and contrast(focus, background) < 3.0:
+            failures.append(f"{path.name}: focus border contrast below 3:1")
+        for required in REQUIRED_COLORS:
             if required not in colors:
                 failures.append(f"{path.name}: missing color key {required}")
+        for required in REQUIRED_SEMANTIC:
+            if required not in semantic:
+                failures.append(f"{path.name}: missing semantic token {required}")
 
-    for name in registered:
+    for name, label in registered.items():
         if not (themes_dir / name).exists():
-            failures.append(f"package.json references missing theme file {name}")
+            failures.append(f"package.json references missing theme file {name} ({label})")
+
+    check_settings_presets(root, failures)
 
     if failures:
         print("\nVALIDATION FAILED")

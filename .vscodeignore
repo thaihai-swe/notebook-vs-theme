@@ -15,3 +15,5 @@ design.md
 AGENTS.md
 agents.md
 vs-code-setting.jsonc
+scripts/**
+.claude/**

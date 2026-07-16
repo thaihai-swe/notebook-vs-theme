@@ -32,7 +32,8 @@
             "foreground": "#93a1a1",
             "fontStyle": "italic"
         },
-        "regexp": "#dc322f"
+        "regexp": "#dc322f",
+        "constant": "#ea9d34"
     },
     "colors": {
         "editor.background": "#fdf6e3",
@@ -200,7 +201,7 @@
         "notifications.foreground": "#657b83",
         "notifications.border": "#00000000",
         "notificationLink.foreground": "#268bd2",
-        "focusBorder": "#2aa198cc",
+        "focusBorder": "#147c78",
         "widget.shadow": "#00000018",
         "widget.border": "#00000000",
         "progressBar.background": "#2aa198",
@@ -284,7 +285,13 @@
         "settings.focusedRowBorder": "#93a1a166",
         "tree.indentGuidesStroke": "#93a1a1b3",
         "tree.activeIndentGuidesStroke": "#2aa198e6",
-        "editor.rangeHighlightBackground": "#ea9d3422"
+        "editor.rangeHighlightBackground": "#ea9d3422",
+        "editorGhostText.foreground": "#657b83",
+        "editorHoverWidget.foreground": "#56676d",
+        "peekViewEditor.matchHighlightBackground": "#6e6a8633",
+        "charts.foreground": "#56676d",
+        "charts.lines": "#657b83",
+        "terminalCursor.foreground": "#cb4b16"
     },
     "tokenColors": [
         {

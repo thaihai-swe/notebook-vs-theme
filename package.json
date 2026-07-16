@@ -1,8 +1,8 @@
 {
     "name": "note-book-theme",
     "displayName": "Note Book Theme",
-    "description": "Warm, comfortable light & dark themes for VS Code — soft paper-like backgrounds, sepia tones, and premium UI",
-    "version": "0.2.0",
+    "description": "Rosé Pine-inspired, calm, readable light & dark themes for VS Code with long-session comfort settings",
+    "version": "0.3.0",
     "publisher": "note-book",
     "license": "MIT",
     "engines": {
@@ -16,11 +16,14 @@
         "light theme",
         "dark theme",
         "notebook",
+        "rose pine",
         "warm",
         "sepia",
-        "low contrast",
+        "accessible",
         "comfortable",
-        "paper"
+        "paper",
+        "long session",
+        "low eye strain"
     ],
     "contributes": {
         "themes": [

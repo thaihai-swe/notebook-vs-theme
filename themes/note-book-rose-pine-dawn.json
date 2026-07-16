@@ -1,5 +1,5 @@
 {
-    "name": "Note Book Ros\u00e9 Pine Dawn",
+    "name": "Note Book Rosé Pine Dawn",
     "type": "light",
     "semanticHighlighting": true,
     "semanticTokenColors": {
@@ -28,7 +28,8 @@
             "foreground": "#9893a5",
             "fontStyle": "italic"
         },
-        "regexp": "#b4637a"
+        "regexp": "#b4637a",
+        "constant": "#ea9d34"
     },
     "colors": {
         "activityBar.activeBorder": "#575279",
@@ -241,7 +242,7 @@
         "extensionIcon.preReleaseForeground": "#286983",
         "extensionIcon.starForeground": "#d7827e",
         "extensionIcon.verifiedForeground": "#907aa9",
-        "focusBorder": "#907aa9cc",
+        "focusBorder": "#7f5f9c",
         "foreground": "#575279",
         "git.blame.editorDecorationForeground": "#9893a5",
         "gitDecoration.addedResourceForeground": "#56949f",
@@ -501,7 +502,9 @@
         "statusBar.border": "#00000000",
         "titleBar.border": "#00000000",
         "widget.border": "#00000000",
-        "terminal.background": "#faf4ed"
+        "terminal.background": "#faf4ed",
+        "editorStickyScroll.background": "#fffaf3",
+        "editorStickyScrollHover.background": "#f2e9e1"
     },
     "tokenColors": [
         {

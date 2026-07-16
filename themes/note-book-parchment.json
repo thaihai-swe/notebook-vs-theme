@@ -9,7 +9,19 @@
         "interface": "#b4637a",
         "type": "#b4637a",
         "parameter": "#286983",
-        "variable.readonly": "#ea9d34"
+        "variable.readonly": "#ea9d34",
+        "variable": "#575279",
+        "property": "#d7827e",
+        "string": "#ea9d34",
+        "number": "#d7827e",
+        "keyword": "#286983",
+        "decorator": "#ea9d34",
+        "regexp": "#b4637a",
+        "constant": "#ea9d34",
+        "comment": {
+            "foreground": "#9893a5",
+            "fontStyle": "italic"
+        }
     },
     "colors": {
         "editor.background": "#fbf7eb",
@@ -113,7 +125,7 @@
         "notifications.foreground": "#2e2d29",
         "notifications.border": "#00000000",
         "notificationLink.foreground": "#092ccd",
-        "focusBorder": "#b4637acc",
+        "focusBorder": "#8e3b59",
         "editorGroupHeader.tabsBorder": "#ece5cf",
         "tab.activeBorder": "#b4637a",
         "widget.shadow": "#00000018",
@@ -261,7 +273,13 @@
         "editorOverviewRuler.bracketMatchForeground": "#3a7d00aa",
         "widget.border": "#00000000",
         "progressBar.background": "#286983",
-        "editor.rangeHighlightBackground": "#ea9d3422"
+        "editor.rangeHighlightBackground": "#ea9d3422",
+        "editorGhostText.foreground": "#77736f",
+        "editorHoverWidget.foreground": "#302f2a",
+        "peekViewEditor.matchHighlightBackground": "#6e6a8633",
+        "charts.foreground": "#302f2a",
+        "charts.lines": "#77736f",
+        "terminalCursor.foreground": "#b4637a"
     },
     "tokenColors": [
         {

@@ -1,6 +1,6 @@
 // ============================================================================
 // VS Code settings.json — iOS Liquid Glass UI/UX
-// Purpose: Rosé Pine-inspired calm chrome, stable contrast, and long-session readability.
+// Purpose: Rosé Pine-inspired calm chrome, stable contrast, and long-session readability (Comfortable density).
 // Liquid Glass: restrained translucency, continuous radii, quiet elevation.
 // Notes:
 // - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
@@ -61,7 +61,7 @@
     "editor.minimap.side": "right",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
-    "editor.minimap.renderCharacters": false,
+    "editor.minimap.renderCharacters": true,
     "editor.minimap.maxColumn": 120,
     "editor.minimap.showSlider": "always",
     // ======================================================================
@@ -88,7 +88,7 @@
     "editor.fastScrollSensitivity": 5,
     "editor.mouseWheelScrollSensitivity": 1,
     "editor.cursorSurroundingLines": 8,
-    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.cursorSurroundingLinesStyle": "default",
     "editor.scrollBeyondLastLine": false,
     "editor.wordWrap": "off",
     "editor.wrappingIndent": "same",
@@ -455,6 +455,13 @@
             "--nb-specular-strong": "inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 rgba(0, 0, 0, 0.1)",
             "--nb-hairline": "0.5px solid color-mix(in srgb, rgba(255, 255, 255, 0.22) 70%, var(--vscode-widget-border, rgba(128, 128, 128, 0.25)) 30%)",
             "--nb-hairline-soft": "0.5px solid color-mix(in srgb, rgba(255, 255, 255, 0.14) 60%, var(--vscode-widget-border, rgba(128, 128, 128, 0.2)) 40%)",
+            "--nb-border-subtle": "1px solid color-mix(in srgb, var(--vscode-widget-border, var(--vscode-foreground)) 42%, transparent)",
+            "--nb-border-visible": "1px solid color-mix(in srgb, var(--vscode-widget-border, var(--vscode-foreground)) 72%, transparent)",
+            "--nb-border-focus": "1px solid color-mix(in srgb, var(--vscode-focusBorder) 88%, var(--vscode-widget-border) 12%)",
+            "--nb-surface-input": "color-mix(in srgb, var(--vscode-input-background, var(--vscode-sideBar-background)) 78%, transparent)",
+            "--nb-text-muted": "color-mix(in srgb, var(--vscode-foreground) 62%, transparent)",
+            "--nb-selection": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground, var(--vscode-editor-selectionBackground)) 70%, transparent)",
+            "--nb-focus-ring": "0 0 0 2px color-mix(in srgb, var(--vscode-focusBorder) 24%, transparent)",
             // Elevation (soft multi-layer, iOS card stack)
             "--nb-elev-1": "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06)",
             "--nb-elev-2": "0 2px 4px rgba(0, 0, 0, 0.05), 0 12px 32px rgba(0, 0, 0, 0.1), 0 24px 48px -12px rgba(0, 0, 0, 0.12)",
@@ -468,8 +475,8 @@
             "--nb-motion-base": "140ms",
             "--nb-motion-slow": "180ms",
             "--nb-motion-page": "220ms",
-            "--nb-ease-spring": "cubic-bezier(0.32, 0.72, 0, 1)",
-            "--nb-ease-bounce": "cubic-bezier(0.34, 1.4, 0.64, 1)",
+            "--nb-ease-spring": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "--nb-ease-bounce": "cubic-bezier(0.22, 1, 0.36, 1)",
             "--nb-ease-out": "cubic-bezier(0.22, 1, 0.36, 1)",
             "--nb-ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
             "background-color": "var(--nb-bg-canvas) !important",
@@ -835,8 +842,8 @@
         // ------------------------------------------------------------------
         ".monaco-inputbox": {
             "border-radius": "var(--nb-input-radius) !important",
-            "border": "var(--nb-hairline-soft) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-input-background, var(--vscode-sideBar-background)) 55%, transparent) !important",
+            "border": "var(--nb-border-visible) !important",
+            "background-color": "var(--nb-surface-input) !important",
             "box-shadow": "var(--nb-specular) !important",
             "transition": "box-shadow var(--nb-motion-base) var(--nb-ease-spring), border-color var(--nb-motion-base) var(--nb-ease-spring), background-color var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
@@ -915,8 +922,13 @@
         ".scm-editor, .scm-input, .monaco-findInput, .suggest-input-container": {
             "border-radius": "var(--nb-input-radius) !important",
             "overflow": "hidden !important",
-            "border": "var(--nb-hairline-soft) !important",
+            "border": "var(--nb-border-visible) !important",
+            "background-color": "var(--nb-surface-input) !important",
             "box-shadow": "var(--nb-specular) !important"
+        },
+        ".scm-editor:focus-within, .scm-input:focus-within, .monaco-findInput.focused, .suggest-input-container:focus-within": {
+            "border": "var(--nb-border-focus) !important",
+            "box-shadow": "var(--nb-focus-ring), var(--nb-specular) !important"
         },
         ".monaco-dialog-box": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1267,6 +1279,14 @@
             "max-width": "none !important",
             "min-width": "0 !important"
         },
+        // Calm motion: preserve color and border feedback without movement,
+        // bounce, shimmer, or blur-based entrance effects.
+        ".monaco-workbench .monaco-list-row:hover, .monaco-workbench .tab:hover, .monaco-workbench .action-label:hover, .monaco-workbench .monaco-button:active, .monaco-workbench .extensions-list .monaco-list-row:hover, .monaco-workbench .monaco-scrollable-element > .scrollbar > .slider:hover": {
+            "transform": "none !important"
+        },
+        ".notification-toast, .notifications-center, .quick-input-widget, .monaco-dialog-box, .monaco-hover, .suggest-widget": {
+            "animation": "none !important"
+        },
         // Sidebar buttons
         ".part.sidebar .monaco-button": {
             "border-radius": "var(--nb-input-radius) !important"
@@ -1345,43 +1365,83 @@
     // ======================================================================
     "workbench.colorCustomizations": {
         "[Note Book Dark]": {
-            "titleBar.activeBackground": "#002c3966",
-            "statusBar.background": "#00212b66",
-            "sideBar.background": "#00212b88",
-            "panel.background": "#00212b77",
+            "titleBar.activeBackground": "#002c39cc",
+            "statusBar.background": "#00212bcc",
+            "sideBar.background": "#00212bdd",
+            "panel.background": "#00212bdd",
             "editorGroupHeader.tabsBackground": "#002b3600",
             "activityBar.background": "#00212b00",
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
         "[Note Book Solarized Light]": {
-            "titleBar.activeBackground": "#eee8d566",
-            "statusBar.background": "#eee8d566",
-            "sideBar.background": "#eee8d588",
-            "panel.background": "#fdf6e377",
+            "titleBar.activeBackground": "#eee8d5cc",
+            "statusBar.background": "#eee8d5cc",
+            "sideBar.background": "#eee8d5dd",
+            "panel.background": "#fdf6e3dd",
             "editorGroupHeader.tabsBackground": "#eee8d500",
             "activityBar.background": "#eee8d500",
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
         "[Note Book Solarized Dark HC]": {
-            "titleBar.activeBackground": "#002b3666",
-            "statusBar.background": "#07364266",
-            "sideBar.background": "#07364288",
-            "panel.background": "#07364277",
+            "titleBar.activeBackground": "#002b36cc",
+            "statusBar.background": "#073642cc",
+            "sideBar.background": "#073642dd",
+            "panel.background": "#073642dd",
             "editorGroupHeader.tabsBackground": "#002b3600",
             "activityBar.background": "#07364200",
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
         "[Note Book Rosé Pine Dawn]": {
-            "titleBar.activeBackground": "#faf4ed66",
-            "statusBar.background": "#faf4ed66",
-            "sideBar.background": "#faf4ed88",
-            "panel.background": "#fffaf377",
+            "titleBar.activeBackground": "#faf4edcc",
+            "statusBar.background": "#faf4edcc",
+            "sideBar.background": "#faf4eddd",
+            "panel.background": "#fffaf3dd",
             "editorGroupHeader.tabsBackground": "#faf4ed00",
             "activityBar.background": "#faf4ed00",
             "tab.activeBorderTop": "#d7827e",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Farmhouse]": {
+            "titleBar.activeBackground": "#dfdbd8cc",
+            "statusBar.background": "#d6d2cfcc",
+            "sideBar.background": "#dfdbd8dd",
+            "panel.background": "#dfdbd8dd",
+            "editorGroupHeader.tabsBackground": "#dfdbd800",
+            "activityBar.background": "#d6d2cf00",
+            "tab.activeBorderTop": "#820046",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Parchment]": {
+            "titleBar.activeBackground": "#f4eedbcc",
+            "statusBar.background": "#ece5cfcc",
+            "sideBar.background": "#f4eedbdd",
+            "panel.background": "#f4eedbdd",
+            "editorGroupHeader.tabsBackground": "#f4eedb00",
+            "activityBar.background": "#ece5cf00",
+            "tab.activeBorderTop": "#b4637a",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Sage]": {
+            "titleBar.activeBackground": "#e3e6ddcc",
+            "statusBar.background": "#d6dacdcc",
+            "sideBar.background": "#e3e6dddd",
+            "panel.background": "#e3e6dddd",
+            "editorGroupHeader.tabsBackground": "#e3e6dd00",
+            "activityBar.background": "#d6dacd00",
+            "tab.activeBorderTop": "#286983",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Minimal]": {
+            "titleBar.activeBackground": "#e5e5e6cc",
+            "statusBar.background": "#d4d4d5cc",
+            "sideBar.background": "#e5e5e6dd",
+            "panel.background": "#e5e5e6dd",
+            "editorGroupHeader.tabsBackground": "#e5e5e600",
+            "activityBar.background": "#d4d4d500",
+            "tab.activeBorderTop": "#ca1243",
             "widget.shadow": "#00000000"
         }
     },

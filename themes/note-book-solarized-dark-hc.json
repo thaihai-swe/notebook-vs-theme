@@ -32,7 +32,8 @@
             "foreground": "#657b83",
             "fontStyle": "italic"
         },
-        "regexp": "#dc322f"
+        "regexp": "#dc322f",
+        "constant": "#b58900"
     },
     "colors": {
         "editor.background": "#002b36",
@@ -284,7 +285,13 @@
         "settings.focusedRowBorder": "#657b8366",
         "tree.indentGuidesStroke": "#586e75cc",
         "tree.activeIndentGuidesStroke": "#2aa198e6",
-        "editor.rangeHighlightBackground": "#b5890022"
+        "editor.rangeHighlightBackground": "#b5890022",
+        "editorGhostText.foreground": "#657b83",
+        "editorHoverWidget.foreground": "#b7c4c5",
+        "peekViewEditor.matchHighlightBackground": "#2aa19833",
+        "charts.foreground": "#b7c4c5",
+        "charts.lines": "#839496",
+        "terminalCursor.foreground": "#d33682"
     },
     "tokenColors": [
         {
