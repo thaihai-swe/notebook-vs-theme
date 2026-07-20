@@ -313,7 +313,13 @@
         "activityBar.foreground": "#93a1a1",
         "activityBar.inactiveForeground": "#586e75",
         "activityBarBadge.background": "#d33682",
-        "activityBarBadge.foreground": "#fdf6e3"
+        "activityBarBadge.foreground": "#fdf6e3",
+        "button.hoverBackground": "#2aa198cc",
+        "tab.hoverBackground": "#073642cc",
+        "editorCursor.background": "#002b36",
+        "inputOption.activeBackground": "#2aa19833",
+        "toolbar.hoverBackground": "#004454aa",
+        "menubar.selectionBackground": "#005a6f"
     },
     "tokenColors": [
         {

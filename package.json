@@ -1,8 +1,8 @@
 {
     "name": "note-book-theme",
     "displayName": "Note Book Theme",
-    "description": "Solarized and Ros\u00e9 Pine-inspired, calm, readable themes for VS Code with long-session comfort settings",
-    "version": "0.5.1",
+    "description": "Solarized and Ros\u00e9 Pine-inspired, calm, readable themes for VS Code with long-session comfort and Liquid Glass settings",
+    "version": "0.5.2",
     "publisher": "note-book",
     "license": "MIT",
     "engines": {

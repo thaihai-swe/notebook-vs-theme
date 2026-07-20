@@ -504,7 +504,8 @@
         "widget.border": "#00000000",
         "terminal.background": "#f7f0e8",
         "editorStickyScroll.background": "#fffaf3",
-        "editorStickyScrollHover.background": "#f2e9e1"
+        "editorStickyScrollHover.background": "#f2e9e1",
+        "tab.activeBorderTop": "#d7827e"
     },
     "tokenColors": [
         {

@@ -291,7 +291,11 @@
         "peekViewEditor.matchHighlightBackground": "#6e6a8633",
         "charts.foreground": "#56676d",
         "charts.lines": "#657b83",
-        "terminalCursor.foreground": "#cb4b16"
+        "terminalCursor.foreground": "#cb4b16",
+        "editorCursor.background": "#fdf6e3",
+        "inputOption.activeBackground": "#2aa19822",
+        "toolbar.hoverBackground": "#e8dfc880",
+        "menubar.selectionBackground": "#ddd6c1"
     },
     "tokenColors": [
         {

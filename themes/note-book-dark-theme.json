@@ -307,7 +307,13 @@
         "editorGhostText.foreground": "#657b83",
         "editorHoverWidget.foreground": "#93a1a1",
         "charts.foreground": "#93a1a1",
-        "charts.lines": "#839496"
+        "charts.lines": "#839496",
+        "button.hoverBackground": "#2aa198cc",
+        "tab.hoverBackground": "#004052cc",
+        "editorCursor.background": "#002b36",
+        "inputOption.activeBackground": "#2aa19833",
+        "toolbar.hoverBackground": "#004454aa",
+        "menubar.selectionBackground": "#005a6f"
     },
     "tokenColors": [
         {

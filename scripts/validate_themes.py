@@ -27,6 +27,18 @@ REQUIRED_COLORS = (
     "terminalCursor.foreground",
     "terminal.selectionBackground",
     "focusBorder",
+    "button.background",
+    "button.hoverBackground",
+    "tab.activeBorderTop",
+    "tab.hoverBackground",
+    "list.hoverBackground",
+    "list.activeSelectionBackground",
+    "menu.selectionBackground",
+    "menubar.selectionBackground",
+    "toolbar.hoverBackground",
+    "inputOption.activeBackground",
+    "editorCursor.foreground",
+    "editorCursor.background",
 )
 
 REQUIRED_SEMANTIC = (
@@ -107,13 +119,22 @@ def check_settings_presets(root: Path, failures: list[str]) -> None:
         "workbench.preferredLightColorTheme",
         "workbench.preferredDarkColorTheme",
         "workbench.reduceMotion",
+        '"workbench.reduceMotion": "user"',
         "custom-ui-style.stylesheet",
         "--nb-border-visible",
         "--nb-border-focus",
         "--nb-surface-input",
+        "--nb-ease-soft",
+        "--nb-lift-1",
+        "--nb-lift-2",
+        "@media (prefers-reduced-motion: reduce)",
     ):
         if key not in text:
             failures.append(f"vs-code-setting.jsonc: missing {key}")
+    if "nb-ease-bounce" in text:
+        failures.append("vs-code-setting.jsonc: bounce easing should be removed")
+    if "nb-shimmer 1.5s infinite" in text:
+        failures.append("vs-code-setting.jsonc: continuous shimmer animation should be disabled")
     for label in THEME_LABELS:
         if f"[{label}]" not in text:
             failures.append(f"vs-code-setting.jsonc: missing colorCustomizations for {label}")

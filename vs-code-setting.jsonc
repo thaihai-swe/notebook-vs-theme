@@ -1,7 +1,8 @@
 // ============================================================================
-// VS Code settings.json — iOS Liquid Glass UI/UX
+// VS Code settings.json — iOS 27 Liquid Glass UI/UX
 // Purpose: Warm, low-glare chrome with a 7:1 text-contrast target for long-session readability.
-// Liquid Glass: restrained translucency, continuous radii, quiet elevation.
+// Liquid Glass: refined frosted surfaces, continuous radii, soft specular edges, quiet elevation.
+// Motion: OS-adaptive by default; reduced-motion mode becomes fully static.
 // Notes:
 // - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
 // - Keep this as User Settings unless you intentionally want it project-specific.
@@ -28,7 +29,7 @@
     // 1. Window, startup, and focus behavior
     // ----------------------------------------------------------------------
     // Liquid glass shell: custom title bar, command center as pill search,
-    // Motion is opt-in through the OS; comfort takes priority over flourish.
+    // Motion follows the OS reduce-motion setting; comfort takes priority over flourish.
     // ======================================================================
     "zenMode.centerLayout": false,
     "zenMode.fullScreen": false,
@@ -40,8 +41,8 @@
     "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 1.15,
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Note Book Parchment",
-    "workbench.preferredDarkColorTheme": "Note Book Solarized Dark HC",
+    "workbench.preferredLightColorTheme": "Note Book Solarized Dark",
+    "workbench.preferredDarkColorTheme": "Note Book Rosé Pine Dawn",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -50,18 +51,17 @@
     // ======================================================================
     // 2. Editor scrollbar and minimap
     // ----------------------------------------------------------------------
-    // Thin floating rails; hide the minimap to remove persistent visual noise.
+    // Thin floating rails; keep minimap and scrollbar readable by default.
     // ======================================================================
     "editor.scrollbar.vertical": "visible",
     "editor.scrollbar.horizontal": "auto",
-    "editor.scrollbar.verticalScrollbarSize": 24,
+    "editor.scrollbar.verticalScrollbarSize": 36,
     "editor.scrollbar.horizontalScrollbarSize": 18,
-    "editor.scrollbar.useShadows": true,
     "editor.minimap.enabled": true,
     "editor.minimap.side": "right",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
-    "editor.minimap.renderCharacters": false,
+    "editor.minimap.renderCharacters": true,
     "editor.minimap.maxColumn": 120,
     "editor.minimap.showSlider": "always",
     // ======================================================================
@@ -194,11 +194,11 @@
     // ======================================================================
     // 7. Workbench tabs and editor management
     // ----------------------------------------------------------------------
-    // Floating glass cards, stable tabs, spring motion allowed unless OS says no.
+    // Floating glass cards, stable tabs, refined spring motion unless OS reduce-motion is on.
     // ======================================================================
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.reduceMotion": "on",
+    "workbench.reduceMotion": "user",
     "workbench.editor.emptyWindowText": "off",
     "workbench.settings.useSplitJSON": false,
     "workbench.editor.enablePreview": false,
@@ -423,14 +423,14 @@
     "problems.autoReveal": false,
     "problems.sortOrder": "severity",
     // ======================================================================
-    // 13. Custom UI stylesheet — iOS Liquid Glass
+    // 13. Custom UI stylesheet — iOS 27 Liquid Glass
     // ----------------------------------------------------------------------
     // Material system:
     //   glass-thin  → title/status chrome (opaque enough for text)
     //   glass-regular → sidebars, panels, tabs
     //   glass-thick → editor card, dialogs, command palette
     // Specular edge = inset top highlight + hairline border.
-    // Spring curves approximate iOS UISpringTimingParameters.
+    // Motion is fluid but restrained: color, opacity, shadow, and 1px lift.
     // Requires Custom UI Style extension.
     // ======================================================================
     "custom-ui-style.stylesheet": {
@@ -470,15 +470,17 @@
             "--nb-blur-thin": "blur(8px) saturate(1.08)",
             "--nb-blur-regular": "blur(12px) saturate(1.12)",
             "--nb-blur-thick": "blur(16px) saturate(1.16)",
-            // iOS spring timing
-            "--nb-motion-fast": "90ms",
-            "--nb-motion-base": "140ms",
-            "--nb-motion-slow": "180ms",
-            "--nb-motion-page": "220ms",
+            // iOS 27 refined spring timing (no bounce overshoot)
+            "--nb-motion-fast": "100ms",
+            "--nb-motion-base": "160ms",
+            "--nb-motion-slow": "200ms",
+            "--nb-motion-page": "240ms",
             "--nb-ease-spring": "cubic-bezier(0.22, 1, 0.36, 1)",
-            "--nb-ease-bounce": "cubic-bezier(0.22, 1, 0.36, 1)",
-            "--nb-ease-out": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "--nb-ease-soft": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "--nb-ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
             "--nb-ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
+            "--nb-lift-1": "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.06)",
+            "--nb-lift-2": "0 2px 6px rgba(0, 0, 0, 0.06), 0 10px 24px rgba(0, 0, 0, 0.08)",
             "background-color": "var(--nb-bg-canvas) !important",
             "font-family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Bear Sans UI', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important"
         },
@@ -571,9 +573,9 @@
         },
         ".part.sidebar .monaco-list-row:hover": {
             "outline": "none !important",
-            "transform": "translateX(3px) scale(1.008) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-list-hoverBackground, rgba(128, 128, 128, 0.12)) 90%, transparent) !important",
-            "box-shadow": "var(--nb-specular), 0 2px 8px rgba(0, 0, 0, 0.04) !important"
+            "transform": "none !important",
+            "background-color": "color-mix(in srgb, var(--vscode-list-hoverBackground, rgba(128, 128, 128, 0.12)) 92%, transparent) !important",
+            "box-shadow": "var(--nb-specular), var(--nb-lift-1) !important"
         },
         // ------------------------------------------------------------------
         // Editor — glass-thick floating stage
@@ -606,8 +608,8 @@
         },
         ".tab:hover": {
             "transform": "translateY(-1px) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 35%, transparent) !important",
-            "box-shadow": "0 2px 8px rgba(0, 0, 0, 0.08), var(--nb-specular) !important"
+            "background-color": "color-mix(in srgb, var(--vscode-tab-inactiveBackground) 40%, transparent) !important",
+            "box-shadow": "var(--nb-lift-1), var(--nb-specular) !important"
         },
         ".tab.active": {
             "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 55%, transparent) !important",
@@ -615,9 +617,9 @@
             "box-shadow": "var(--nb-elev-1), var(--nb-specular-strong), 0 0 8px color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-progressBar-background)) 20%, transparent) !important"
         },
         ".tab.active:hover": {
-            "transform": "translateY(-1.5px) !important",
-            "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 65%, transparent) !important",
-            "box-shadow": "0 4px 12px rgba(0, 0, 0, 0.12), var(--nb-specular-strong), 0 0 12px color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-progressBar-background)) 25%, transparent) !important"
+            "transform": "translateY(-1px) !important",
+            "background-color": "color-mix(in srgb, var(--vscode-tab-activeBackground) 68%, transparent) !important",
+            "box-shadow": "var(--nb-lift-2), var(--nb-specular-strong), 0 0 10px color-mix(in srgb, var(--vscode-tab-activeBorder, var(--vscode-progressBar-background)) 18%, transparent) !important"
         },
         ".tab::after": {
             "content": "'' !important",
@@ -628,7 +630,7 @@
             "height": "2.5px !important",
             "border-radius": "var(--nb-pill-radius) !important",
             "background-color": "var(--vscode-tab-activeBorder, var(--vscode-foreground)) !important",
-            "transition": "width var(--nb-motion-base) var(--nb-ease-bounce), left var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "transition": "width var(--nb-motion-base) var(--nb-ease-soft), left var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".tab.active::after": {
             "left": "22% !important",
@@ -639,7 +641,7 @@
             "transition": "text-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         ".tab:active": {
-            "transform": "scale(0.94) !important",
+            "transform": "scale(0.98) !important",
             "opacity": "0.92 !important",
             "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring), opacity var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
@@ -653,11 +655,11 @@
         ".tab .tab-close-button, .tab .action-label.codicon-close": {
             "border-radius": "50% !important",
             "padding": "2px !important",
-            "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), color var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-bounce) !important"
+            "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), color var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-soft) !important"
         },
         ".tab .tab-close-button:hover, .tab .action-label.codicon-close:hover": {
             "background-color": "rgba(255, 255, 255, 0.16) !important",
-            "transform": "scale(1.15) rotate(90deg) !important"
+            "transform": "none !important"
         },
         ".tabs-and-actions-container": {
             "border-bottom": "var(--nb-hairline-soft) !important",
@@ -730,10 +732,10 @@
         },
         ".part.activitybar .action-item .action-label": {
             "border-radius": "50% !important",
-            "transition": "background var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-bounce) !important"
+            "transition": "background var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-soft) !important"
         },
         ".part.activitybar .action-item .action-label:hover": {
-            "transform": "scale(1.22) translateY(-2px) !important",
+            "transform": "translateY(-1px) !important",
             "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.15)) 40%, transparent) !important",
             "box-shadow": "var(--nb-specular), 0 4px 10px rgba(0, 0, 0, 0.12) !important"
         },
@@ -744,7 +746,7 @@
             "box-shadow": "var(--nb-specular-strong), 0 4px 12px rgba(0, 0, 0, 0.20), 0 0 8px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 30%, transparent) !important"
         },
         ".part.activitybar .action-item.checked .action-label:hover": {
-            "transform": "scale(1.22) translateY(-2px) !important",
+            "transform": "translateY(-1px) !important",
             "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 92%, rgba(255, 255, 255, 0.16)) !important",
             "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 90%, rgba(255, 255, 255, 0.6)) !important",
             "box-shadow": "var(--nb-specular-strong), 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 12px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 40%, transparent) !important"
@@ -758,14 +760,14 @@
             "height": "6px !important",
             "border-radius": "var(--nb-pill-radius) !important",
             "background-color": "var(--vscode-activityBar-activeBorder, var(--vscode-activityBar-foreground)) !important",
-            "transition": "height var(--nb-motion-base) var(--nb-ease-bounce), top var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "transition": "height var(--nb-motion-base) var(--nb-ease-soft), top var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".part.activitybar .action-item.checked:hover::after": {
             "height": "12px !important",
             "top": "calc(50% - 6px) !important"
         },
         ".part.activitybar .action-item:active": {
-            "transform": "scale(0.88) !important",
+            "transform": "scale(0.97) !important",
             "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
         // ------------------------------------------------------------------
@@ -795,7 +797,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-thick) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-3), var(--nb-specular-strong), 0 0 0 100vw rgba(0, 0, 0, 0.22) !important",
-            "animation": "nb-spotlight var(--nb-motion-slow) var(--nb-ease-bounce) !important"
+            "animation": "nb-spotlight var(--nb-motion-slow) var(--nb-ease-soft) !important"
         },
         ".quick-input-widget .monaco-list-row": {
             "border-radius": "var(--nb-item-radius) !important",
@@ -808,7 +810,7 @@
             "outline": "none !important",
             "box-shadow": "inset 0 0 0 1px var(--vscode-focusBorder, rgba(128, 128, 128, 0.45)), var(--nb-specular-strong), 0 2px 8px color-mix(in srgb, var(--vscode-focusBorder) 20%, transparent) !important",
             "background-color": "color-mix(in srgb, var(--vscode-quickInput-list-focusBackground, var(--vscode-list-activeSelectionBackground)) 85%, transparent) !important",
-            "transform": "scale(1.01) translateX(2px) !important"
+            "transform": "translateX(1px) !important"
         },
         // ------------------------------------------------------------------
         // Notifications
@@ -821,7 +823,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-regular) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "animation": "nb-notify var(--nb-motion-page) var(--nb-ease-bounce) !important"
+            "animation": "nb-notify var(--nb-motion-page) var(--nb-ease-soft) !important"
         },
         ".notifications-center": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -831,7 +833,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-thick) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-3), var(--nb-specular-strong) !important",
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".notifications-toasts": {
             "margin-right": "var(--nb-panel-gap) !important",
@@ -855,7 +857,7 @@
             "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
         ".monaco-list-row:active": {
-            "transform": "scale(0.97) !important",
+            "transform": "scale(0.985) !important",
             "opacity": "0.92 !important"
         },
         ".monaco-button": {
@@ -865,45 +867,53 @@
             "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         ".monaco-button:active": {
-            "transform": "scale(0.94) !important",
+            "transform": "scale(0.98) !important",
             "opacity": "0.92 !important",
             "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring), opacity var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
         ".action-label": {
-            "transition": "transform var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "transition": "transform var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".action-label:hover": {
-            "transform": "scale(1.08) !important"
+            "transform": "scale(1.03) !important"
         },
         ".action-label:active": {
-            "transform": "scale(0.92) !important",
+            "transform": "scale(0.98) !important",
             "opacity": "0.9 !important"
         },
         // ------------------------------------------------------------------
         // Scrollbars — thin liquid rails
         // ------------------------------------------------------------------
         ".monaco-scrollable-element > .scrollbar > .slider": {
-            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-background) 55%, transparent) !important",
+            "background": "var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) !important",
             "border-radius": "var(--nb-pill-radius) !important",
             "border": "0.5px solid color-mix(in srgb, rgba(255, 255, 255, 0.12) 50%, transparent) !important",
             "box-shadow": "var(--nb-specular) !important",
-            "transition": "opacity var(--nb-motion-slow) var(--nb-ease-spring), transform var(--nb-motion-base) var(--nb-ease-spring), background var(--nb-motion-base) var(--nb-ease-spring) !important"
+            "transition": "transform var(--nb-motion-base) var(--nb-ease-spring), background var(--nb-motion-base) var(--nb-ease-spring) !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.vertical": {
+            "width": "36px !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.vertical > .slider": {
+            "width": "8px !important",
+            "margin-left": "6px !important",
+            "background": "var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) !important"
         },
         ".monaco-scrollable-element > .scrollbar.vertical > .slider:hover": {
-            "transform": "scaleX(1.45) !important",
-            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) 70%, transparent) !important"
+            "transform": "scaleX(1.12) !important",
+            "background": "var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) !important"
         },
         ".monaco-scrollable-element > .scrollbar.vertical > .slider.active, .monaco-scrollable-element > .scrollbar.vertical > .slider:active": {
-            "transform": "scaleX(1.65) !important",
-            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-activeBackground, var(--vscode-scrollbarSlider-background)) 85%, transparent) !important"
+            "transform": "scaleX(1.2) !important",
+            "background": "var(--vscode-scrollbarSlider-activeBackground, var(--vscode-scrollbarSlider-background)) !important"
         },
         ".monaco-scrollable-element > .scrollbar.horizontal > .slider:hover": {
-            "transform": "scaleY(1.45) !important",
-            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) 70%, transparent) !important"
+            "transform": "scaleY(1.12) !important",
+            "background": "var(--vscode-scrollbarSlider-hoverBackground, var(--vscode-scrollbarSlider-background)) !important"
         },
         ".monaco-scrollable-element > .scrollbar.horizontal > .slider.active, .monaco-scrollable-element > .scrollbar.horizontal > .slider:active": {
-            "transform": "scaleY(1.65) !important",
-            "background": "color-mix(in srgb, var(--vscode-scrollbarSlider-activeBackground, var(--vscode-scrollbarSlider-background)) 85%, transparent) !important"
+            "transform": "scaleY(1.2) !important",
+            "background": "var(--vscode-scrollbarSlider-activeBackground, var(--vscode-scrollbarSlider-background)) !important"
         },
         ".scrollbar .slider": {
             "border-radius": "var(--nb-pill-radius) !important"
@@ -938,7 +948,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-thick) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-3), var(--nb-specular-strong) !important",
-            "animation": "nb-emerge var(--nb-motion-slow) var(--nb-ease-bounce) !important"
+            "animation": "nb-emerge var(--nb-motion-slow) var(--nb-ease-soft) !important"
         },
         ".monaco-dialog-box .dialog-buttons .monaco-button": {
             "border-radius": "var(--nb-pill-radius) !important"
@@ -952,7 +962,7 @@
         },
         ".monaco-editor .line-numbers.active-line-number": {
             "color": "var(--vscode-editorLineNumber-activeForeground) !important",
-            "transform": "scale(1.08) !important",
+            "transform": "scale(1.03) !important",
             "transition": "transform var(--nb-motion-base) var(--nb-ease-spring), color var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         ".monaco-editor .cursor": {
@@ -971,7 +981,7 @@
         ".monaco-progress-container .progress-bit": {
             "background": "linear-gradient(90deg, var(--vscode-progressBar-background) 0%, color-mix(in srgb, var(--vscode-progressBar-background) 60%, #ffffff) 50%, var(--vscode-progressBar-background) 100%) !important",
             "background-size": "200% 100% !important",
-            "animation": "nb-shimmer 1.5s infinite linear !important",
+            "animation": "none !important",
             "box-shadow": "0 0 8px var(--vscode-progressBar-background) !important"
         },
         // ------------------------------------------------------------------
@@ -1013,14 +1023,14 @@
             "background-color": "var(--nb-glass-regular) !important",
             "border-color": "color-mix(in srgb, var(--vscode-focusBorder) 35%, rgba(255, 255, 255, 0.2)) !important",
             "box-shadow": "var(--nb-elev-1), var(--nb-specular-strong) !important",
-            "transform": "translateY(-1.5px) !important"
+            "transform": "translateY(-1px) !important"
         },
         ".settings-editor .setting-item.setting-item-modified .setting-item-contents, .settings-editor .setting-item.setting-item-modified, .setting-item.setting-item-modified": {
             "border-left": "4px solid var(--vscode-focusBorder) !important"
         },
         "input[type='checkbox']:active, .settings-editor .setting-item-bool:active": {
-            "transform": "scale(0.92) !important",
-            "transition": "transform var(--nb-motion-fast) var(--nb-ease-bounce) !important"
+            "transform": "scale(0.98) !important",
+            "transition": "transform var(--nb-motion-fast) var(--nb-ease-soft) !important"
         },
         // ------------------------------------------------------------------
         // Breadcrumbs / minimap / icons — quiet until focus
@@ -1037,24 +1047,6 @@
         ".monaco-breadcrumbs:hover": {
             "opacity": "1 !important",
             "background-color": "color-mix(in srgb, var(--vscode-breadcrumb-background, var(--vscode-editor-background)) 60%, transparent) !important"
-        },
-        ".minimap": {
-            "border-radius": "var(--nb-panel-radius) 0 0 var(--nb-panel-radius) !important",
-            "background-color": "transparent !important",
-            "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
-        },
-        ".minimap:hover": {
-            "background-color": "color-mix(in srgb, var(--vscode-editor-background) 30%, transparent) !important",
-            "backdrop-filter": "var(--nb-blur-thin) !important",
-            "-webkit-backdrop-filter": "var(--nb-blur-thin) !important",
-            "box-shadow": "-4px 0 16px rgba(0, 0, 0, 0.12), var(--nb-specular) !important"
-        },
-        ".minimap canvas": {
-            "opacity": "0.28 !important",
-            "transition": "opacity var(--nb-motion-base) var(--nb-ease-spring) !important"
-        },
-        ".minimap:hover canvas": {
-            "opacity": "0.9 !important"
         },
         ".monaco-icon-label.file-icon::before": {
             "filter": "drop-shadow(0 0 1.5px color-mix(in srgb, currentColor 40%, transparent)) !important",
@@ -1078,10 +1070,10 @@
             "border-color": "color-mix(in srgb, var(--vscode-commandCenter-activeBorder, var(--vscode-focusBorder)) 45%, rgba(255, 255, 255, 0.25)) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 48%, transparent) !important",
             "box-shadow": "0 0 12px color-mix(in srgb, var(--vscode-focusBorder) 25%, transparent), var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "transform": "scale(1.01) !important"
+            "transform": "none !important"
         },
         ".command-center-center:active": {
-            "transform": "scale(0.97) !important"
+            "transform": "scale(0.985) !important"
         },
         ".command-center-center *": {
             "border-radius": "var(--nb-pill-radius) !important"
@@ -1143,7 +1135,7 @@
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
             "overflow": "hidden !important",
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".suggest-widget": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1153,7 +1145,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-regular) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-bounce) !important"
+            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".context-view": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1174,45 +1166,45 @@
         "@keyframes nb-emerge": {
             "0%": {
                 "opacity": "0",
-                "transform": "translateY(12px) scale(0.95)",
+                "transform": "translateY(6px)",
                 "filter": "blur(4px)"
             },
             "70%": {
-                "transform": "translateY(-1px) scale(1.01)"
+                "transform": "translateY(0)"
             },
             "100%": {
                 "opacity": "1",
-                "transform": "translateY(0) scale(1)",
+                "transform": "translateY(0)",
                 "filter": "blur(0)"
             }
         },
         "@keyframes nb-notify": {
             "0%": {
                 "opacity": "0",
-                "transform": "translateX(36px) scale(0.92)",
+                "transform": "translateX(12px)",
                 "filter": "blur(4px)"
             },
             "70%": {
-                "transform": "translateX(-4px) scale(1.02)"
+                "transform": "translateX(0)"
             },
             "100%": {
                 "opacity": "1",
-                "transform": "translateX(0) scale(1)",
+                "transform": "translateX(0)",
                 "filter": "blur(0)"
             }
         },
         "@keyframes nb-spotlight": {
             "0%": {
                 "opacity": "0",
-                "transform": "translateY(-24px) scale(0.96)",
+                "transform": "translateY(-8px)",
                 "filter": "blur(6px)"
             },
             "65%": {
-                "transform": "translateY(2px) scale(1.005)"
+                "transform": "translateY(0)"
             },
             "100%": {
                 "opacity": "1",
-                "transform": "translateY(0) scale(1)",
+                "transform": "translateY(0)",
                 "filter": "blur(0)"
             }
         },
@@ -1228,7 +1220,7 @@
             "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         ".extensions-list .monaco-list-row:hover": {
-            "transform": "translateY(-1px) scale(1.005) !important",
+            "transform": "translateY(-1px) !important",
             "box-shadow": "var(--nb-elev-1), var(--nb-specular) !important"
         },
         // Folder Tree item spacing
@@ -1279,13 +1271,13 @@
             "max-width": "none !important",
             "min-width": "0 !important"
         },
-        // Calm motion: preserve color and border feedback without movement,
-        // bounce, shimmer, or blur-based entrance effects.
-        ".monaco-workbench .monaco-list-row:hover, .monaco-workbench .tab:hover, .monaco-workbench .action-label:hover, .monaco-workbench .monaco-button:active, .monaco-workbench .extensions-list .monaco-list-row:hover, .monaco-workbench .monaco-scrollable-element > .scrollbar > .slider:hover": {
+        // Refined motion baseline: keep elevation tiny and avoid restless hover travel.
+        // Continuous shimmer and large entrance travel are intentionally disabled.
+        ".monaco-workbench .monaco-list-row:hover, .monaco-workbench .action-label:hover, .monaco-workbench .monaco-button:active, .monaco-workbench .extensions-list .monaco-list-row:hover, .monaco-workbench .monaco-scrollable-element > .scrollbar > .slider:hover": {
             "transform": "none !important"
         },
         ".notification-toast, .notifications-center, .quick-input-widget, .monaco-dialog-box, .monaco-hover, .suggest-widget": {
-            "animation": "none !important"
+            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         // Sidebar buttons
         ".part.sidebar .monaco-button": {
@@ -1316,12 +1308,15 @@
                 "--nb-motion-slow": "0ms !important",
                 "--nb-motion-page": "0ms !important"
             },
-            "*": {
+            ".monaco-workbench, .monaco-workbench *": {
+                "animation": "none !important",
                 "animation-duration": "0s !important",
                 "animation-delay": "0s !important",
+                "transition": "none !important",
                 "transition-duration": "0s !important",
                 "transition-delay": "0s !important",
-                "transform": "none !important"
+                "transform": "none !important",
+                "scroll-behavior": "auto !important"
             }
         }
     },
