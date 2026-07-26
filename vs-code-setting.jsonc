@@ -41,8 +41,8 @@
     "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 1.15,
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Note Book Solarized Dark",
-    "workbench.preferredDarkColorTheme": "Note Book Rosé Pine Dawn",
+    "workbench.preferredLightColorTheme": "Note Book Minimal",
+    "workbench.preferredDarkColorTheme": "Note Book Solarized Dark HC",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -73,7 +73,7 @@
     "editor.fontSize": 16,
     "editor.fontWeight": "400",
     "editor.lineHeight": 1.9,
-    "editor.letterSpacing": 0.2,
+    "editor.letterSpacing": 0.15,
     "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "solid",
@@ -146,7 +146,7 @@
     "editor.parameterHints.cycle": true,
     "editor.linkedEditing": true,
     "editor.hover.enabled": "on",
-    "editor.hover.delay": 350,
+    "editor.hover.delay": 300,
     "editor.hover.sticky": true,
     "editor.codeLens": false,
     "editor.codeLensFontSize": 14,
@@ -463,18 +463,18 @@
             "--nb-selection": "color-mix(in srgb, var(--vscode-list-activeSelectionBackground, var(--vscode-editor-selectionBackground)) 70%, transparent)",
             "--nb-focus-ring": "0 0 0 2px color-mix(in srgb, var(--vscode-focusBorder) 24%, transparent)",
             // Elevation (soft multi-layer, iOS card stack)
-            "--nb-elev-1": "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06)",
-            "--nb-elev-2": "0 2px 4px rgba(0, 0, 0, 0.05), 0 12px 32px rgba(0, 0, 0, 0.1), 0 24px 48px -12px rgba(0, 0, 0, 0.12)",
+            "--nb-elev-1": "0 1px 2px rgba(0, 0, 0, 0.03), 0 3px 8px rgba(0, 0, 0, 0.04)",
+            "--nb-elev-2": "0 2px 4px rgba(0, 0, 0, 0.04), 0 10px 24px rgba(0, 0, 0, 0.06), 0 24px 48px -12px rgba(0, 0, 0, 0.10)",
             "--nb-elev-3": "0 4px 8px rgba(0, 0, 0, 0.06), 0 24px 64px -12px rgba(0, 0, 0, 0.28), 0 0 0 0.5px color-mix(in srgb, rgba(255, 255, 255, 0.12) 50%, transparent)",
             // Blur recipes
             "--nb-blur-thin": "blur(8px) saturate(1.08)",
             "--nb-blur-regular": "blur(12px) saturate(1.12)",
             "--nb-blur-thick": "blur(16px) saturate(1.16)",
             // iOS 27 refined spring timing (no bounce overshoot)
-            "--nb-motion-fast": "100ms",
-            "--nb-motion-base": "160ms",
-            "--nb-motion-slow": "200ms",
-            "--nb-motion-page": "240ms",
+            "--nb-motion-fast": "120ms",
+            "--nb-motion-base": "180ms",
+            "--nb-motion-slow": "240ms",
+            "--nb-motion-page": "280ms",
             "--nb-ease-spring": "cubic-bezier(0.22, 1, 0.36, 1)",
             "--nb-ease-soft": "cubic-bezier(0.25, 0.1, 0.25, 1)",
             "--nb-ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -573,7 +573,7 @@
         },
         ".part.sidebar .monaco-list-row:hover": {
             "outline": "none !important",
-            "transform": "none !important",
+            "transform": "translateY(-1px) !important",
             "background-color": "color-mix(in srgb, var(--vscode-list-hoverBackground, rgba(128, 128, 128, 0.12)) 92%, transparent) !important",
             "box-shadow": "var(--nb-specular), var(--nb-lift-1) !important"
         },
@@ -823,7 +823,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-regular) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "animation": "nb-notify var(--nb-motion-page) var(--nb-ease-soft) !important"
+            "animation": "nb-notify var(--nb-motion-page) var(--nb-ease-out) forwards !important"
         },
         ".notifications-center": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -854,7 +854,7 @@
             "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-focusBorder) 22%, transparent), var(--nb-specular) !important"
         },
         ".monaco-list-row": {
-            "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
+            "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring), opacity var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".monaco-list-row:active": {
             "transform": "scale(0.985) !important",
@@ -1070,7 +1070,7 @@
             "border-color": "color-mix(in srgb, var(--vscode-commandCenter-activeBorder, var(--vscode-focusBorder)) 45%, rgba(255, 255, 255, 0.25)) !important",
             "background-color": "color-mix(in srgb, var(--vscode-sideBar-background) 48%, transparent) !important",
             "box-shadow": "0 0 12px color-mix(in srgb, var(--vscode-focusBorder) 25%, transparent), var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "transform": "none !important"
+            "transform": "translateY(-1px) !important"
         },
         ".command-center-center:active": {
             "transform": "scale(0.985) !important"
@@ -1271,13 +1271,24 @@
             "max-width": "none !important",
             "min-width": "0 !important"
         },
-        // Refined motion baseline: keep elevation tiny and avoid restless hover travel.
-        // Continuous shimmer and large entrance travel are intentionally disabled.
-        ".monaco-workbench .monaco-list-row:hover, .monaco-workbench .action-label:hover, .monaco-workbench .monaco-button:active, .monaco-workbench .extensions-list .monaco-list-row:hover, .monaco-workbench .monaco-scrollable-element > .scrollbar > .slider:hover": {
-            "transform": "none !important"
+        // Refined motion baseline: allow tiny 1px lifts on intentional targets,
+        // but keep generic list/action hover travel subtle and non-restless.
+        // Continuous shimmer and large entrance travel remain disabled.
+        ".monaco-workbench .extensions-list .monaco-list-row:hover": {
+            "transform": "translateY(-1px) !important"
+        },
+        ".monaco-workbench .monaco-list-row:hover": {
+            "box-shadow": "var(--nb-lift-1) !important"
+        },
+        ".monaco-workbench .monaco-button:hover": {
+            "transform": "translateY(-1px) !important",
+            "box-shadow": "var(--nb-lift-1), var(--nb-specular) !important"
+        },
+        ".monaco-workbench .monaco-button:active": {
+            "transform": "scale(0.98) !important"
         },
         ".notification-toast, .notifications-center, .quick-input-widget, .monaco-dialog-box, .monaco-hover, .suggest-widget": {
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
+            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) forwards !important"
         },
         // Sidebar buttons
         ".part.sidebar .monaco-button": {
@@ -1359,6 +1370,46 @@
     // fully transparent so the editor card glass reads continuously.
     // ======================================================================
     "workbench.colorCustomizations": {
+        "[Note Book Minimal]": {
+            "titleBar.activeBackground": "#e5e5e6cc",
+            "statusBar.background": "#d4d4d5cc",
+            "sideBar.background": "#e5e5e6dd",
+            "panel.background": "#e5e5e6dd",
+            "editorGroupHeader.tabsBackground": "#e5e5e600",
+            "activityBar.background": "#d4d4d500",
+            "tab.activeBorderTop": "#ca1243",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Farmhouse]": {
+            "titleBar.activeBackground": "#dfdbd8cc",
+            "statusBar.background": "#d6d2cfcc",
+            "sideBar.background": "#dfdbd8dd",
+            "panel.background": "#dfdbd8dd",
+            "editorGroupHeader.tabsBackground": "#dfdbd800",
+            "activityBar.background": "#d6d2cf00",
+            "tab.activeBorderTop": "#820046",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Parchment]": {
+            "titleBar.activeBackground": "#f4eedbcc",
+            "statusBar.background": "#ece5cfcc",
+            "sideBar.background": "#f4eedbdd",
+            "panel.background": "#f4eedbdd",
+            "editorGroupHeader.tabsBackground": "#f4eedb00",
+            "activityBar.background": "#ece5cf00",
+            "tab.activeBorderTop": "#b4637a",
+            "widget.shadow": "#00000000"
+        },
+        "[Note Book Rosé Pine Dawn]": {
+            "titleBar.activeBackground": "#faf4edcc",
+            "statusBar.background": "#faf4edcc",
+            "sideBar.background": "#faf4eddd",
+            "panel.background": "#fffaf3dd",
+            "editorGroupHeader.tabsBackground": "#faf4ed00",
+            "activityBar.background": "#faf4ed00",
+            "tab.activeBorderTop": "#d7827e",
+            "widget.shadow": "#00000000"
+        },
         "[Note Book Dark]": {
             "titleBar.activeBackground": "#002c39cc",
             "statusBar.background": "#00212bcc",
@@ -1366,16 +1417,6 @@
             "panel.background": "#00212bdd",
             "editorGroupHeader.tabsBackground": "#002b3600",
             "activityBar.background": "#00212b00",
-            "tab.activeBorderTop": "#2aa198",
-            "widget.shadow": "#00000000"
-        },
-        "[Note Book Solarized Light]": {
-            "titleBar.activeBackground": "#eee8d5cc",
-            "statusBar.background": "#eee8d5cc",
-            "sideBar.background": "#eee8d5dd",
-            "panel.background": "#fdf6e3dd",
-            "editorGroupHeader.tabsBackground": "#eee8d500",
-            "activityBar.background": "#eee8d500",
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
@@ -1399,34 +1440,14 @@
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
-        "[Note Book Rosé Pine Dawn]": {
-            "titleBar.activeBackground": "#faf4edcc",
-            "statusBar.background": "#faf4edcc",
-            "sideBar.background": "#faf4eddd",
-            "panel.background": "#fffaf3dd",
-            "editorGroupHeader.tabsBackground": "#faf4ed00",
-            "activityBar.background": "#faf4ed00",
-            "tab.activeBorderTop": "#d7827e",
-            "widget.shadow": "#00000000"
-        },
-        "[Note Book Farmhouse]": {
-            "titleBar.activeBackground": "#dfdbd8cc",
-            "statusBar.background": "#d6d2cfcc",
-            "sideBar.background": "#dfdbd8dd",
-            "panel.background": "#dfdbd8dd",
-            "editorGroupHeader.tabsBackground": "#dfdbd800",
-            "activityBar.background": "#d6d2cf00",
-            "tab.activeBorderTop": "#820046",
-            "widget.shadow": "#00000000"
-        },
-        "[Note Book Parchment]": {
-            "titleBar.activeBackground": "#f4eedbcc",
-            "statusBar.background": "#ece5cfcc",
-            "sideBar.background": "#f4eedbdd",
-            "panel.background": "#f4eedbdd",
-            "editorGroupHeader.tabsBackground": "#f4eedb00",
-            "activityBar.background": "#ece5cf00",
-            "tab.activeBorderTop": "#b4637a",
+        "[Note Book Solarized Light]": {
+            "titleBar.activeBackground": "#eee8d5cc",
+            "statusBar.background": "#eee8d5cc",
+            "sideBar.background": "#eee8d5dd",
+            "panel.background": "#fdf6e3dd",
+            "editorGroupHeader.tabsBackground": "#eee8d500",
+            "activityBar.background": "#eee8d500",
+            "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },
         "[Note Book Sage]": {
@@ -1436,19 +1457,9 @@
             "panel.background": "#e3e6dddd",
             "editorGroupHeader.tabsBackground": "#e3e6dd00",
             "activityBar.background": "#d6dacd00",
-            "tab.activeBorderTop": "#286983",
-            "widget.shadow": "#00000000"
-        },
-        "[Note Book Minimal]": {
-            "titleBar.activeBackground": "#e5e5e6cc",
-            "statusBar.background": "#d4d4d5cc",
-            "sideBar.background": "#e5e5e6dd",
-            "panel.background": "#e5e5e6dd",
-            "editorGroupHeader.tabsBackground": "#e5e5e600",
-            "activityBar.background": "#d4d4d500",
-            "tab.activeBorderTop": "#ca1243",
+            "tab.activeBorderTop": "#56949f",
             "widget.shadow": "#00000000"
         }
     },
-    "workbench.colorTheme": "Note Book Solarized Dark HC"
+    "workbench.colorTheme": "Note Book Minimal"
 }

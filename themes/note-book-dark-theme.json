@@ -314,7 +314,17 @@
         "inputOption.activeBackground": "#2aa19833",
         "toolbar.hoverBackground": "#004454aa",
         "menubar.selectionBackground": "#005a6f"
-    },
+      ,
+  "tab.hoverForeground": "#a7b6b7",
+  "tab.unfocusedActiveForeground": "#93a1a1",
+  "titleBar.activeForeground": "#93a1a1",
+  "panelTitle.activeForeground": "#a7b6b7",
+  "input.border": "#2aa19899",
+  "list.hoverForeground": "#a7b6b7",
+  "list.focusForeground": "#a7b6b7",
+  "notificationToast.border": "#2aa198cc",
+  "notifications.background": "#00212b",
+  "editor.selectionForeground": "#000000"},
     "tokenColors": [
         {
             "settings": {

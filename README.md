@@ -1,11 +1,11 @@
 # Note Book Theme for VS Code
 
-A Solarized and Rosé Pine-inspired suite of calm, readable themes for VS Code. Softened surfaces, warm neutrals, muted accents, and stable focus states support long coding sessions.
+A Solarized and Rosé Pine-inspired suite of calm, readable themes for VS Code, rebuilt with Liquid Glass surfaces and refined motion. Softened frosted chrome, warm neutrals, muted accents, and adaptive transition behavior support long coding sessions.
 
 ## Themes
 
 ### Recommended for long hours
-- **Note Book Parchment** — warm paper light theme; recommended light default
+- **Note Book Minimal** — neutral, high-clarity light theme; preferred light default
 - **Note Book Solarized Dark HC** — deep teal dark theme with stronger text and focus contrast; recommended dark default
 - **Note Book Rosé Pine Dawn** — warm Rosé Pine-inspired light alternative for lower-stimulation days
 
@@ -31,7 +31,7 @@ These themes improve readability and reduce visual noise. They are not a medical
 
 ```bash
 npx vsce package
-code --install-extension note-book-theme-0.5.2.vsix
+code --install-extension note-book-theme-0.6.0.vsix
 ```
 
 Then open **Preferences: Color Theme** and choose a Note Book theme.
@@ -42,7 +42,7 @@ The published VSIX remains theme-only. For refined frosted chrome and OS-adaptiv
 
 The preset provides:
 
-- Automatic OS light/dark switching between Parchment and Solarized Dark HC
+- Automatic OS light/dark switching between **Note Book Minimal** (light) and **Note Book Solarized Dark HC** (dark)
 - Refined Liquid Glass surfaces: continuous radii, soft specular edges, quiet elevation
 - OS-adaptive motion (`workbench.reduceMotion: user`) with a strict reduced-motion CSS fallback
 - 16 px editor type, generous line height, higher terminal contrast, and a calm static cursor
@@ -52,7 +52,7 @@ Custom UI Style is required only for the `custom-ui-style.stylesheet` section. A
 
 `.vscodeignore` intentionally excludes `vs-code-setting.jsonc`, scripts, and local design notes so the marketplace package stays lightweight.
 
-For the greatest benefit, set your display brightness to match the room, use a warm night-light profile after sunset if it is comfortable for you, and take regular screen breaks.
+For the greatest benefit, set your display brightness to match the room, use a warm night-light profile after sunset if comfortable, and take regular screen breaks.
 
 ## Validation
 

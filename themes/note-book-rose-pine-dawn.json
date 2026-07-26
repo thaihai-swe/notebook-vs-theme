@@ -506,7 +506,9 @@
         "editorStickyScroll.background": "#fffaf3",
         "editorStickyScrollHover.background": "#f2e9e1",
         "tab.activeBorderTop": "#d7827e"
-    },
+      ,
+  "tab.hoverForeground": "#4a4668",
+  "tab.unfocusedActiveForeground": "#797593"},
     "tokenColors": [
         {
             "scope": [

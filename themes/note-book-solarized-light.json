@@ -296,7 +296,13 @@
         "inputOption.activeBackground": "#2aa19822",
         "toolbar.hoverBackground": "#e8dfc880",
         "menubar.selectionBackground": "#ddd6c1"
-    },
+      ,
+  "selection.background": "#fdf6e3",
+  "tab.hoverForeground": "#3f4f54",
+  "list.hoverForeground": "#3f4f54",
+  "list.focusForeground": "#3f4f54",
+  "notificationToast.border": "#147c78",
+  "editor.selectionForeground": "#000000"},
     "tokenColors": [
         {
             "scope": [
