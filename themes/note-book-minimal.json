@@ -283,14 +283,14 @@
         "editorCursor.background": "#f0f0f0",
         "inputOption.activeBackground": "#b4637a22",
         "toolbar.hoverBackground": "#e5e5e680",
-        "menubar.selectionBackground": "#d4d4d5"
-      ,
-  "selection.background": "#f0f0f0",
-  "tab.hoverForeground": "#383a42",
-  "list.hoverForeground": "#383a42",
-  "list.focusForeground": "#383a42",
-  "notificationToast.border": "#ca1243cc",
-  "editor.selectionForeground": "#000000"},
+        "menubar.selectionBackground": "#d4d4d5",
+        "selection.background": "#f0f0f0",
+        "tab.hoverForeground": "#383a42",
+        "list.hoverForeground": "#383a42",
+        "list.focusForeground": "#383a42",
+        "notificationToast.border": "#ca1243cc",
+        "editor.selectionForeground": "#000000"
+    },
     "tokenColors": [
         {
             "scope": [

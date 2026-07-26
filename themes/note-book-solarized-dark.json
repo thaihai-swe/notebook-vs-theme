@@ -319,18 +319,18 @@
         "editorCursor.background": "#002b36",
         "inputOption.activeBackground": "#2aa19833",
         "toolbar.hoverBackground": "#004454aa",
-        "menubar.selectionBackground": "#005a6f"
-      ,
-  "tab.hoverForeground": "#839496",
-  "tab.unfocusedActiveForeground": "#93a1a1",
-  "titleBar.activeForeground": "#93a1a1",
-  "panelTitle.activeForeground": "#839496",
-  "input.border": "#2aa19899",
-  "list.hoverForeground": "#839496",
-  "list.focusForeground": "#839496",
-  "notificationToast.border": "#2aa198cc",
-  "notifications.background": "#073642",
-  "editor.selectionForeground": "#ffffff"},
+        "menubar.selectionBackground": "#005a6f",
+        "tab.hoverForeground": "#839496",
+        "tab.unfocusedActiveForeground": "#93a1a1",
+        "titleBar.activeForeground": "#93a1a1",
+        "panelTitle.activeForeground": "#839496",
+        "input.border": "#2aa19899",
+        "list.hoverForeground": "#839496",
+        "list.focusForeground": "#839496",
+        "notificationToast.border": "#2aa198cc",
+        "notifications.background": "#073642",
+        "editor.selectionForeground": "#ffffff"
+    },
     "tokenColors": [
         {
             "settings": {

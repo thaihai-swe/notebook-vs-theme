@@ -1,6 +1,6 @@
 # Note Book Theme for VS Code
 
-A Solarized and Rosé Pine-inspired suite of calm, readable themes for VS Code, rebuilt with Liquid Glass surfaces and refined motion. Softened frosted chrome, warm neutrals, muted accents, and adaptive transition behavior support long coding sessions.
+A Solarized and Rosé Pine-inspired suite of calm, readable themes for VS Code, rebuilt with premium Liquid Glass surfaces and refined motion. Softened frosted chrome, warm neutrals, muted accents, and adaptive transition behavior support long coding sessions.
 
 ## Themes
 
@@ -36,19 +36,42 @@ code --install-extension note-book-theme-0.6.0.vsix
 
 Then open **Preferences: Color Theme** and choose a Note Book theme.
 
-## Optional iOS 27 Liquid Glass preset
+## Optional premium Liquid Glass preset
 
-The published VSIX remains theme-only. For refined frosted chrome and OS-adaptive motion, copy the repo file `vs-code-setting.jsonc` into your VS Code User `settings.json`.
+The published VSIX remains theme-only. For premium frosted chrome, Settings Editor polish, and OS-adaptive motion, copy the repo file `vs-code-setting.jsonc` into your VS Code User `settings.json`.
 
-The preset provides:
+### Requirements
+
+- [Custom UI Style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style) is required only for the `custom-ui-style.stylesheet` section
+- After changing stylesheet rules, run **Custom UI Style: Reload** or **Developer: Reload Window**
+
+### What the preset provides
 
 - Automatic OS light/dark switching between **Note Book Minimal** (light) and **Note Book Solarized Dark HC** (dark)
-- Refined Liquid Glass surfaces: continuous radii, soft specular edges, quiet elevation
+- Premium Liquid Glass materials: thin / regular / thick / overlay / card surfaces
+- Continuous radii, specular edges, layered elevation, and focus glows
+- Settings Editor redesign: frosted cards, pill search field, clearer TOC selection, modified-state indicators
 - OS-adaptive motion (`workbench.reduceMotion: user`) with a strict reduced-motion CSS fallback
-- 16 px editor type, generous line height, higher terminal contrast, and a calm static cursor
+- 15 px editor type, 1.75 line height, higher terminal contrast, and a calm static cursor
 - Stronger Search/Replace borders and native VS Code fallback when Custom UI Style is not installed
 
-Custom UI Style is required only for the `custom-ui-style.stylesheet` section. After changing those rules, run **Custom UI Style: Reload** or **Developer: Reload Window**.
+### Performance notes
+
+Backdrop blur is intentional for the glass look. If scrolling or typing feels heavy:
+
+1. Temporarily remove or comment out the `custom-ui-style.stylesheet` block
+2. Keep the theme and non-CSS settings for a lighter native chrome
+3. Prefer reduced-motion OS settings if animations feel restless
+
+### Troubleshooting
+
+| Issue | Fix |
+| --- | --- |
+| Styles not applying | Run **Custom UI Style: Reload**, then **Developer: Reload Window** |
+| Settings cards look default | Confirm Custom UI Style is installed and enabled |
+| UI feels laggy | Disable the stylesheet section; keep theme tokens only |
+| Fonts look wrong | Install preferred fonts or rely on the fallback stack |
+| Glass too strong | Lower window zoom or switch to a denser theme like Minimal / Solarized Dark HC |
 
 `.vscodeignore` intentionally excludes `vs-code-setting.jsonc`, scripts, and local design notes so the marketplace package stays lightweight.
 
@@ -59,6 +82,8 @@ For the greatest benefit, set your display brightness to match the room, use a w
 ```bash
 python3 scripts/validate_themes.py
 ```
+
+The validator checks theme contrast, required color/semantic coverage, package registration, and Liquid Glass settings-preset integrity.
 
 ## License
 
