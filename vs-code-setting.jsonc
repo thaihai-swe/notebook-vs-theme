@@ -481,7 +481,9 @@
             "--nb-ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
             "--nb-lift-1": "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.06)",
             "--nb-lift-2": "0 2px 6px rgba(0, 0, 0, 0.06), 0 10px 24px rgba(0, 0, 0, 0.08)",
+            "--nb-theme-motion": "var(--nb-motion-slow) var(--nb-ease-soft)",
             "background-color": "var(--nb-bg-canvas) !important",
+            "transition": "background-color var(--nb-theme-motion), color var(--nb-theme-motion) !important",
             "font-family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Bear Sans UI', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important"
         },
         // ------------------------------------------------------------------
@@ -527,6 +529,7 @@
             "border-right": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular) !important",
             "margin": "var(--nb-panel-top) 0 var(--nb-panel-gap) 0 !important",
+            "animation": "nb-slide-in-left var(--nb-motion-slow) var(--nb-ease-soft) !important",
             "transition": "background-color var(--nb-motion-slow) var(--nb-ease-spring), box-shadow var(--nb-motion-slow) var(--nb-ease-spring) !important"
         },
         ".part.sidebar .composite.title": {
@@ -659,7 +662,7 @@
         },
         ".tab .tab-close-button:hover, .tab .action-label.codicon-close:hover": {
             "background-color": "rgba(255, 255, 255, 0.16) !important",
-            "transform": "none !important"
+            "transform": "scale(1.1) !important"
         },
         ".tabs-and-actions-container": {
             "border-bottom": "var(--nb-hairline-soft) !important",
@@ -745,6 +748,49 @@
             "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 75%, rgba(255, 255, 255, 0.45)) !important",
             "box-shadow": "var(--nb-specular-strong), 0 4px 12px rgba(0, 0, 0, 0.20), 0 0 8px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 30%, transparent) !important"
         },
+        ".part.activitybar .action-item:checked .action-label:hover": {
+            "transform": "translateY(-1px) !important",
+            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 92%, rgba(255, 255, 255, 0.16)) !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 90%, rgba(255, 255, 255, 0.6)) !important",
+            "box-shadow": "var(--nb-specular-strong), 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 12px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 40%, transparent) !important"
+        },
+        ".part.activitybar .action-item:checked::after": {
+            "content": "'' !important",
+            "position": "absolute !important",
+            "left": "-2px !important",
+            "top": "calc(50% - 3px) !important",
+            "width": "4px !important",
+            "height": "6px !important",
+            "border-radius": "var(--nb-pill-radius) !important",
+            "background-color": "var(--vscode-activityBar-activeBorder, var(--vscode-activityBar-foreground)) !important",
+            "transition": "height var(--nb-motion-base) var(--nb-ease-soft), top var(--nb-motion-base) var(--nb-ease-soft) !important"
+        },
+        ".part.activitybar .action-item:checked:hover::after": {
+            "height": "12px !important",
+            "top": "calc(50% - 6px) !important"
+        },
+        ".part.activitybar .action-item:active .action-label": {
+            "transform": "scale(0.95) !important",
+            "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
+        },
+        ".part.activitybar .action-item": {
+            "position": "relative !important"
+        },
+        ".part.activitybar .action-item .action-label": {
+            "border-radius": "50% !important",
+            "transition": "background var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-soft) !important"
+        },
+        ".part.activitybar .action-item .action-label:hover": {
+            "transform": "translateY(-1px) !important",
+            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.15)) 40%, transparent) !important",
+            "box-shadow": "var(--nb-specular), 0 4px 10px rgba(0, 0, 0, 0.12) !important"
+        },
+        ".part.activitybar .action-item.checked .action-label": {
+            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 88%, rgba(255, 255, 255, 0.12)) !important",
+            "border-radius": "50% !important",
+            "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 75%, rgba(255, 255, 255, 0.45)) !important",
+            "box-shadow": "var(--nb-specular-strong), 0 4px 12px rgba(0, 0, 0, 0.20), 0 0 8px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 30%, transparent) !important"
+        },
         ".part.activitybar .action-item.checked .action-label:hover": {
             "transform": "translateY(-1px) !important",
             "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 92%, rgba(255, 255, 255, 0.16)) !important",
@@ -782,6 +828,7 @@
             "border-left": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular) !important",
             "margin": "var(--nb-panel-top) 0 var(--nb-panel-gap) 0 !important",
+            "animation": "nb-slide-in-left var(--nb-motion-slow) var(--nb-ease-soft) !important",
             "transition": "background-color var(--nb-motion-slow) var(--nb-ease-spring) !important"
         },
         // ------------------------------------------------------------------
@@ -851,10 +898,14 @@
         },
         ".monaco-inputbox.focused": {
             "border-color": "color-mix(in srgb, var(--vscode-focusBorder) 55%, rgba(255, 255, 255, 0.25)) !important",
-            "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-focusBorder) 22%, transparent), var(--nb-specular) !important"
+            "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-focusBorder) 22%, transparent), var(--nb-specular) !important",
+            "animation": "nb-focus-pulse 2s var(--nb-ease-in-out) infinite !important"
         },
         ".monaco-list-row": {
             "transition": "background-color var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-spring), opacity var(--nb-motion-base) var(--nb-ease-soft) !important"
+        },
+        ".monaco-list-row.focused": {
+            "animation": "nb-focus-pulse 2s var(--nb-ease-in-out) infinite !important"
         },
         ".monaco-list-row:active": {
             "transform": "scale(0.985) !important",
@@ -880,6 +931,10 @@
         ".action-label:active": {
             "transform": "scale(0.98) !important",
             "opacity": "0.9 !important"
+        },
+        "input[type='checkbox']:hover, .settings-editor .setting-item-bool:hover": {
+            "box-shadow": "0 0 0 2px color-mix(in srgb, var(--vscode-focusBorder) 15%, transparent) !important",
+            "transition": "box-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         // ------------------------------------------------------------------
         // Scrollbars — thin liquid rails
@@ -966,23 +1021,32 @@
             "transition": "transform var(--nb-motion-base) var(--nb-ease-spring), color var(--nb-motion-base) var(--nb-ease-spring) !important"
         },
         ".monaco-editor .cursor": {
-            "filter": "drop-shadow(0 0 3px color-mix(in srgb, var(--vscode-editorCursor-foreground) 85%, transparent)) !important"
+            "filter": "drop-shadow(0 0 3px color-mix(in srgb, var(--vscode-editorCursor-foreground) 85%, transparent)) !important",
+            "animation": "nb-cursor-glow 2s ease-in-out infinite !important"
         },
         ".monaco-editor .selected-text": {
             "border-radius": "3px !important"
         },
         ".monaco-editor .bracket-indent-guide.active": {
             "filter": "drop-shadow(0 0 2.5px var(--vscode-editorBracketHighlight-foreground1, var(--vscode-focusBorder))) !important",
-            "opacity": "1 !important"
+            "opacity": "1 !important",
+            "animation": "nb-bracket-pop 150ms var(--nb-ease-spring) !important"
         },
         // ------------------------------------------------------------------
         // Progress track — glass shimmer
         // ------------------------------------------------------------------
-        ".monaco-progress-container .progress-bit": {
+".monaco-progress-container .progress-bit": {
             "background": "linear-gradient(90deg, var(--vscode-progressBar-background) 0%, color-mix(in srgb, var(--vscode-progressBar-background) 60%, #ffffff) 50%, var(--vscode-progressBar-background) 100%) !important",
             "background-size": "200% 100% !important",
-            "animation": "none !important",
+            "animation": "nb-shimmer 1.5s linear infinite !important",
             "box-shadow": "0 0 8px var(--vscode-progressBar-background) !important"
+        },
+        // Skeleton loading pulse
+        ".monaco-list-row.loading": {
+            "background": "linear-gradient(90deg, var(--vscode-sideBar-background) 25%, color-mix(in srgb, var(--vscode-sideBar-background) 85%, #ffffff) 50%, var(--vscode-sideBar-background) 75%) !important",
+            "background-size": "200% 100% !important",
+            "animation": "nb-shimmer 1.2s ease-in-out infinite !important",
+            "opacity": "0.6 !important"
         },
         // ------------------------------------------------------------------
         // File Tree Twisties
@@ -1135,7 +1199,7 @@
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
             "overflow": "hidden !important",
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
+            "animation": "nb-fade-scale var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".suggest-widget": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1145,7 +1209,7 @@
             "-webkit-backdrop-filter": "var(--nb-blur-regular) !important",
             "border": "var(--nb-hairline) !important",
             "box-shadow": "var(--nb-elev-2), var(--nb-specular-strong) !important",
-            "animation": "nb-emerge var(--nb-motion-base) var(--nb-ease-soft) !important"
+            "animation": "nb-fade-scale var(--nb-motion-base) var(--nb-ease-soft) !important"
         },
         ".context-view": {
             "border-radius": "var(--nb-widget-radius) !important",
@@ -1214,6 +1278,73 @@
             },
             "100%": {
                 "background-position": "-200% 0"
+            }
+        },
+        "@keyframes nb-slide-in-left": {
+            "0%": {
+                "opacity": "0",
+                "transform": "translateX(-12px)",
+                "filter": "blur(4px)"
+            },
+            "70%": {
+                "transform": "translateX(0)"
+            },
+            "100%": {
+                "opacity": "1",
+                "transform": "translateX(0)",
+                "filter": "blur(0)"
+            }
+        },
+        "@keyframes nb-fade-scale": {
+            "0%": {
+                "opacity": "0",
+                "transform": "scale(0.96)",
+                "filter": "blur(4px)"
+            },
+            "70%": {
+                "transform": "scale(1)"
+            },
+            "100%": {
+                "opacity": "1",
+                "transform": "scale(1)",
+                "filter": "blur(0)"
+            }
+        },
+        "@keyframes nb-slide-out": {
+            "0%": {
+                "opacity": "1",
+                "transform": "translateX(0) scale(1)"
+            },
+            "100%": {
+                "opacity": "0",
+                "transform": "translateX(-8px) scale(0.95)"
+            }
+        },
+        "@keyframes nb-focus-pulse": {
+            "0%": {
+                "box-shadow": "0 0 0 0px color-mix(in srgb, var(--vscode-focusBorder) 40%, transparent)"
+            },
+            "50%": {
+                "box-shadow": "0 0 0 3px color-mix(in srgb, var(--vscode-focusBorder) 20%, transparent)"
+            },
+            "100%": {
+                "box-shadow": "0 0 0 0px color-mix(in srgb, var(--vscode-focusBorder) 40%, transparent)"
+            }
+        },
+        "@keyframes nb-skeleton-pulse": {
+            "0%, 100%": {
+                "opacity": "0.4"
+            },
+            "50%": {
+                "opacity": "0.7"
+            }
+        },
+        "@keyframes nb-cursor-glow": {
+            "0%, 100%": {
+                "filter": "drop-shadow(0 0 3px color-mix(in srgb, var(--vscode-editorCursor-foreground) 85%, transparent))"
+            },
+            "50%": {
+                "filter": "drop-shadow(0 0 6px color-mix(in srgb, var(--vscode-editorCursor-foreground) 95%, transparent))"
             }
         },
         ".extensions-list .monaco-list-row": {
@@ -1328,6 +1459,15 @@
                 "transition-delay": "0s !important",
                 "transform": "none !important",
                 "scroll-behavior": "auto !important"
+            },
+            ".monaco-progress-container .progress-bit": {
+                "animation": "none !important"
+            },
+            ".monaco-editor .cursor": {
+                "animation": "none !important"
+            },
+            ".monaco-inputbox.focused, .monaco-list-row.focused": {
+                "animation": "none !important"
             }
         }
     },

@@ -52,7 +52,11 @@ The published VSIX remains theme-only. For premium frosted chrome, Settings Edit
 - Continuous radii, specular edges, layered elevation, and focus glows
 - Settings Editor redesign: frosted cards, pill search field, clearer TOC selection, modified-state indicators
 - OS-adaptive motion (`workbench.reduceMotion: user`) with a strict reduced-motion CSS fallback
-- 15 px editor type, 1.75 line height, higher terminal contrast, and a calm static cursor
+- 10 keyframe animations: slide-in-left, fade-scale, emerge, notify, spotlight, slide-out, focus-pulse, cursor-glow, bracket-pop, shimmer
+- 38 transition rules across sidebar, tabs, buttons, inputs, scrollbars, and panels for spring-based UI
+- Smooth theme-switch cross-fade via `--nb-theme-motion` variable
+- Skeleton loading pulse for list items and progress shimmer
+- 16 px editor type, 1.9 line height, higher terminal contrast, and a calm cursor with subtle glow pulse
 - Stronger Search/Replace borders and native VS Code fallback when Custom UI Style is not installed
 
 ### Performance notes
