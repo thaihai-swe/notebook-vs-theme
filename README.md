@@ -6,13 +6,12 @@ A Solarized and Rosé Pine-inspired suite of calm, readable themes for VS Code, 
 
 ### Recommended for long hours
 - **Note Book Minimal** — neutral, high-clarity light theme; preferred light default
-- **Note Book Solarized Dark HC** — deep teal dark theme with stronger text and focus contrast; recommended dark default
+- **Note Book Solarized Dark** — canonical Solarized Dark palette and text balance; recommended dark default
 - **Note Book Rosé Pine Dawn** — warm Rosé Pine-inspired light alternative for lower-stimulation days
 
 ### Solarized family
 - **Note Book Solarized Light** — classic cream and teal light theme (comfort contrast)
 - **Note Book Solarized Dark** — canonical Solarized Dark palette and text balance
-- **Note Book Solarized Dark HC** — Solarized Dark with raised body-text contrast for marathon sessions
 
 ### Rosé Pine family
 - **Note Book Rosé Pine Dawn** — warm Rosé Pine-inspired light theme
@@ -47,7 +46,7 @@ The published VSIX remains theme-only. For premium frosted chrome, Settings Edit
 
 ### What the preset provides
 
-- Automatic OS light/dark switching between **Note Book Minimal** (light) and **Note Book Solarized Dark HC** (dark)
+- Automatic OS light/dark switching between **Note Book Minimal** (light) and **Note Book Solarized Dark** (dark)
 - Premium Liquid Glass materials: thin / regular / thick / overlay / card surfaces
 - Continuous radii, specular edges, layered elevation, and focus glows
 - Settings Editor redesign: frosted cards, pill search field, clearer TOC selection, modified-state indicators
@@ -75,7 +74,7 @@ Backdrop blur is intentional for the glass look. If scrolling or typing feels he
 | Settings cards look default | Confirm Custom UI Style is installed and enabled |
 | UI feels laggy | Disable the stylesheet section; keep theme tokens only |
 | Fonts look wrong | Install preferred fonts or rely on the fallback stack |
-| Glass too strong | Lower window zoom or switch to a denser theme like Minimal / Solarized Dark HC |
+| Glass too strong | Lower window zoom or switch to a denser theme like Minimal / Solarized Dark |
 
 `.vscodeignore` intentionally excludes `vs-code-setting.jsonc`, scripts, and local design notes so the marketplace package stays lightweight.
 

@@ -42,7 +42,7 @@
     "window.zoomLevel": 1.15,
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Note Book Minimal",
-    "workbench.preferredDarkColorTheme": "Note Book Solarized Dark HC",
+    "workbench.preferredDarkColorTheme": "Note Book Solarized Dark",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -773,49 +773,6 @@
             "transform": "scale(0.95) !important",
             "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
         },
-        ".part.activitybar .action-item": {
-            "position": "relative !important"
-        },
-        ".part.activitybar .action-item .action-label": {
-            "border-radius": "50% !important",
-            "transition": "background var(--nb-motion-base) var(--nb-ease-spring), box-shadow var(--nb-motion-base) var(--nb-ease-spring), transform var(--nb-motion-fast) var(--nb-ease-soft) !important"
-        },
-        ".part.activitybar .action-item .action-label:hover": {
-            "transform": "translateY(-1px) !important",
-            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, rgba(128, 128, 128, 0.15)) 40%, transparent) !important",
-            "box-shadow": "var(--nb-specular), 0 4px 10px rgba(0, 0, 0, 0.12) !important"
-        },
-        ".part.activitybar .action-item.checked .action-label": {
-            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 88%, rgba(255, 255, 255, 0.12)) !important",
-            "border-radius": "50% !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 75%, rgba(255, 255, 255, 0.45)) !important",
-            "box-shadow": "var(--nb-specular-strong), 0 4px 12px rgba(0, 0, 0, 0.20), 0 0 8px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 30%, transparent) !important"
-        },
-        ".part.activitybar .action-item.checked .action-label:hover": {
-            "transform": "translateY(-1px) !important",
-            "background": "color-mix(in srgb, var(--vscode-activityBar-activeBackground, var(--vscode-focusBorder)) 92%, rgba(255, 255, 255, 0.16)) !important",
-            "border": "1.5px solid color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 90%, rgba(255, 255, 255, 0.6)) !important",
-            "box-shadow": "var(--nb-specular-strong), 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 12px color-mix(in srgb, var(--vscode-activityBar-activeBorder, var(--vscode-focusBorder)) 40%, transparent) !important"
-        },
-        ".part.activitybar .action-item.checked::after": {
-            "content": "'' !important",
-            "position": "absolute !important",
-            "left": "-2px !important",
-            "top": "calc(50% - 3px) !important",
-            "width": "4px !important",
-            "height": "6px !important",
-            "border-radius": "var(--nb-pill-radius) !important",
-            "background-color": "var(--vscode-activityBar-activeBorder, var(--vscode-activityBar-foreground)) !important",
-            "transition": "height var(--nb-motion-base) var(--nb-ease-soft), top var(--nb-motion-base) var(--nb-ease-soft) !important"
-        },
-        ".part.activitybar .action-item.checked:hover::after": {
-            "height": "12px !important",
-            "top": "calc(50% - 6px) !important"
-        },
-        ".part.activitybar .action-item:active": {
-            "transform": "scale(0.97) !important",
-            "transition": "transform var(--nb-motion-fast) var(--nb-ease-spring) !important"
-        },
         // ------------------------------------------------------------------
         // Auxiliary bar — glass card (right)
         // ------------------------------------------------------------------
@@ -935,6 +892,42 @@
         "input[type='checkbox']:hover, .settings-editor .setting-item-bool:hover": {
             "box-shadow": "0 0 0 2px color-mix(in srgb, var(--vscode-focusBorder) 15%, transparent) !important",
             "transition": "box-shadow var(--nb-motion-base) var(--nb-ease-spring) !important"
+        },
+        ".monaco-workbench :focus-visible": {
+            "outline": "2px solid color-mix(in srgb, var(--vscode-focusBorder) 88%, transparent) !important",
+            "outline-offset": "2px !important",
+            "box-shadow": "var(--nb-focus-ring) !important"
+        },
+        ".monaco-editor .selected-text, .monaco-list-row.selected, .monaco-list-row.focused, .search-view .findMatch": {
+            "transition": "background-color var(--nb-motion-fast) var(--nb-ease-soft), color var(--nb-motion-fast) var(--nb-ease-soft) !important"
+        },
+        ".monaco-editor .find-widget, .monaco-editor .suggest-widget": {
+            "max-width": "min(720px, calc(100vw - 32px)) !important"
+        },
+        "@media (max-width: 900px)": {
+            ".monaco-workbench": {
+                "--nb-panel-radius": "18px",
+                "--nb-widget-radius": "14px",
+                "--nb-panel-gap": "4px",
+                "--nb-panel-top": "4px"
+            },
+            ".part.sidebar, .part.auxiliarybar": {
+                "margin-top": "var(--nb-panel-top) !important",
+                "margin-bottom": "var(--nb-panel-gap) !important"
+            },
+            ".part.editor": {
+                "margin": "var(--nb-panel-gap) !important"
+            }
+        },
+        "@media (prefers-reduced-transparency: reduce)": {
+            ".monaco-workbench": {
+                "--nb-glass-thin": "var(--vscode-sideBar-background)",
+                "--nb-glass-regular": "var(--vscode-sideBar-background)",
+                "--nb-glass-thick": "var(--vscode-editor-background)",
+                "--nb-blur-thin": "none",
+                "--nb-blur-regular": "none",
+                "--nb-blur-thick": "none"
+            }
         },
         // ------------------------------------------------------------------
         // Scrollbars — thin liquid rails
@@ -1557,16 +1550,6 @@
             "panel.background": "#00212bdd",
             "editorGroupHeader.tabsBackground": "#002b3600",
             "activityBar.background": "#00212b00",
-            "tab.activeBorderTop": "#2aa198",
-            "widget.shadow": "#00000000"
-        },
-        "[Note Book Solarized Dark HC]": {
-            "titleBar.activeBackground": "#002b36cc",
-            "statusBar.background": "#073642cc",
-            "sideBar.background": "#073642dd",
-            "panel.background": "#073642dd",
-            "editorGroupHeader.tabsBackground": "#002b3600",
-            "activityBar.background": "#07364200",
             "tab.activeBorderTop": "#2aa198",
             "widget.shadow": "#00000000"
         },

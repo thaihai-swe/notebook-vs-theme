@@ -39,11 +39,6 @@
                 "path": "./themes/note-book-solarized-light.json"
             },
             {
-                "label": "Note Book Solarized Dark HC",
-                "uiTheme": "vs-dark",
-                "path": "./themes/note-book-solarized-dark-hc.json"
-            },
-            {
                 "label": "Note Book Solarized Dark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/note-book-solarized-dark.json"

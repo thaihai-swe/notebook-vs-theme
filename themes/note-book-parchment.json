@@ -284,7 +284,7 @@
         "inputOption.activeBackground": "#b4637a22",
         "toolbar.hoverBackground": "#c3c1ba80",
         "menubar.selectionBackground": "#b3b1aa",
-        "selection.background": "#fbf7eb",
+        "selection.background": "#d8cdbbaa",
         "tab.hoverForeground": "#302f2a",
         "list.hoverForeground": "#302f2a",
         "list.focusForeground": "#302f2a",
