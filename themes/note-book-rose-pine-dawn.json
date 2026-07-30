@@ -21,6 +21,10 @@
         "enumMember": "#56949f",
         "typeParameter": "#56949f",
         "decorator": "#ea9d34",
+        "macro": {
+            "foreground": "#286983",
+            "fontStyle": "bold"
+        },
         "string": "#ea9d34",
         "number": "#d7827e",
         "keyword": "#286983",
