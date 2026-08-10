@@ -511,7 +511,66 @@
         "editorStickyScrollHover.background": "#f2e9e1",
         "tab.activeBorderTop": "#d7827e",
         "tab.hoverForeground": "#4a4668",
-        "tab.unfocusedActiveForeground": "#797593"
+        "tab.unfocusedActiveForeground": "#797593",
+        "contrastActiveBorder": "#7f5f9c",
+        "contrastBorder": "#7f5f9cAA",
+        "disabledForeground": "#797593A8",
+        "sash.hoverBorder": "#7f5f9c",
+        "list.activeSelectionIconForeground": "#4a4668",
+        "list.focusHighlightForeground": "#7f5f9c",
+        "list.focusAndSelectionOutline": "#7f5f9c",
+        "list.inactiveSelectionIconForeground": "#797593",
+        "tree.inactiveIndentGuidesStroke": "#6e6a864D",
+        "tab.activeBorder": "#7f5f9c",
+        "tab.hoverBorder": "#7f5f9c80",
+        "tab.unfocusedActiveBorder": "#7f5f9c80",
+        "tab.unfocusedInactiveForeground": "#797593",
+        "editorIndentGuide.background": "#6e6a864D",
+        "editorIndentGuide.activeBackground": "#7f5f9cB3",
+        "terminal.border": "#6e6a8680",
+        "terminal.inactiveSelectionBackground": "#7f5f9c26",
+        "terminal.tab.activeForeground": "#4a4668",
+        "terminal.tab.inactiveForeground": "#797593",
+        "terminalCommandDecoration.defaultBackground": "#56949f",
+        "terminalCommandDecoration.successBackground": "#286983",
+        "terminalCommandDecoration.errorBackground": "#b4637a",
+        "settings.dropdownBackground": "#f7f0e8",
+        "settings.dropdownForeground": "#4a4668",
+        "settings.dropdownBorder": "#6e6a86B3",
+        "settings.checkboxBackground": "#f7f0e8",
+        "settings.checkboxForeground": "#4a4668",
+        "settings.checkboxBorder": "#6e6a86B3",
+        "settings.textInputBackground": "#f7f0e8",
+        "settings.textInputForeground": "#4a4668",
+        "settings.textInputBorder": "#6e6a86B3",
+        "settings.numberInputBackground": "#f7f0e8",
+        "settings.numberInputForeground": "#4a4668",
+        "settings.numberInputBorder": "#6e6a86B3",
+        "notebook.editorBackground": "#f7f0e8",
+        "notebook.inactiveFocusedCellBorder": "#7f5f9c80",
+        "notebookStatusSuccessIcon.foreground": "#286983",
+        "notebookStatusErrorIcon.foreground": "#b4637a",
+        "testing.iconPassed": "#286983",
+        "testing.iconFailed": "#b4637a",
+        "testing.iconErrored": "#b4637a",
+        "testing.iconQueued": "#ea9d34",
+        "testing.iconSkipped": "#797593",
+        "testing.iconUnset": "#797593",
+        "testing.runAction": "#286983",
+        "chat.requestBackground": "#f2e9e180",
+        "chat.requestBorder": "#6e6a8680",
+        "chat.slashCommandBackground": "#7f5f9c1A",
+        "chat.slashCommandForeground": "#7f5f9c",
+        "chat.avatarForeground": "#4a4668",
+        "chat.avatarBackground": "#f2e9e1",
+        "welcomePage.tileBackground": "#fffaf3",
+        "welcomePage.tileHoverBackground": "#f2e9e1",
+        "welcomePage.tileBorder": "#6e6a8680",
+        "commandCenter.background": "#fffaf3",
+        "commandCenter.foreground": "#797593",
+        "commandCenter.border": "#6e6a86B3",
+        "commandCenter.activeBackground": "#6e6a8633",
+        "commandCenter.activeForeground": "#4a4668"
     },
     "tokenColors": [
         {
@@ -779,6 +838,44 @@
             ],
             "settings": {
                 "foreground": "#907aa9"
+            }
+        },
+        {
+            "scope": "comment.todo",
+            "settings": {
+                "foreground": "#ea9d34",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "comment.note",
+            "settings": {
+                "foreground": "#56949f",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "invalid",
+            "settings": {
+                "foreground": "#b4637a"
+            }
+        },
+        {
+            "scope": "string.escape",
+            "settings": {
+                "foreground": "#7f5f9c"
+            }
+        },
+        {
+            "scope": "constant.language.boolean",
+            "settings": {
+                "foreground": "#7f5f9c"
+            }
+        },
+        {
+            "scope": "support.type.property-name",
+            "settings": {
+                "foreground": "#56949f"
             }
         }
     ]
