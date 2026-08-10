@@ -74,10 +74,10 @@
     // Islands Dark font contract: IBM Plex Mono editor, Bear Sans UI chrome.
     "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'JetBrainsMono Nerd Font',  'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 16,
-    "editor.fontWeight": "400",
+    "editor.fontWeight": "450",
     "editor.lineHeight": 1.8,
     "editor.letterSpacing": 0.15,
-    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+    "editor.fontLigatures": "'calt', 'liga'",
     "editor.cursorStyle": "line",
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": "off",
@@ -104,6 +104,7 @@
     "editor.stickyTabStops": true,
     "editor.largeFileOptimizations": true,
     "editor.accessibilitySupport": "auto",
+    "accessibility.signalOptions.volume": "off",
     // Eye-care: less constant glow, clear column anchors, calmer highlights.
     "editor.matchBrackets": "near",
     "editor.occurrencesHighlight": "singleFile",
@@ -364,12 +365,13 @@
     "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
     "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font', 'Fira Code', 'IBM Plex Mono', 'Monaspace Neon', 'Menlo', 'Monaco', monospace",
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontWeight": "500",
+    "terminal.integrated.fontWeight": "450",
     "terminal.integrated.lineHeight": 1.55,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": false,
     "terminal.integrated.cursorWidth": 2,
     "terminal.integrated.customGlyphs": true,
+    "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.tabs.enabled": true,
     "terminal.integrated.tabs.hideCondition": "singleTerminal",
     "terminal.integrated.mouseWheelScrollSensitivity": 3,
@@ -439,6 +441,9 @@
         ".monaco-workbench": {
             "--nb-font-ui": "'Bear Sans UI', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
             "--nb-font-heading": "'Bear Sans UI Heading', 'Bear Sans UI', system-ui, sans-serif",
+            "--nb-font-size-ui": "13px",
+            "--nb-font-size-small": "12px",
+            "--nb-font-size-heading": "13px",
             "--nb-radius-panel": "14px",
             "--nb-radius-widget": "10px",
             "--nb-radius-input": "7px",
@@ -467,7 +472,17 @@
         },
         ".part.sidebar .title-label, .part.auxiliarybar .title-label, .part.panel.bottom .title-label": {
             "font-family": "var(--nb-font-heading) !important",
-            "font-weight": "600 !important"
+            "font-weight": "600 !important",
+            "font-size": "var(--nb-font-size-heading) !important"
+        },
+        ".part.sidebar, .part.auxiliarybar, .part.panel, .part.activitybar, .part.statusbar, .tabs-and-actions-container, .monaco-breadcrumbs, .monaco-menu, .quick-input-widget .quick-input-header, .notifications-center, .notification-toast": {
+            "font-family": "var(--nb-font-ui) !important"
+        },
+        ".monaco-list-row, .monaco-menu .action-label, .quick-input-widget, .suggest-widget, .settings-editor": {
+            "font-size": "var(--nb-font-size-ui) !important"
+        },
+        ".part.statusbar, .monaco-breadcrumbs, .tab .label-name": {
+            "font-size": "var(--nb-font-size-small) !important"
         },
         ".monaco-workbench .part, .monaco-workbench .monaco-list-row, .monaco-workbench .tab, .monaco-workbench .monaco-button": {
             "transition-timing-function": "var(--nb-ease-out) !important"
@@ -545,23 +560,24 @@
         ".tab::after": {
             "content": "'' !important",
             "position": "absolute !important",
-            "left": "50% !important",
+            "left": "8px !important",
+            "right": "8px !important",
             "bottom": "0 !important",
             "height": "2px !important",
             "border-radius": "999px !important",
-            "background-color": "var(--vscode-tab-activeBorder, var(--vscode-focusBorder)) !important",
-            "transform": "translateX(-50%) scaleX(0) !important",
-            "transform-origin": "center !important",
+            "background-color": "var(--vscode-tab-activeBorder, var(--vscode-statusBarItem-remoteBackground, var(--vscode-focusBorder))) !important",
+            "transform": "scaleX(0) !important",
+            "transform-origin": "left center !important",
             "opacity": "0 !important",
             "transition": "transform var(--nb-motion-slow) var(--nb-ease-out), opacity var(--nb-motion-fast) var(--nb-ease-out) !important"
         },
         ".tab:hover::after": {
             "opacity": "0.75 !important",
-            "transform": "translateX(-50%) scaleX(0.45) !important"
+            "transform": "scaleX(0.5) !important"
         },
         ".tab.active::after": {
             "opacity": "1 !important",
-            "transform": "translateX(-50%) scaleX(1) !important"
+            "transform": "scaleX(1) !important"
         },
         ".tab:hover": {
             "background-color": "var(--vscode-tab-hoverBackground) !important"
@@ -578,8 +594,6 @@
         },
         ".monaco-list-row": {
             "border-radius": "var(--nb-radius-item) !important",
-            "margin-top": "1px !important",
-            "margin-bottom": "1px !important",
             "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out) !important"
         },
         ".monaco-list-row.focused": {
@@ -629,8 +643,6 @@
             "background-color": "var(--nb-surface-raised) !important",
             "border": "1px solid var(--nb-border) !important",
             "box-shadow": "var(--nb-surface-shadow) !important",
-            "backdrop-filter": "var(--nb-glass-blur) !important",
-            "-webkit-backdrop-filter": "var(--nb-glass-blur) !important",
             "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
         },
         ".monaco-hover": {
@@ -638,8 +650,6 @@
             "background-color": "var(--nb-surface-raised) !important",
             "border": "1px solid var(--nb-border) !important",
             "box-shadow": "var(--nb-surface-shadow) !important",
-            "backdrop-filter": "var(--nb-glass-blur) !important",
-            "-webkit-backdrop-filter": "var(--nb-glass-blur) !important",
             "animation": "nb-settle-in var(--nb-motion-base) var(--nb-ease-out) both !important"
         },
         ".monaco-dialog-box": {
