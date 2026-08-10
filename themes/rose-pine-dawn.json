@@ -1,5 +1,5 @@
 {
-    "name": "Note Book Rosé Pine Dawn",
+    "name": "Rosé Pine Dawn",
     "type": "light",
     "semanticHighlighting": true,
     "semanticTokenColors": {
@@ -571,7 +571,23 @@
         "commandCenter.border": "#6e6a86B3",
         "commandCenter.activeBackground": "#6e6a8633",
         "commandCenter.activeForeground": "#4a4668",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#b42318"
+        "editorBracketHighlight.unexpectedBracket.foreground": "#b42318",
+        "debugTokenExpression.boolean": "#ea9d34",
+        "debugTokenExpression.error": "#b4637a",
+        "debugTokenExpression.name": "#ea9d3480",
+        "debugTokenExpression.number": "#b4637a80",
+        "debugTokenExpression.string": "#28698380",
+        "debugTokenExpression.value": "#28698380",
+        "editorIndentGuide.activeBackground2": "#b4637a80",
+        "editorIndentGuide.activeBackground3": "#ea9d3480",
+        "editorIndentGuide.background2": "#b4637a80",
+        "editorIndentGuide.background3": "#ea9d3480",
+        "notebook.cellToolbarSeparator": "#6e6a8626",
+        "notebook.selectedCellBackground": "#e6dfe8",
+        "notebook.selectedCellBorder": "#7f5f9ccc",
+        "notebookStatusRunningIcon.foreground": "#56949f",
+        "scrollbar.background": "#f7f0e815",
+        "sideBarTitle.foreground": "#797593"
     },
     "tokenColors": [
         {

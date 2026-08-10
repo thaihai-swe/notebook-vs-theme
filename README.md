@@ -1,4 +1,4 @@
-# Note Book Theme & VS Code Settings Redesign
+# Glass Paper Theme & VS Code Settings Redesign
 
 A Solarized and Rosé Pine-inspired suite for VS Code, redesigned as one Glass Paper system for long coding sessions, stable focus states, and predictable workspace ergonomics.
 
@@ -14,22 +14,22 @@ A Solarized and Rosé Pine-inspired suite for VS Code, redesigned as one Glass P
 
 ### Light variants
 
-- **Note Book Minimal** — neutral high-clarity default
-- **Note Book Solarized Light** — warm cream and teal
-- **Note Book Farmhouse** — warm gray editorial surface
-- **Note Book Parchment** — warm paper surface
-- **Note Book Rosé Pine Dawn** — soft low-stimulation palette
-- **Note Book Sage** — calm green surface
+- **Minimal** — neutral high-clarity default
+- **Solarized Light** — warm cream and teal
+- **Farmhouse** — warm gray editorial surface
+- **Parchment** — warm paper surface
+- **Rosé Pine Dawn** — soft low-stimulation palette
+- **Sage** — calm green surface
 
 ### Dark variants
 
-- **Note Book Solarized Dark** — canonical dark default
-- **Note Book Dark** — deep teal companion
+- **Solarized Dark** — canonical dark default
+- **Midnight Teal** — deep teal companion
 
 ## Installation & setup
 
 1. Install or update the extension in VS Code.
-2. Open **Preferences: Color Theme** and choose a Note Book theme.
+2. Open **Preferences: Color Theme** and choose a Glass Paper theme.
 3. Optional: copy `vs-code-setting.jsonc` into your VS Code User `settings.json` for matching editor ergonomics and optional Custom UI Style chrome.
 
 The optional `custom-ui-style.stylesheet` section requires [Custom UI Style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style). After changing those rules, run **Custom UI Style: Reload** or **Developer: Reload Window**.
@@ -45,5 +45,5 @@ The validator checks color format, required UI state keys, baseline foreground/b
 
 ```bash
 npx vsce package
-code --install-extension note-book-theme-0.8.0.vsix
+code --install-extension glass-paper-theme-0.0.1.vsix
 ```

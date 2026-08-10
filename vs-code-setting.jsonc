@@ -43,8 +43,8 @@
     "workbench.startupEditor": "welcomePage",
     "workbench.iconTheme": "material-icon-theme",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Note Book Minimal",
-    "workbench.preferredDarkColorTheme": "Note Book Solarized Dark",
+    "workbench.preferredLightColorTheme": "Minimal",
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
@@ -74,7 +74,7 @@
     // Islands Dark font contract: IBM Plex Mono editor, Bear Sans UI chrome.
     "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'JetBrainsMono Nerd Font',  'Monaspace Neon', 'Fira Code', 'Menlo', 'Monaco', monospace",
     "editor.fontSize": 16,
-    "editor.fontWeight": "450",
+    "editor.fontWeight": "400",
     "editor.lineHeight": 1.8,
     "editor.letterSpacing": 0.15,
     "editor.fontLigatures": "'calt', 'liga'",
@@ -916,5 +916,5 @@
             "widget.shadow": "#00000000"
         }
     },
-    "workbench.colorTheme": "Note Book Minimal"
+    "workbench.colorTheme": "Minimal"
 }

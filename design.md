@@ -1,6 +1,6 @@
-# Note Book — Glass Paper System
+# Glass Paper — Glass Paper System
 
-A locked visual system for the Note Book VS Code theme suite and its companion
+A locked visual system for the Glass Paper VS Code theme suite and its companion
 settings preset. The suite keeps each paper palette distinct while sharing one
 calm interaction language.
 

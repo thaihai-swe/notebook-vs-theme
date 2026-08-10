@@ -1,77 +1,77 @@
 {
-    "name": "note-book-theme",
-    "displayName": "Note Book Theme",
-    "description": "Solarized and Ros\u00e9 Pine-inspired, calm, readable themes for VS Code with long-session comfort and Glass Paper settings",
-    "version": "0.8.0",
-    "publisher": "note-book",
-    "license": "MIT",
-    "engines": {
-        "vscode": "^1.60.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "keywords": [
-        "theme",
-        "light theme",
-        "dark theme",
-        "notebook",
-        "rose pine",
-        "solarized",
-        "warm",
-        "sepia",
-        "accessible",
-        "comfortable",
-        "paper",
-        "long session",
-        "low eye strain"
-    ],
-    "contributes": {
-        "themes": [
-            {
-                "label": "Note Book Dark",
-                "uiTheme": "vs-dark",
-                "path": "./themes/note-book-dark-theme.json"
-            },
-            {
-                "label": "Note Book Solarized Light",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-solarized-light.json"
-            },
-            {
-                "label": "Note Book Solarized Dark",
-                "uiTheme": "vs-dark",
-                "path": "./themes/note-book-solarized-dark.json"
-            },
-            {
-                "label": "Note Book Farmhouse",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-farmhouse.json"
-            },
-            {
-                "label": "Note Book Minimal",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-minimal.json"
-            },
-            {
-                "label": "Note Book Ros\u00e9 Pine Dawn",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-rose-pine-dawn.json"
-            },
-            {
-                "label": "Note Book Parchment",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-parchment.json"
-            },
-            {
-                "label": "Note Book Sage",
-                "uiTheme": "vs",
-                "path": "./themes/note-book-sage.json"
-            }
-        ]
-    },
-    "repository": {
-        "type": "git",
-        "url": ""
-    }
+  "name": "glass-paper-theme",
+  "displayName": "Glass Paper Theme",
+  "description": "Solarized and Rosé Pine-inspired, calm, readable themes for VS Code with long-session comfort and Glass Paper settings",
+  "version": "0.0.1",
+  "publisher": "note-book",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "light theme",
+    "dark theme",
+    "notebook",
+    "rose pine",
+    "solarized",
+    "warm",
+    "sepia",
+    "accessible",
+    "comfortable",
+    "paper",
+    "long session",
+    "low eye strain"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Midnight Teal",
+        "uiTheme": "vs-dark",
+                "path": "./themes/midnight-teal.json"
+      },
+      {
+        "label": "Solarized Light",
+        "uiTheme": "vs",
+                "path": "./themes/solarized-light.json"
+      },
+      {
+        "label": "Solarized Dark",
+        "uiTheme": "vs-dark",
+                "path": "./themes/solarized-dark.json"
+      },
+      {
+        "label": "Farmhouse",
+        "uiTheme": "vs",
+                "path": "./themes/farmhouse.json"
+      },
+      {
+        "label": "Minimal",
+        "uiTheme": "vs",
+                "path": "./themes/minimal.json"
+      },
+      {
+        "label": "Rosé Pine Dawn",
+        "uiTheme": "vs",
+                "path": "./themes/rose-pine-dawn.json"
+      },
+      {
+        "label": "Parchment",
+        "uiTheme": "vs",
+                "path": "./themes/parchment.json"
+      },
+      {
+        "label": "Sage",
+        "uiTheme": "vs",
+                "path": "./themes/sage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
 }
