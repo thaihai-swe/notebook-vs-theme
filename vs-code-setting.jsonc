@@ -1,7 +1,7 @@
 // ============================================================================
-// VS Code settings.json — iOS 27 Liquid Glass UI/UX
-// Purpose: Warm, low-glare chrome with a 7:1 text-contrast target for long-session readability.
-// Liquid Glass: refined frosted surfaces, continuous radii, soft specular edges, quiet elevation.
+// Hallmark · modern-minimal · Glass Paper UI/UX settings
+// Purpose: Warm, low-glare chrome with stable focus states for long-session readability.
+// Glass Paper: translucent chrome only where it communicates hierarchy; no decorative glow.
 // Motion: OS-adaptive by default; reduced-motion mode becomes fully static.
 // Notes:
 // - This file is JSONC, not strict JSON. VS Code settings.json supports comments.
@@ -39,7 +39,6 @@
     "zenMode.restore": true,
     "workbench.startupEditor": "welcomePage",
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": 1.15,
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Note Book Minimal",
     "workbench.preferredDarkColorTheme": "Note Book Solarized Dark",
@@ -61,9 +60,9 @@
     "editor.minimap.side": "right",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
-    "editor.minimap.renderCharacters": true,
+    "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 120,
-    "editor.minimap.showSlider": "always",
+    "editor.minimap.showSlider": "mouseover",
     // ======================================================================
     // 3. Editor behavior and typography
     // ----------------------------------------------------------------------
@@ -423,289 +422,297 @@
     "problems.autoReveal": false,
     "problems.sortOrder": "severity",
     // ======================================================================
-    // 13. Custom UI stylesheet — iOS 27 Liquid Glass
+    // 13. Custom UI stylesheet — Glass Paper motion and chrome
     // ----------------------------------------------------------------------
     // Material system:
-    //   glass-thin  → title/status chrome (opaque enough for text)
-    //   glass-regular → sidebars, panels, tabs
-    //   glass-thick → editor card, dialogs, command palette
-    // Specular edge = inset top highlight + hairline border.
-    // Motion is fluid but restrained: color, opacity, shadow, and 1px lift.
+    //   quiet → title/status chrome
+    //   raised → sidebars, panels, tabs
+    //   widget → dialogs, command palette, suggestions
+    // Hairline borders provide separation; motion communicates state, not decoration.
     // Requires Custom UI Style extension.
     // ======================================================================
     "custom-ui-style.stylesheet": {
-    ".monaco-workbench": {
-        "--nb-radius-panel": "14px",
-        "--nb-radius-widget": "10px",
-        "--nb-radius-input": "6px",
-        "--nb-motion-fast": "120ms",
-        "--nb-motion-base": "180ms",
-        "--nb-motion-slow": "260ms",
-        "--nb-ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "--nb-ease-in": "cubic-bezier(0.4, 0, 1, 1)",
-        "--nb-ease-in-out": "cubic-bezier(0.45, 0, 0.55, 1)",
-        "--nb-surface": "color-mix(in srgb, var(--vscode-sideBar-background) 90%, transparent)",
-        "--nb-surface-raised": "color-mix(in srgb, var(--vscode-editorWidget-background) 95%, transparent)",
-        "--nb-border": "color-mix(in srgb, var(--vscode-widget-border, var(--vscode-foreground)) 45%, transparent)",
-        "--nb-focus": "var(--vscode-focusBorder)",
-        "--nb-shadow": "0 8px 24px color-mix(in srgb, var(--vscode-widget-shadow, #000000) 22%, transparent)",
-        "transition": "background-color var(--nb-motion-slow) var(--nb-ease-out), color var(--nb-motion-slow) var(--nb-ease-out) !important"
-    },
-    ".part.titlebar": {
-        "background-color": "var(--nb-surface) !important",
-        "border-bottom": "1px solid var(--nb-border) !important",
-        "box-shadow": "none !important",
-        "transition": "background-color var(--nb-motion-slow) var(--nb-ease-out) !important"
-    },
-    ".part.statusbar": {
-        "background-color": "var(--nb-surface) !important",
-        "border-top": "1px solid var(--nb-border) !important",
-        "box-shadow": "none !important"
-    },
-    ".part.statusbar .statusbar-item-label": {
-        "opacity": "0.85 !important",
-        "transition": "opacity var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".part.statusbar:hover .statusbar-item-label": {
-        "opacity": "1 !important"
-    },
-    ".part.sidebar, .part.auxiliarybar, .part.panel.bottom": {
-        "background-color": "var(--nb-surface) !important",
-        "border-color": "var(--nb-border) !important",
-        "box-shadow": "none !important"
-    },
-    ".part.editor": {
-        "background-color": "var(--vscode-editor-background) !important",
-        "border-left": "1px solid var(--nb-border) !important",
-        "border-right": "1px solid var(--nb-border) !important"
-    },
-    ".tabs-and-actions-container": {
-        "background-color": "var(--vscode-editorGroupHeader-tabsBackground) !important",
-        "border-bottom": "1px solid var(--nb-border) !important"
-    },
-    ".tab": {
-        "position": "relative !important",
-        "border-radius": "var(--nb-radius-input) !important",
-        "margin": "3px 2px !important",
-        "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".tab::after": {
-        "content": "'' !important",
-        "position": "absolute !important",
-        "left": "50% !important",
-        "bottom": "0 !important",
-        "width": "0 !important",
-        "height": "2px !important",
-        "border-radius": "999px !important",
-        "background-color": "var(--vscode-tab-activeBorder, var(--vscode-focusBorder)) !important",
-        "transform": "translateX(-50%) !important",
-        "transition": "width var(--nb-motion-slow) var(--nb-ease-out) !important"
-    },
-    ".tab:hover::after": {
-        "width": "40% !important"
-    },
-    ".tab.active::after": {
-        "width": "100% !important"
-    },
-    ".tab:hover": {
-        "background-color": "var(--vscode-tab-hoverBackground) !important"
-    },
-    ".tab.active": {
-        "background-color": "var(--vscode-tab-activeBackground) !important"
-    },
-    ".monaco-list-row": {
-        "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".monaco-list-row.focused": {
-        "outline": "1px solid var(--nb-focus) !important",
-        "outline-offset": "-1px !important"
-    },
-    ".monaco-list-row:hover": {
-        "transform": "none !important"
-    },
-    ".monaco-inputbox, .monaco-findInput, .scm-input, .scm-editor": {
-        "border-radius": "var(--nb-radius-input) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "background-color": "var(--vscode-input-background) !important",
-        "transition": "border-color var(--nb-motion-fast) var(--nb-ease-out), box-shadow var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".monaco-inputbox.focused, .monaco-findInput.focused, .scm-input:focus-within, .scm-editor:focus-within": {
-        "border-color": "var(--nb-focus) !important",
-        "box-shadow": "0 0 0 2px color-mix(in srgb, var(--nb-focus) 25%, transparent) !important"
-    },
-    ".monaco-button": {
-        "border-radius": "var(--nb-radius-input) !important",
-        "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out), border-color var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".monaco-button:hover, .action-label:hover": {
-        "transform": "none !important"
-    },
-    ".monaco-button:active, .action-label:active": {
-        "transform": "scale(0.98) !important",
-        "transition": "transform var(--nb-motion-fast) var(--nb-ease-in) !important"
-    },
-    ".monaco-workbench :focus-visible": {
-        "outline": "2px solid var(--nb-focus) !important",
-        "outline-offset": "2px !important",
-        "animation": "none !important"
-    },
-    ".quick-input-widget": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "backdrop-filter": "blur(10px) !important",
-        "-webkit-backdrop-filter": "blur(10px) !important",
-        "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
-    },
-    ".suggest-widget": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
-    },
-    ".monaco-hover": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-settle-in var(--nb-motion-base) var(--nb-ease-out) both !important"
-    },
-    ".monaco-dialog-box": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
-    },
-    ".notification-toast": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-toast-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
-    },
-    ".notifications-center": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
-    },
-    ".monaco-menu": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "background-color": "var(--nb-surface-raised) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "box-shadow": "var(--nb-shadow) !important",
-        "animation": "nb-settle-in var(--nb-motion-fast) var(--nb-ease-out) both !important"
-    },
-    ".quick-input-widget .monaco-list-row.focused, .suggest-widget .monaco-list-row.focused": {
-        "outline": "1px solid var(--nb-focus) !important",
-        "background-color": "var(--vscode-quickInputList-focusBackground) !important"
-    },
-    ".settings-editor .setting-item, .settings-editor .setting-item-contents": {
-        "border-radius": "var(--nb-radius-widget) !important",
-        "border": "1px solid var(--nb-border) !important",
-        "background-color": "var(--nb-surface) !important",
-        "padding": "14px 18px !important",
-        "margin-bottom": "8px !important",
-        "box-shadow": "none !important",
-        "transition": "border-color var(--nb-motion-fast) var(--nb-ease-out), background-color var(--nb-motion-fast) var(--nb-ease-out) !important"
-    },
-    ".settings-editor .setting-item:hover, .settings-editor .setting-item-contents:hover": {
-        "border-color": "var(--vscode-focusBorder) !important",
-        "transform": "none !important"
-    },
-    ".settings-editor .setting-item.setting-item-modified .setting-item-contents": {
-        "border-left": "3px solid var(--vscode-settings-modifiedItemIndicator) !important"
-    },
-    ".monaco-progress-container .progress-bit": {
-        "animation": "nb-progress-sweep 900ms var(--nb-ease-in-out) infinite !important"
-    },
-    ".monaco-scrollable-element > .scrollbar.vertical": {
-        "width": "14px !important"
-    },
-    ".monaco-scrollable-element > .scrollbar.vertical > .slider": {
-        "width": "6px !important",
-        "margin-left": "4px !important",
-        "border-radius": "999px !important"
-    },
-    ".monaco-scrollable-element > .scrollbar > .slider:hover": {
-        "background": "var(--vscode-scrollbarSlider-hoverBackground) !important"
-    },
-    ".monaco-sash:hover": {
-        "background-color": "var(--vscode-sash-hoverBorder) !important",
-        "box-shadow": "none !important"
-    },
-    ".command-center-center": {
-        "border-radius": "999px !important",
-        "border": "1px solid var(--nb-border) !important",
-        "background-color": "var(--nb-surface) !important",
-        "box-shadow": "none !important"
-    },
-    ".monaco-editor .cursor": {
-        "filter": "none !important",
-        "animation": "none !important"
-    },
-    "@keyframes nb-settle-in": {
-        "from": {
-            "opacity": "0",
-            "transform": "translateY(6px)"
-        },
-        "to": {
-            "opacity": "1",
-            "transform": "translateY(0)"
-        }
-    },
-    "@keyframes nb-toast-in": {
-        "from": {
-            "opacity": "0",
-            "transform": "translateX(10px)"
-        },
-        "to": {
-            "opacity": "1",
-            "transform": "translateX(0)"
-        }
-    },
-    "@keyframes nb-progress-sweep": {
-        "0%": {
-            "opacity": "0",
-            "transform": "translateX(-100%)"
-        },
-        "40%": {
-            "opacity": "1"
-        },
-        "100%": {
-            "opacity": "1",
-            "transform": "translateX(100%)"
-        }
-    },
-    "@media (prefers-reduced-transparency: reduce)": {
         ".monaco-workbench": {
-            "--nb-surface": "var(--vscode-sideBar-background)",
-            "--nb-surface-raised": "var(--vscode-editorWidget-background)"
+            "--nb-radius-panel": "14px",
+            "--nb-radius-widget": "10px",
+            "--nb-radius-input": "6px",
+            "--nb-motion-fast": "120ms",
+            "--nb-motion-base": "180ms",
+            "--nb-motion-slow": "260ms",
+            "--nb-ease-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+            "--nb-ease-in": "cubic-bezier(0.7, 0, 0.84, 0)",
+            "--nb-ease-in-out": "cubic-bezier(0.65, 0, 0.35, 1)",
+            "--nb-motion-calm": "150ms",
+            "--nb-surface": "color-mix(in srgb, var(--vscode-sideBar-background) 90%, transparent)",
+            "--nb-surface-raised": "color-mix(in srgb, var(--vscode-editorWidget-background) 95%, transparent)",
+            "--nb-border": "color-mix(in srgb, var(--vscode-widget-border, var(--vscode-foreground)) 45%, transparent)",
+            "--nb-focus": "var(--vscode-focusBorder)",
+            "--nb-shadow": "0 8px 24px color-mix(in srgb, var(--vscode-widget-shadow, #000000) 22%, transparent)",
+            "transition": "background-color var(--nb-motion-slow) var(--nb-ease-out), color var(--nb-motion-slow) var(--nb-ease-out) !important"
         },
-        ".quick-input-widget, .suggest-widget, .monaco-hover, .monaco-dialog-box, .notification-toast, .notifications-center, .monaco-menu": {
-            "backdrop-filter": "none !important",
-            "-webkit-backdrop-filter": "none !important"
-        }
-    },
-    "@media (prefers-reduced-motion: reduce)": {
-        ".monaco-workbench, .monaco-workbench *": {
-            "transition-duration": "0ms !important",
-            "animation": "none !important",
-            "scroll-behavior": "auto !important"
+        ".monaco-workbench .part, .monaco-workbench .monaco-list-row, .monaco-workbench .tab, .monaco-workbench .monaco-button": {
+            "transition-timing-function": "var(--nb-ease-out) !important"
         },
-        ".tab::after, .monaco-progress-container .progress-bit": {
-            "animation": "none !important",
-            "transition": "none !important"
+        ".part.titlebar": {
+            "background-color": "var(--nb-surface) !important",
+            "border-bottom": "1px solid var(--nb-border) !important",
+            "box-shadow": "none !important",
+            "transition": "background-color var(--nb-motion-slow) var(--nb-ease-out) !important"
+        },
+        ".part.statusbar": {
+            "background-color": "var(--nb-surface) !important",
+            "border-top": "1px solid var(--nb-border) !important",
+            "box-shadow": "none !important"
+        },
+        ".part.statusbar .statusbar-item-label": {
+            "opacity": "0.85 !important",
+            "transition": "opacity var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".part.statusbar:hover .statusbar-item-label": {
+            "opacity": "1 !important"
+        },
+        ".part.sidebar, .part.auxiliarybar, .part.panel.bottom": {
+            "background-color": "var(--nb-surface) !important",
+            "border-color": "var(--nb-border) !important",
+            "box-shadow": "none !important"
+        },
+        ".part.editor": {
+            "background-color": "var(--vscode-editor-background) !important",
+            "border-left": "1px solid var(--nb-border) !important",
+            "border-right": "1px solid var(--nb-border) !important"
+        },
+        ".tabs-and-actions-container": {
+            "background-color": "var(--vscode-editorGroupHeader-tabsBackground) !important",
+            "border-bottom": "1px solid var(--nb-border) !important"
+        },
+        ".tab": {
+            "position": "relative !important",
+            "border-radius": "var(--nb-radius-input) !important",
+            "margin": "3px 2px !important",
+            "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".tab::after": {
+            "content": "'' !important",
+            "position": "absolute !important",
+            "left": "50% !important",
+            "bottom": "0 !important",
+            "height": "2px !important",
+            "border-radius": "999px !important",
+            "background-color": "var(--vscode-tab-activeBorder, var(--vscode-focusBorder)) !important",
+            "transform": "translateX(-50%) scaleX(0) !important",
+            "transform-origin": "center !important",
+            "opacity": "0 !important",
+            "transition": "transform var(--nb-motion-slow) var(--nb-ease-out), opacity var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".tab:hover::after": {
+            "opacity": "0.65 !important",
+            "transform": "translateX(-50%) scaleX(0.4) !important"
+        },
+        ".tab.active::after": {
+            "opacity": "1 !important",
+            "transform": "translateX(-50%) scaleX(1) !important"
+        },
+        ".tab:hover": {
+            "background-color": "var(--vscode-tab-hoverBackground) !important"
+        },
+        ".tab.active": {
+            "background-color": "var(--vscode-tab-activeBackground) !important"
+        },
+        ".monaco-list-row": {
+            "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".monaco-list-row.focused": {
+            "outline": "1px solid var(--nb-focus) !important",
+            "outline-offset": "-1px !important"
+        },
+        ".monaco-list-row:hover": {
+            "transform": "none !important"
+        },
+        ".monaco-inputbox, .monaco-findInput, .scm-input, .scm-editor": {
+            "border-radius": "var(--nb-radius-input) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "background-color": "var(--vscode-input-background) !important",
+            "transition": "border-color var(--nb-motion-fast) var(--nb-ease-out), box-shadow var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".monaco-inputbox.focused, .monaco-findInput.focused, .scm-input:focus-within, .scm-editor:focus-within": {
+            "border-color": "var(--nb-focus) !important",
+            "box-shadow": "0 0 0 2px color-mix(in srgb, var(--nb-focus) 25%, transparent) !important"
+        },
+        ".monaco-button": {
+            "border-radius": "var(--nb-radius-input) !important",
+            "transition": "background-color var(--nb-motion-fast) var(--nb-ease-out), color var(--nb-motion-fast) var(--nb-ease-out), border-color var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".monaco-button:hover, .action-label:hover": {
+            "transform": "none !important"
         },
         ".monaco-button:active, .action-label:active": {
+            "transform": "scale(0.98) !important",
+            "transition": "transform var(--nb-motion-calm) var(--nb-ease-in) !important"
+        },
+        ".monaco-workbench :focus-visible": {
+            "outline": "2px solid var(--nb-focus) !important",
+            "outline-offset": "2px !important",
+            "animation": "none !important"
+        },
+        ".quick-input-widget": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "backdrop-filter": "blur(10px) !important",
+            "-webkit-backdrop-filter": "blur(10px) !important",
+            "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
+        },
+        ".suggest-widget": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
+        },
+        ".monaco-hover": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-settle-in var(--nb-motion-base) var(--nb-ease-out) both !important"
+        },
+        ".monaco-dialog-box": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
+        },
+        ".notification-toast": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-toast-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
+        },
+        ".notifications-center": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-settle-in var(--nb-motion-slow) var(--nb-ease-out) both !important"
+        },
+        ".monaco-menu": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "background-color": "var(--nb-surface-raised) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "box-shadow": "var(--nb-shadow) !important",
+            "animation": "nb-settle-in var(--nb-motion-fast) var(--nb-ease-out) both !important"
+        },
+        ".quick-input-widget .monaco-list-row.focused, .suggest-widget .monaco-list-row.focused": {
+            "outline": "1px solid var(--nb-focus) !important",
+            "background-color": "var(--vscode-quickInputList-focusBackground) !important"
+        },
+        ".settings-editor .setting-item, .settings-editor .setting-item-contents": {
+            "border-radius": "var(--nb-radius-widget) !important",
+            "border": "1px solid var(--nb-border) !important",
+            "background-color": "var(--nb-surface) !important",
+            "padding": "14px 18px !important",
+            "margin-bottom": "8px !important",
+            "box-shadow": "none !important",
+            "transition": "border-color var(--nb-motion-fast) var(--nb-ease-out), background-color var(--nb-motion-fast) var(--nb-ease-out) !important"
+        },
+        ".settings-editor .setting-item:hover, .settings-editor .setting-item-contents:hover": {
+            "border-color": "var(--vscode-focusBorder) !important",
             "transform": "none !important"
+        },
+        ".settings-editor .setting-item.setting-item-modified .setting-item-contents": {
+            "border-left": "3px solid var(--vscode-settings-modifiedItemIndicator) !important"
+        },
+        ".monaco-progress-container .progress-bit": {
+            "animation": "nb-progress-sweep 900ms var(--nb-ease-in-out) infinite !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.vertical": {
+            "width": "14px !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.vertical > .slider": {
+            "width": "6px !important",
+            "margin-left": "4px !important",
+            "border-radius": "999px !important"
+        },
+        ".monaco-scrollable-element > .scrollbar > .slider:hover": {
+            "background": "var(--vscode-scrollbarSlider-hoverBackground) !important"
+        },
+        ".monaco-sash:hover": {
+            "background-color": "var(--vscode-sash-hoverBorder) !important",
+            "box-shadow": "none !important"
+        },
+        ".command-center-center": {
+            "border-radius": "999px !important",
+            "border": "1px solid var(--nb-border) !important",
+            "background-color": "var(--nb-surface) !important",
+            "box-shadow": "none !important"
+        },
+        ".monaco-editor .cursor": {
+            "filter": "none !important",
+            "animation": "none !important"
+        },
+        "@keyframes nb-settle-in": {
+            "from": {
+                "opacity": "0",
+                "transform": "translateY(6px)"
+            },
+            "to": {
+                "opacity": "1",
+                "transform": "translateY(0)"
+            }
+        },
+        "@keyframes nb-toast-in": {
+            "from": {
+                "opacity": "0",
+                "transform": "translateX(10px)"
+            },
+            "to": {
+                "opacity": "1",
+                "transform": "translateX(0)"
+            }
+        },
+        "@keyframes nb-progress-sweep": {
+            "0%": {
+                "opacity": "0",
+                "transform": "translateX(-100%)"
+            },
+            "40%": {
+                "opacity": "1"
+            },
+            "100%": {
+                "opacity": "1",
+                "transform": "translateX(100%)"
+            }
+        },
+        "@media (prefers-reduced-transparency: reduce)": {
+            ".monaco-workbench": {
+                "--nb-surface": "var(--vscode-sideBar-background)",
+                "--nb-surface-raised": "var(--vscode-editorWidget-background)"
+            },
+            ".quick-input-widget, .suggest-widget, .monaco-hover, .monaco-dialog-box, .notification-toast, .notifications-center, .monaco-menu": {
+                "backdrop-filter": "none !important",
+                "-webkit-backdrop-filter": "none !important"
+            }
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+            ".monaco-workbench, .monaco-workbench *": {
+                "transition-duration": "0ms !important",
+                "animation": "none !important",
+                "scroll-behavior": "auto !important"
+            },
+            ".tab::after, .monaco-progress-container .progress-bit": {
+                "animation": "none !important",
+                "transition": "none !important",
+                "opacity": "1 !important",
+                "transform": "translateX(-50%) scaleX(1) !important"
+            },
+            ".monaco-button:active, .action-label:active": {
+                "transform": "none !important"
+            }
         }
-    }
-},
+    },
     // ======================================================================
     // 14. Language-specific settings
     // ======================================================================

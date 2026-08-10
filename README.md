@@ -1,14 +1,14 @@
 # Note Book Theme & VS Code Settings Redesign
 
-A Solarized and Rosé Pine-inspired suite for VS Code, redesigned for long coding sessions with restrained, readable interaction states and predictable workspace ergonomics.
+A Solarized and Rosé Pine-inspired suite for VS Code, redesigned as one Glass Paper system for long coding sessions, stable focus states, and predictable workspace ergonomics.
 
 ## What changed in the redesign
 
-- **Unified state coverage across all 8 themes:** normalized colors for lists, trees, tabs, inputs, command palette, notebooks, diffs, SCM, chat, and testing.
+- **Unified interaction contract across all 8 themes:** normalized foreground/background pairs for focused lists, menus, tabs, controls, settings, tree guides, terminals, command palette, notebooks, diffs, SCM, chat, and testing.
 - **Distinct list states:** clear visual separation between focused items, active selection, and hover rows.
-- **Restrained microinteractions:** static cursor and focus outlines; no constant pulsing, glowing, or hover translation in high-density areas.
-- **Ergonomic settings preset:** 16 px editor typography with 28 px line height, non-intrusive minimap (mouseover slider, no characters), compact scrollbars, and fast 120–220 ms transition curves.
-- **Accessibility-first defaults:** high terminal contrast target, strict reduced-motion support, and full fallback readability when custom CSS extensions are absent.
+- **Glass Paper chrome:** restrained translucent surfaces, hairline separators, and opt-in blur only for hierarchy-bearing widgets—not decorative glow.
+- **Ergonomic settings preset:** 16 px editor typography with a 28 px line height, structural minimap (mouseover slider, no characters), compact scrollbars, and a 120 / 180 / 260 ms motion ramp.
+- **Accessibility-first defaults:** baseline 3:1 control contrast validation, immediate focus rings, strict reduced-motion support, reduced-transparency fallback, and full readability when Custom UI Style is absent.
 
 ## Included themes
 
@@ -40,10 +40,10 @@ The optional `custom-ui-style.stylesheet` section requires [Custom UI Style](htt
 python3 scripts/validate_themes.py
 ```
 
-The validator checks color format, required UI state keys, package registration, and settings integrity.
+The validator checks color format, required UI state keys, baseline foreground/background contrast, and package registration.
 ## Installation
 
 ```bash
 npx vsce package
-code --install-extension note-book-theme-0.6.0.vsix
+code --install-extension note-book-theme-0.8.0.vsix
 ```
