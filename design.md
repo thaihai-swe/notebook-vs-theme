@@ -42,6 +42,14 @@ Modern-minimal with an editorial paper influence.
 - Loading: only functional progress may loop.
 - Error/success: use the theme's existing semantic red/green colors and keep feedback quiet.
 
+## CSS authoring syntax tier
+
+- **Custom Properties (`--*`)**: bolded distinct token tier for immediate visual scan.
+- **Selectors & Specificity**: classes and IDs distinct from quieted HTML/tag selectors.
+- **Pseudo-classes & Elements**: italicized interactive state markers (`:hover`, `:focus-visible`, `::before`).
+- **Values & Units**: numerical units dimmed relative to value literals to maintain reading rhythm.
+- **At-Rules**: italicized structural boundaries (`@media`, `@container`, `@layer`, `@keyframes`).
+
 ## Ergonomics
 
 - Editor typography defaults to 16px with a 28px line-height.

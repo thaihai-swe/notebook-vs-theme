@@ -920,49 +920,6 @@
             }
         },
         {
-            "name": "CSS selectors",
-            "scope": [
-                "entity.name.tag.css",
-                "entity.other.attribute-name.class.css",
-                "entity.other.attribute-name.id.css",
-                "entity.other.attribute-name.pseudo-class.css"
-            ],
-            "settings": {
-                "foreground": "#b58900"
-            }
-        },
-        {
-            "name": "CSS properties",
-            "scope": [
-                "support.type.property-name.css",
-                "support.type.vendored.property-name.css"
-            ],
-            "settings": {
-                "foreground": "#839496"
-            }
-        },
-        {
-            "name": "CSS units and colors",
-            "scope": [
-                "keyword.other.unit.css",
-                "constant.other.color.rgb-value.css",
-                "support.constant.color.css"
-            ],
-            "settings": {
-                "foreground": "#268bd2"
-            }
-        },
-        {
-            "name": "CSS at-rules",
-            "scope": [
-                "keyword.control.at-rule.css",
-                "keyword.control.at-rule.media.css"
-            ],
-            "settings": {
-                "foreground": "#b58900"
-            }
-        },
-        {
             "name": "Deprecated",
             "scope": [
                 "invalid.deprecated"
@@ -1002,6 +959,127 @@
             "scope": "support.type.property-name",
             "settings": {
                 "foreground": "#268bd2"
+            }
+        },
+        {
+            "name": "CSS Tags and Type Selectors",
+            "scope": [
+                "entity.name.tag.css",
+                "entity.name.tag.less",
+                "entity.name.tag.scss",
+                "entity.name.tag.wildcard.css"
+            ],
+            "settings": {
+                "foreground": "#268bd2"
+            }
+        },
+        {
+            "name": "CSS Classes and IDs",
+            "scope": [
+                "entity.other.attribute-name.class.css",
+                "entity.other.attribute-name.class.less",
+                "entity.other.attribute-name.class.scss",
+                "entity.other.attribute-name.id.css",
+                "entity.other.attribute-name.id.less",
+                "entity.other.attribute-name.id.scss"
+            ],
+            "settings": {
+                "foreground": "#b58900"
+            }
+        },
+        {
+            "name": "CSS Pseudo Classes and Pseudo Elements",
+            "scope": [
+                "entity.other.attribute-name.pseudo-class.css",
+                "entity.other.attribute-name.pseudo-element.css",
+                "entity.other.attribute-name.pseudo-class.scss",
+                "entity.other.attribute-name.pseudo-element.scss",
+                "entity.other.attribute-name.pseudo-class.less",
+                "entity.other.attribute-name.pseudo-element.less"
+            ],
+            "settings": {
+                "foreground": "#859900",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "CSS Properties",
+            "scope": [
+                "support.type.property-name.css",
+                "support.type.property-name.media",
+                "support.type.vendored.property-name.css",
+                "support.type.property-name.scss",
+                "support.type.property-name.less",
+                "meta.property-name.css",
+                "meta.property-name.scss",
+                "meta.property-name.less"
+            ],
+            "settings": {
+                "foreground": "#839496"
+            }
+        },
+        {
+            "name": "CSS Custom Properties / Variables",
+            "scope": [
+                "support.type.custom-property.name.css",
+                "support.type.custom-property.name.scss",
+                "support.type.custom-property.name.less",
+                "variable.css",
+                "variable.argument.css",
+                "variable.scss",
+                "variable.other.less"
+            ],
+            "settings": {
+                "foreground": "#2aa198",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "CSS Values and Constants",
+            "scope": [
+                "meta.property-value.css",
+                "meta.property-value.scss",
+                "meta.property-value.less",
+                "support.constant.property-value.css",
+                "support.constant.property-value.scss",
+                "support.constant.property-value.less",
+                "support.constant.color.css",
+                "support.constant.color.scss",
+                "support.constant.font-name.css",
+                "constant.other.color.rgb-value.css"
+            ],
+            "settings": {
+                "foreground": "#2aa198"
+            }
+        },
+        {
+            "name": "CSS Units and Quantities",
+            "scope": [
+                "keyword.other.unit.css",
+                "keyword.other.unit.scss",
+                "keyword.other.unit.less",
+                "keyword.other.unit"
+            ],
+            "settings": {
+                "foreground": "#657b83"
+            }
+        },
+        {
+            "name": "CSS At-Rules and Keywords",
+            "scope": [
+                "keyword.control.at-rule.css",
+                "keyword.control.at-rule.media.css",
+                "keyword.control.at-rule.container.css",
+                "keyword.control.at-rule.layer.css",
+                "keyword.control.at-rule.keyframes.css",
+                "keyword.control.at-rule.supports.css",
+                "keyword.control.at-rule.import.css",
+                "keyword.control.at-rule.scss",
+                "keyword.control.at-rule.less"
+            ],
+            "settings": {
+                "foreground": "#cb4b16",
+                "fontStyle": "italic"
             }
         }
     ]

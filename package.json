@@ -24,6 +24,8 @@
     "comfortable",
     "paper",
     "long session",
+    "css",
+    "frontend",
     "low eye strain"
   ],
   "contributes": {
@@ -31,42 +33,42 @@
       {
         "label": "Midnight Teal",
         "uiTheme": "vs-dark",
-                "path": "./themes/midnight-teal.json"
+        "path": "./themes/midnight-teal.json"
       },
       {
         "label": "Solarized Light",
         "uiTheme": "vs",
-                "path": "./themes/solarized-light.json"
+        "path": "./themes/solarized-light.json"
       },
       {
         "label": "Solarized Dark",
         "uiTheme": "vs-dark",
-                "path": "./themes/solarized-dark.json"
+        "path": "./themes/solarized-dark.json"
       },
       {
         "label": "Farmhouse",
         "uiTheme": "vs",
-                "path": "./themes/farmhouse.json"
+        "path": "./themes/farmhouse.json"
       },
       {
         "label": "Minimal",
         "uiTheme": "vs",
-                "path": "./themes/minimal.json"
+        "path": "./themes/minimal.json"
       },
       {
         "label": "Rosé Pine Dawn",
         "uiTheme": "vs",
-                "path": "./themes/rose-pine-dawn.json"
+        "path": "./themes/rose-pine-dawn.json"
       },
       {
         "label": "Parchment",
         "uiTheme": "vs",
-                "path": "./themes/parchment.json"
+        "path": "./themes/parchment.json"
       },
       {
         "label": "Sage",
         "uiTheme": "vs",
-                "path": "./themes/sage.json"
+        "path": "./themes/sage.json"
       }
     ]
   },
