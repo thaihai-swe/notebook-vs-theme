@@ -1,5 +1,5 @@
 {
-    "name": "Rosé Pine Dawn",
+    "name": "Ros\u00e9 Pine Dawn",
     "type": "light",
     "semanticHighlighting": true,
     "semanticTokenColors": {
@@ -587,7 +587,18 @@
         "notebook.selectedCellBorder": "#7f5f9ccc",
         "notebookStatusRunningIcon.foreground": "#56949f",
         "scrollbar.background": "#f7f0e815",
-        "sideBarTitle.foreground": "#797593"
+        "sideBarTitle.foreground": "#797593",
+        "diffEditor.move.border": "#f2e9e1",
+        "diffEditor.moveActive.border": "#f2e9e1",
+        "diffEditor.unchangedCodeBackground": "#4a466808",
+        "diffEditor.unchangedRegionBackground": "#f7f0e8",
+        "diffEditor.unchangedRegionForeground": "#4a466855",
+        "diffEditorGutter.insertedLineBackground": "#56949f26",
+        "diffEditorGutter.removedLineBackground": "#b4637a26",
+        "notebook.cellInsertionIndicator": "#7f5f9ccc",
+        "notebook.inactiveCellBackground": "#4a466808",
+        "notebook.inactiveCellBorder": "#6e6a8626",
+        "sideBarSectionHeader.foreground": "#4a4668"
     },
     "tokenColors": [
         {

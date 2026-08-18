@@ -10,6 +10,8 @@ A Solarized and Rosé Pine-inspired suite for VS Code, redesigned as one Glass P
 - **Ergonomic settings preset:** 16 px editor typography with a 28 px line height, structural minimap (mouseover slider, no characters), compact scrollbars, and a 120 / 180 / 260 ms motion ramp.
 - **Accessibility-first defaults:** 4.5:1 text and control-label contrast validation, immediate focus rings, strict reduced-motion support, reduced-transparency fallback, and full readability when Custom UI Style is absent.
 - **First-class CSS & UI/UX authoring:** dedicated token tiers for CSS custom properties (`--var`), pseudo-states (`:hover`, `::backdrop`), selectors, units, and at-rules (`@container`, `@media`, `@layer`) alongside native color decorators and quiet linting defaults.
+- **Modern CSS color system:** perceptual `color-mix(in oklch, …)` for surfaces, hairlines, focus rings, and accent glows so every palette stays natural in both light and dark modes.
+- **Accessibility-first defaults:** 4.5:1 text and control-label contrast validation, immediate focus rings, strict reduced-motion support, reduced-transparency fallback, high-contrast (`prefers-contrast: more`) deepened borders and a 3px focus ring, and full readability when Custom UI Style is absent.
 
 ## Included themes
 
