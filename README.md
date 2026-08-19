@@ -7,11 +7,12 @@ A Solarized and Rosé Pine-inspired suite for VS Code, redesigned as one Glass P
 - **Unified interaction contract across all 8 themes:** normalized foreground/background pairs for focused lists, menus, tabs, controls, settings, tree guides, terminals, command palette, notebooks, diffs, SCM, chat, and testing.
 - **Distinct list states:** clear visual separation between focused items, active selection, and hover rows.
 - **Glass Paper chrome:** restrained translucent surfaces, hairline separators, and opt-in blur only for hierarchy-bearing widgets—not decorative glow.
-- **Ergonomic settings preset:** 16 px editor typography with a 28 px line height, structural minimap (mouseover slider, no characters), compact scrollbars, and a 120 / 180 / 260 ms motion ramp.
-- **Accessibility-first defaults:** 4.5:1 text and control-label contrast validation, immediate focus rings, strict reduced-motion support, reduced-transparency fallback, and full readability when Custom UI Style is absent.
+- **Ergonomic settings preset:** 16 px editor typography with a 28 px line height, structural minimap (mouseover slider, no characters), compact scrollbars, and an 80 / 120 / 180 / 260 ms motion ramp.
+- **Expanded design tokens:** `--nb-depth-1/2/3` shadows, `--nb-surface-2` / `--nb-surface-overlay`, `--nb-text-muted` / `--nb-text-faint`, `--nb-border-strong`, `--nb-glass-tint`, `--nb-ring`, `--nb-scrim`, `--nb-blur-strong`, and a 4 / 8 / 12 / 16 px spacing scale — all consumed by the Custom UI Style stylesheet.
+- **Dark-mode chrome:** `.monaco-workbench.vs-dark` overrides deepen glass blur, raise shadow alpha, and switch surface blends to `oklch` so Midnight Teal and Solarized Dark stay readable.
+- **Accessibility-first defaults:** 4.5:1 text and control-label contrast validation, offset focus rings (including inputs), strict reduced-motion, reduced-transparency fallback, `prefers-contrast: more` deepened borders and a 3 px focus ring, Windows High Contrast (`forced-colors`) CanvasText reset, `@supports` blur fallback, and full readability when Custom UI Style is absent.
 - **First-class CSS & UI/UX authoring:** dedicated token tiers for CSS custom properties (`--var`), pseudo-states (`:hover`, `::backdrop`), selectors, units, and at-rules (`@container`, `@media`, `@layer`) alongside native color decorators and quiet linting defaults.
 - **Modern CSS color system:** perceptual `color-mix(in oklch, …)` for surfaces, hairlines, focus rings, and accent glows so every palette stays natural in both light and dark modes.
-- **Accessibility-first defaults:** 4.5:1 text and control-label contrast validation, immediate focus rings, strict reduced-motion support, reduced-transparency fallback, high-contrast (`prefers-contrast: more`) deepened borders and a 3px focus ring, and full readability when Custom UI Style is absent.
 
 ## Included themes
 

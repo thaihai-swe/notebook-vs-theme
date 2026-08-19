@@ -430,9 +430,18 @@
     // 13. Custom UI stylesheet — Glass Paper motion and chrome
     // ----------------------------------------------------------------------
     // Material system:
-    //   quiet → title/status chrome
+    //   quiet  → title/status chrome
     //   raised → sidebars, panels, tabs
     //   widget → dialogs, command palette, suggestions
+    // New in this revision:
+    //   • Expanded token tiers: --nb-depth-1/2/3 shadows, --nb-surface-2/overlay,
+    //     --nb-text-muted/faint, --nb-border-strong, --nb-radius-sm, --nb-motion-xs,
+    //     --nb-blur-strong, --nb-glass-tint, --nb-ring, --nb-scrim, spacing scale.
+    //   • Per-theme dark overrides via .monaco-workbench.vs-dark (deeper glass,
+    //     stronger shadows, oklch blends) so the chrome reads on dark surfaces.
+    //   • Full Windows High Contrast (forced-colors) reset: blur/shadow removed,
+    //     CanvasText outlines and borders restore OS contrast.
+    //   • Stronger, offset focus rings on every interactive element including inputs.
     // Hairline borders provide separation; motion communicates state, not decoration.
     // Decorative surface-glow removed; widget tier gets a stronger depth shadow.
     // Requires Custom UI Style extension.
@@ -472,9 +481,42 @@
             "--nb-surface-glow": "none",
             "--nb-focus-ring": "0 0 0 3px color-mix(in oklch, var(--nb-focus) 30%, transparent)",
             "--nb-shadow-soft": "0 8px 24px color-mix(in oklch, var(--vscode-widget-shadow, #000) 18%, transparent)",
+            "--nb-depth-1": "0 1px 2px color-mix(in oklch, var(--vscode-widget-shadow, #000) 14%, transparent)",
+            "--nb-depth-2": "0 6px 16px color-mix(in oklch, var(--vscode-widget-shadow, #000) 24%, transparent)",
+            "--nb-depth-3": "0 16px 40px color-mix(in oklch, var(--vscode-widget-shadow, #000) 38%, transparent)",
+            "--nb-glass-tint": "color-mix(in oklch, var(--vscode-foreground) 6%, transparent)",
+            "--nb-surface-2": "color-mix(in srgb, var(--vscode-sideBar-background) 88%, var(--vscode-editor-background) 12%)",
+            "--nb-surface-overlay": "color-mix(in srgb, var(--vscode-editorWidget-background) 90%, transparent)",
+            "--nb-scrim": "color-mix(in oklch, var(--vscode-editor-background) 55%, transparent)",
+            "--nb-text-muted": "color-mix(in oklch, var(--vscode-foreground) 72%, transparent)",
+            "--nb-text-faint": "color-mix(in oklch, var(--vscode-foreground) 52%, transparent)",
+            "--nb-border-strong": "color-mix(in srgb, var(--vscode-widget-border, var(--vscode-foreground)) 52%, transparent)",
+            "--nb-radius-sm": "4px",
+            "--nb-motion-xs": "80ms",
+            "--nb-blur-strong": "blur(18px)",
+            "--nb-focus-ring-offset": "2px",
+            "--nb-ring": "0 0 0 var(--nb-focus-ring-offset) var(--vscode-editor-background), 0 0 0 calc(var(--nb-focus-ring-offset) + 2px) var(--nb-focus)",
+            "--nb-spacing-xs": "4px",
+            "--nb-spacing-sm": "8px",
+            "--nb-spacing-md": "12px",
+            "--nb-spacing-lg": "16px",
+            "--nb-z-overlay": "1000",
             "background-color": "var(--nb-canvas) !important",
             "font-family": "var(--nb-font-ui) !important",
             "transition": "background-color var(--nb-motion-slow) var(--nb-ease-out), color var(--nb-motion-slow) var(--nb-ease-out) !important"
+        },
+        ".monaco-workbench.vs-dark, .vs-dark .monaco-workbench": {
+            "--nb-canvas": "color-mix(in oklch, var(--vscode-editor-background) 80%, #000 20%)",
+            "--nb-surface": "color-mix(in oklch, var(--vscode-sideBar-background) 86%, transparent)",
+            "--nb-surface-raised": "color-mix(in oklch, var(--vscode-editorWidget-background) 92%, transparent)",
+            "--nb-surface-highlight": "color-mix(in oklch, var(--vscode-foreground) 14%, transparent)",
+            "--nb-border": "color-mix(in oklch, var(--vscode-widget-border, var(--vscode-foreground)) 30%, transparent)",
+            "--nb-border-subtle": "color-mix(in oklch, var(--vscode-widget-border, var(--vscode-foreground)) 16%, transparent)",
+            "--nb-glass-blur": "blur(16px)",
+            "--nb-blur-strong": "blur(22px)",
+            "--nb-surface-shadow": "0 4px 18px color-mix(in oklch, var(--vscode-widget-shadow, #000) 42%, transparent)",
+            "--nb-widget-shadow": "0 12px 32px color-mix(in oklch, var(--vscode-widget-shadow, #000) 58%, transparent)",
+            "--nb-shadow-soft": "0 8px 24px color-mix(in oklch, var(--vscode-widget-shadow, #000) 36%, transparent)"
         },
         ".part.sidebar .title-label, .part.auxiliarybar .title-label, .part.panel.bottom .title-label": {
             "font-family": "var(--nb-font-heading) !important",
@@ -633,9 +675,14 @@
         },
         ".monaco-workbench :focus-visible": {
             "outline": "2px solid var(--nb-focus) !important",
-            "outline-offset": "2px !important",
+            "outline-offset": "var(--nb-focus-ring-offset) !important",
             "box-shadow": "var(--nb-focus-ring) !important",
+            "border-radius": "var(--nb-radius-item) !important",
             "animation": "none !important"
+        },
+        ".monaco-workbench input:focus-visible, .monaco-workbench textarea:focus-visible, .monaco-workbench [role='textbox']:focus-visible": {
+            "outline": "none !important",
+            "box-shadow": "var(--nb-ring) !important"
         },
         ".quick-input-widget": {
             "border-radius": "var(--nb-radius-widget) !important",
@@ -756,6 +803,44 @@
             "background-color": "var(--vscode-sash-hoverBorder) !important",
             "box-shadow": "none !important"
         },
+        ".monaco-list-row.selected": {
+            "background-color": "var(--vscode-list-activeSelectionBackground) !important",
+            "color": "var(--vscode-list-activeSelectionForeground) !important"
+        },
+        ".monaco-tl-row:hover, .monaco-list-row:hover": {
+            "background-color": "var(--nb-surface-highlight) !important"
+        },
+        ".monaco-breadcrumbs .breadcrumbs-item:hover": {
+            "color": "var(--vscode-foreground) !important",
+            "text-decoration": "underline dotted !important",
+            "text-underline-offset": "3px !important"
+        },
+        ".monaco-hover .hover-row": {
+            "padding": "2px 4px !important"
+        },
+        ".suggest-widget .details > .monaco-scrollable-element": {
+            "border-radius": "var(--nb-radius-item) !important"
+        },
+        ".monaco-scrollable-element > .scrollbar.horizontal > .slider": {
+            "height": "6px !important",
+            "margin-top": "4px !important",
+            "border-radius": "999px !important",
+            "background": "color-mix(in oklch, var(--vscode-scrollbarSlider-background) 72%, var(--nb-focus)) !important"
+        },
+        ".monaco-editor .margin": {
+            "border-right": "1px solid var(--nb-border-subtle) !important"
+        },
+        ".part.sidebar, .part.auxiliarybar, .part.panel.bottom, .part.activitybar": {
+            "box-shadow": "inset 0 1px 0 var(--nb-glass-tint), var(--nb-surface-shadow) !important"
+        },
+        ".part.statusbar": {
+            "box-shadow": "inset 0 1px 0 var(--nb-glass-tint), var(--nb-shadow-soft) !important"
+        },
+        "@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)))": {
+            ".quick-input-widget, .suggest-widget, .monaco-hover, .monaco-dialog-box, .notification-toast, .notifications-center, .monaco-menu": {
+                "background-color": "var(--vscode-editorWidget-background) !important"
+            }
+        },
         ".command-center-center": {
             "border-radius": "999px !important",
             "border": "1px solid var(--nb-border) !important",
@@ -838,6 +923,25 @@
             },
             ".monaco-progress-container .progress-bit": {
                 "animation-duration": "400ms !important"
+            }
+        },
+        "@media (forced-colors: active)": {
+            ".monaco-workbench, .monaco-workbench *": {
+                "backdrop-filter": "none !important",
+                "-webkit-backdrop-filter": "none !important",
+                "box-shadow": "none !important",
+                "background-image": "none !important",
+                "border-radius": "0 !important"
+            },
+            ".monaco-workbench :focus-visible, .monaco-inputbox.focused, .monaco-findInput.focused, .scm-input:focus-within, .scm-editor:focus-within": {
+                "outline": "2px solid CanvasText !important",
+                "box-shadow": "none !important"
+            },
+            ".part.sidebar, .part.auxiliarybar, .part.panel.bottom, .part.activitybar, .part.statusbar, .part.editor": {
+                "border": "1px solid CanvasText !important"
+            },
+            ".tab::after": {
+                "background-color": "CanvasText !important"
             }
         }
     },
