@@ -11,6 +11,7 @@
         "Extension Packs"
     ],
     "extensionPack": [
+        "fernandoescolar.vscode-solution-explorer",
         "kreativ-software.csharpextensions",
         "k--kato.docomment",
         "jetbrains.resharper-code",
@@ -20,6 +21,7 @@
         "ms-dotnettools.csdevkit",
         "adrianwilczynski.csharp-namespace-autocompletion",
         "subframe7536.custom-ui-style",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "formulahendry.dotnet-test-explorer"
     ]
 }

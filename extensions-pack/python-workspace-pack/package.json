@@ -1,0 +1,30 @@
+{
+    "name": "python-workspace-pack",
+    "displayName": "Python Workspace Extension Pack",
+    "description": "Bundles Python development tools, formatters, linters, and UI enhancements.",
+    "version": "0.0.1",
+    "private": true,
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter-cell-tags",
+        "ms-python.pylint",
+        "editorconfig.editorconfig",
+        "subframe7536.custom-ui-style"
+    ]
+}
