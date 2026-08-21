@@ -159,11 +159,15 @@
     "editor.inlayHints.maximumLength": 40,
     // ======================================================================
     // 5. Indent guides, bracket guides, and sticky scroll
+    // ----------------------------------------------------------------------
+    // Native Indent Rainbow: six cycling hues provided directly by each theme
+    // so nested blocks are readable at a glance. Guides stay on across all
+    // indent columns; the active column and matching bracket pair render stronger.
     // ======================================================================
     "editor.guides.indentation": true,
     "editor.guides.highlightActiveIndentation": "always",
-    "editor.guides.bracketPairs": "active",
-    "editor.guides.bracketPairsHorizontal": false,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": "active",
     "editor.guides.highlightActiveBracketPair": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -1025,6 +1029,7 @@
     // ----------------------------------------------------------------------
     // Lower opacity so backdrop-filter can frost through. Tabs header stays
     // fully transparent so the editor card glass reads continuously.
+    // Indent guides and bracket colors are defined directly within each theme.
     // ======================================================================
     "workbench.colorCustomizations": {
         "[Minimal]": {

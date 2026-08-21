@@ -1,0 +1,25 @@
+{
+    "name": "csharp-workspace-pack",
+    "displayName": "C# Workspace Extension Pack",
+    "description": "Bundles C# development tools, themes, and UI enhancements.",
+    "version": "0.0.1",
+    "private": true,
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [
+        "kreativ-software.csharpextensions",
+        "k--kato.docomment",
+        "jetbrains.resharper-code",
+        "adrianwilczynski.namespace",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "adrianwilczynski.csharp-namespace-autocompletion",
+        "subframe7536.custom-ui-style",
+        "editorconfig.editorconfig"
+    ]
+}
